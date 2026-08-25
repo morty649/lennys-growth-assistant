@@ -171,7 +171,7 @@ Be precise: the evaluator installs Docker and Ollama, pulls the two named models
 
 ### What went wrong
 
-The README links to a nonexistent `v0.2.md`. Some older reports describe fewer tests than now exist, and “Claude implemented,” “Groq deferred,” and “cloud version” are easy to misread as verified provider parity. The current containers are also stopped even though prior reports describe a running stack.
+The README previously linked to a nonexistent planning document. Some older reports describe fewer tests than now exist, and “Claude implemented,” “Groq deferred,” and “cloud version” are easy to misread as verified provider parity. The current containers are also stopped even though prior reports describe a running stack.
 
 ### How we solve it
 

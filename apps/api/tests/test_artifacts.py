@@ -18,6 +18,19 @@ def test_rendered_artifact_is_a_complete_document() -> None:
     assert "<h1>Grounded brief</h1>" in rendered
 
 
+def test_markdown_artifacts_sanitize_embedded_html() -> None:
+    rendered = render_artifact(
+        "markdown",
+        '# Safe\n\n<script>alert(1)</script><p onclick="alert(2)">Still safe</p>',
+        "Brief",
+    )
+
+    assert "<h1>Safe</h1>" in rendered
+    assert "script" not in rendered
+    assert "onclick" not in rendered
+    assert "Still safe" in rendered
+
+
 def test_plain_html_artifact_source_renders_markdown_links() -> None:
     rendered = render_artifact("html", "[Source](https://example.com)", "Brief")
 

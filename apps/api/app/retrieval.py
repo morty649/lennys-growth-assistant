@@ -24,6 +24,13 @@ GUEST_QUERY_FILLER = {
     "about", "an", "and", "can", "episode", "from", "it", "lenny", "make",
     "me", "of", "podcast", "say", "the", "this", "use", "what", "with",
 }
+LEXICAL_QUERY_FILLER = GUEST_QUERY_FILLER | {
+    "are", "could", "did", "do", "does", "explain", "for", "how", "in",
+    "is", "please", "should", "that", "their", "they", "to", "was", "were",
+    "why", "would",
+}
+
+
 def _tokens(text: str) -> set[str]:
     return {token.casefold() for token in WORD.findall(text) if len(token) > 1}
 
@@ -246,10 +253,34 @@ def _topic_episode_ids(topic: str | None) -> set[str]:
     return {row["episode_id"] for row in rows}
 
 
+def _lexical_terms(query: str, guest: str | None = None, limit: int = 12) -> list[str]:
+    """Extract content-bearing terms for partial lexical retrieval."""
+    guest_terms = _tokens(guest or "")
+    terms: list[str] = []
+    for token in re.findall(r"[a-z0-9]+", query.casefold()):
+        if len(token) < 2 or token in LEXICAL_QUERY_FILLER or token in guest_terms:
+            continue
+        if token not in terms:
+            terms.append(token)
+    return terms[:limit]
+
+
 def _lexical_candidates(
     query: str, guest: str | None, limit: int, episode_ids: set[str] | None = None
 ) -> list[dict[str, Any]]:
-    params: list[Any] = [query, query]
+    terms = _lexical_terms(query, guest)
+    if not terms:
+        return []
+
+    # Natural questions often contain useful modifiers which are absent from the
+    # best passage. Match any content term, then rank by how much of the query the
+    # passage covers. This avoids the all-terms requirement of plainto_tsquery.
+    disjunction = " | ".join(terms)
+    coverage_parts = [
+        "(search_tsv @@ plainto_tsquery('english', %s))::int" for _ in terms
+    ]
+    coverage_sql = " + ".join(coverage_parts)
+    params: list[Any] = [disjunction, *terms, len(terms), disjunction]
     guest_clause = ""
     if guest:
         guest_clause = "AND (lower(guest) = lower(%s) OR lower(guest) LIKE lower(%s))"
@@ -262,33 +293,24 @@ def _lexical_candidates(
     with connection() as conn:
         rows = conn.execute(
             f"""
-            SELECT id, ts_rank_cd(search_tsv, plainto_tsquery('english', %s)) AS lexical_score
-            FROM evidence_units
-            WHERE search_tsv @@ plainto_tsquery('english', %s)
-            {guest_clause} {episode_clause}
-            ORDER BY lexical_score DESC
+            WITH lexical_matches AS (
+              SELECT id,
+                     ts_rank_cd(search_tsv, to_tsquery('english', %s)) AS term_rank,
+                     (({coverage_sql})::float / %s) AS term_coverage
+              FROM evidence_units
+              WHERE search_tsv @@ to_tsquery('english', %s)
+              {guest_clause} {episode_clause}
+            )
+            SELECT id,
+                   term_coverage * 0.8 + LEAST(term_rank, 1.0) * 0.2 AS lexical_score,
+                   term_coverage AS lexical_coverage
+            FROM lexical_matches
+            ORDER BY term_coverage DESC, term_rank DESC
             LIMIT %s
             """,
             params,
         ).fetchall()
-        if rows:
-            return list(rows)
-        fallback_params: list[Any] = [f"%{query[:180]}%"]
-        if guest:
-            fallback_params.extend((guest, f"{guest} %"))
-        if episode_ids:
-            fallback_params.append(sorted(episode_ids))
-        fallback_params.append(limit)
-        return list(
-            conn.execute(
-                f"""
-                SELECT id, 0.01 AS lexical_score FROM evidence_units
-                WHERE search_document ILIKE %s {guest_clause} {episode_clause}
-                LIMIT %s
-                """,
-                fallback_params,
-            ).fetchall()
-        )
+        return list(rows)
 
 
 def _dense_candidates(query: str, guest: str | None, limit: int) -> list[dict[str, Any]]:
@@ -455,6 +477,9 @@ def search_transcripts(
             unit_id = candidate["id"]
             fused_scores[unit_id] += 1.0 / (RRF_K + rank)
             diagnostics[unit_id]["lexical"] = float(candidate.get("lexical_score") or 0.0)
+            diagnostics[unit_id]["lexical_coverage"] = float(
+                candidate.get("lexical_coverage") or 0.0
+            )
         for rank, candidate in enumerate(dense, start=1):
             unit_id = candidate["id"]
             fused_scores[unit_id] += 1.0 / (RRF_K + rank)

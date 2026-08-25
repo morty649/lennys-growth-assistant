@@ -1,4 +1,4 @@
-# v0.2 evaluation
+# Evaluation
 
 This release separates retrieval diagnostics from real end-to-end model behavior. It does not claim that the interrupted 440-turn experiment completed.
 
@@ -16,15 +16,15 @@ make eval
 
 Before the release suite, one real session validates explicit guest resolution, follow-up context, model-originated transcript search, no-think transport behavior, citations, fallback state, and latency.
 
-### v0.2 release suite
+### Release suite
 
-`v02_sessions.json` contains 10 distinct guests and episodes with exactly five turns each: 50 real calls through `POST /api/chat`.
+The frozen release dataset contains 10 distinct guests and episodes with exactly five turns each. A bounded submission check can select five sessions and three turns without changing the underlying cases.
 
 ```bash
-make eval-v02
+make eval-release
 ```
 
-The runner records provider, exact model, dataset checksum, run ID, per-turn sources, gold evidence, route, tool origin, context retention, citation state, execution mode, fallback reason, and latency. Checkpoints are written atomically. Resume is refused when provider, model, or dataset identity changes.
+The runner records provider, exact model, dataset checksum, run ID, per-turn answers, cited evidence excerpts, gold evidence, route, tool origin, context retention, citation state, execution mode, fallback reason, and latency. Checkpoints are written atomically. Resume is refused when provider, model, or dataset identity changes. Each turn includes a pending manual-review record so support and conversational context can be judged against the saved evidence rather than inferred from retrieval metrics.
 
 ### Ship 30 editorial suite
 
@@ -75,6 +75,17 @@ For every accepted factual answer:
 
 Release requires zero accepted unsupported material claims. Generated fixtures remain labelled pending manual review until this check is recorded.
 
+## PostgreSQL persistence and isolation
+
+Run the opt-in integration test against the disposable database started by Compose. It creates two temporary users, verifies that each sees only its own session, confirms ordered message persistence, and removes its records afterward.
+
+```bash
+cd apps/api
+RUN_POSTGRES_INTEGRATION=1 \
+POSTGRES_INTEGRATION_URL=postgresql://lenny:lenny_local_password@127.0.0.1:5433/lenny_growth \
+uv run pytest tests/test_database_integration.py -q
+```
+
 ## Historical evidence
 
 - The 40-case retrieval result remains a diagnostic baseline.
@@ -92,8 +103,9 @@ its signed tokens in the checkpoint.
 cd apps/api
 EVAL_API_URL=https://lennys-growth-api.onrender.com \
   EVAL_USERNAME=test1 EVAL_PASSWORD='<configured password>' \
-  uv run python ../../evals/run_agent_eval.py --set v02 --provider groq \
-  --model openai/gpt-oss-120b --run-id v02-cloud-groq
+  uv run python ../../evals/run_agent_eval.py --set release --provider groq \
+  --model openai/gpt-oss-120b --limit 5 --turn-limit 3 \
+  --run-id cloud-groq-release-5x3
 ```
 
 Rate-limit fallback may use `openai/gpt-oss-20b`; each affected turn is

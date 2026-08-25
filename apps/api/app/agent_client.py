@@ -9,6 +9,7 @@ import httpx
 from app.config import get_settings
 from app.grounding import (
     SOURCE_TOKEN,
+    cited_claims_are_supported,
     claims_have_citations,
     clean_citations,
     collect_evidence,
@@ -16,7 +17,18 @@ from app.grounding import (
     fallback_answer,
     only_cited_evidence,
     retain_cited_claims,
+    retain_supported_cited_claims,
 )
+
+
+class AgentServiceError(RuntimeError):
+    """A safe, structured failure returned by (or while reaching) the Pi service."""
+
+    def __init__(self, code: str, detail: str, status_code: int) -> None:
+        super().__init__(detail)
+        self.code = code
+        self.detail = detail
+        self.status_code = status_code
 
 
 @dataclass(slots=True)
@@ -128,33 +140,75 @@ async def _call_agent(
         and str(history[-1].get("content") or "").strip() == query.strip()
         else history
     )
-    async with httpx.AsyncClient(
-        timeout=settings.request_timeout_seconds, trust_env=False
-    ) as client:
-        response = await client.post(
-            f"{settings.agent_url.rstrip('/')}/run",
-            json={
-                "query": query,
-                "history": [
-                    {"role": item["role"], "content": item["content"]}
-                    for item in prior_history[-12:]
-                    if item["role"] in {"user", "assistant"}
-                ],
-                "provider": provider,
-                "model": model,
-                "mode": "adaptive",
-                "requestId": request_id,
-                "resolvedContext": {
-                    "guests": resolved_context.get("guests") or [],
-                    "topics": resolved_context.get("topics") or [],
-                    "prior_evidence_ids": resolved_context.get("prior_evidence_ids") or [],
+    try:
+        async with httpx.AsyncClient(
+            timeout=settings.request_timeout_seconds, trust_env=False
+        ) as client:
+            response = await client.post(
+                f"{settings.agent_url.rstrip('/')}/run",
+                json={
+                    "query": query,
+                    "history": [
+                        {"role": item["role"], "content": item["content"]}
+                        for item in prior_history[-12:]
+                        if item["role"] in {"user", "assistant"}
+                    ],
+                    "provider": provider,
+                    "model": model,
+                    "mode": "adaptive",
+                    "requestId": request_id,
+                    "resolvedContext": {
+                        "guests": resolved_context.get("guests") or [],
+                        "topics": resolved_context.get("topics") or [],
+                        "prior_evidence_ids": resolved_context.get("prior_evidence_ids")
+                        or [],
+                    },
                 },
-            },
+            )
+    except httpx.TimeoutException as exc:
+        raise AgentServiceError(
+            "provider_timeout",
+            "The model did not finish before the request timeout",
+            504,
+        ) from exc
+    except httpx.RequestError as exc:
+        raise AgentServiceError(
+            "agent_unreachable",
+            "The agent service is temporarily unavailable",
+            503,
+        ) from exc
+
+    if response.is_error:
+        try:
+            error_payload = response.json()
+        except ValueError:
+            error_payload = {}
+        code = str(error_payload.get("code") or "agent_run_failed")
+        detail = str(
+            error_payload.get("detail") or "The agent could not complete the request"
         )
-        response.raise_for_status()
+        status_code = {
+            "provider_not_configured": 409,
+            "provider_rate_limited": 429,
+            "provider_timeout": 504,
+            "agent_unreachable": 503,
+        }.get(code, 502)
+        raise AgentServiceError(code, detail, status_code)
+
+    try:
         payload = response.json()
+    except ValueError as exc:
+        raise AgentServiceError(
+            "invalid_agent_response",
+            "The agent service returned an invalid response",
+            502,
+        ) from exc
     if not isinstance(payload, dict):
-        raise RuntimeError("The Pi agent returned an invalid response")
+        raise AgentServiceError(
+            "invalid_agent_response",
+            "The agent service returned an invalid response",
+            502,
+        )
     return payload
 
 
@@ -201,6 +255,21 @@ def _grounded_result(
                 used_fallback=True,
                 fallback_reason="missing_valid_citations",
             )
+        if not cited_claims_are_supported(text, evidence):
+            return _result(
+                fallback_answer(evidence[:3], "unsupported_claims"),
+                evidence[:3],
+                public_runs,
+                provider,
+                model,
+                payload,
+                "evidence_only",
+                "unverified",
+                started,
+                used_fallback=True,
+                fallback_reason="unsupported_claims",
+                expose_model=False,
+            )
         return _result(
             text,
             only_cited_evidence(evidence, valid_citations),
@@ -215,6 +284,26 @@ def _grounded_result(
     if valid_citations and not claims_have_citations(text):
         text = retain_cited_claims(text)
         valid_citations = {match.group("id") for match in SOURCE_TOKEN.finditer(text)}
+    if valid_citations and claims_have_citations(text) and not cited_claims_are_supported(
+        text, evidence
+    ):
+        text = retain_supported_cited_claims(text, evidence)
+        valid_citations = {match.group("id") for match in SOURCE_TOKEN.finditer(text)}
+        if not text or not valid_citations:
+            return _result(
+                fallback_answer(evidence[:3], "unsupported_claims"),
+                evidence[:3],
+                public_runs,
+                provider,
+                model,
+                payload,
+                "evidence_only",
+                "supported",
+                started,
+                used_fallback=True,
+                fallback_reason="unsupported_claims",
+                expose_model=False,
+            )
     if not valid_citations or not claims_have_citations(text):
         reason = "missing_valid_citations" if not valid_citations else "incomplete_citation_coverage"
         fallback_evidence = evidence[:3]

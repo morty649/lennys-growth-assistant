@@ -21,6 +21,14 @@ export {
   systemPromptFor,
 };
 
+export function ship30DraftReady(text: string): boolean {
+  const wordCount = text.match(/\b[\p{L}\p{N}’'-]+\b/gu)?.length ?? 0;
+  const sourceIds = new Set(
+    [...text.matchAll(/\[\[source:([^\]]+)\]\]/g)].map((match) => match[1]),
+  );
+  return wordCount >= 1_100 && wordCount <= 1_400 && sourceIds.size >= 2;
+}
+
 function assertConfigured(payload: RunRequest): void {
   const provider = payload.provider ?? "ollama";
   if (!payload.query?.trim()) throw new Error("query is required");
@@ -182,7 +190,7 @@ async function runAgentOnce(payload: RunRequest) {
       ),
       tools: toolsForMode(mode, toolRuns, resolvedContext),
       messages: [],
-      thinkingLevel: provider === "groq" ? "medium" : "off",
+      thinkingLevel: provider === "groq" && mode !== "ship30" ? "medium" : "off",
     },
     onPayload: (requestPayload) => {
       if (provider !== "ollama") return requestPayload;
@@ -231,8 +239,26 @@ async function runAgentOnce(payload: RunRequest) {
       "Call browse_corpus_catalog for the current question now, then answer only from the returned metadata.",
     );
   }
+  if (
+    mode === "ship30" &&
+    (
+      !toolRuns.some((run) => run.name === "search_transcripts" && run.status === "complete") ||
+      !toolRuns.some((run) => run.name === "prepare_ship_30_essay" && run.status === "complete")
+    )
+  ) {
+    await agent.prompt(
+      "Complete the required Ship 30 workflow now: search the transcripts, then call prepare_ship_30_essay using only returned evidence IDs. Do not write the essay until both tools complete.",
+    );
+  }
   if (agent.state.errorMessage) throw new Error(agent.state.errorMessage);
   let text = assistantText(agent.state.messages);
+  if (mode === "ship30" && !ship30DraftReady(text)) {
+    await agent.prompt(
+      "Write the complete final essay now using the evidence and Ship 30 brief already returned. Output only 1,100–1,400 words of polished Markdown. Include a strong hook, clear narrative progression, skimmable headings, selective bold emphasis, and a specific useful takeaway. Copy exact [[source:...]] tokens after factual transcript claims and use at least two distinct evidence IDs. Do not call another tool and do not provide an outline or summary.",
+    );
+    if (agent.state.errorMessage) throw new Error(agent.state.errorMessage);
+    text = assistantText(agent.state.messages);
+  }
   const searched = toolRuns.some(
     (run) => run.name === "search_transcripts" && run.status === "complete",
   );
@@ -260,6 +286,33 @@ async function runAgentOnce(payload: RunRequest) {
 export function isGroqRateLimitError(error: unknown): boolean {
   const message = error instanceof Error ? error.message : String(error);
   return /(?:\b429\b|rate.?limit|too many requests)/i.test(message);
+}
+
+export function agentFailureCode(error: unknown): string {
+  const message = error instanceof Error ? error.message : String(error);
+  if (/API_KEY|not configured|LOCAL_MODEL_THINKING/i.test(message)) {
+    return "provider_not_configured";
+  }
+  if (isGroqRateLimitError(error)) return "provider_rate_limited";
+  if (/timeout|timed out|abort(?:ed)?/i.test(message)) return "provider_timeout";
+  if (/fetch failed|ECONNREFUSED|ENOTFOUND|unreachable/i.test(message)) {
+    return "agent_unreachable";
+  }
+  if (/scope classifier returned no valid routing label/i.test(message)) {
+    return "routing_failed";
+  }
+  if (/no final answer|invalid .*response|produced an invalid/i.test(message)) {
+    return "invalid_model_response";
+  }
+  return "agent_run_failed";
+}
+
+function statusForFailure(code: string): number {
+  if (code === "provider_not_configured") return 400;
+  if (code === "provider_rate_limited") return 429;
+  if (code === "provider_timeout") return 504;
+  if (code === "agent_unreachable") return 503;
+  return 502;
 }
 
 export async function runAgent(payload: RunRequest) {
@@ -305,16 +358,25 @@ app.post("/run", async (request: Request<unknown, unknown, RunRequest>, response
     response.json(result);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    const configurationError = message.includes("API_KEY") || message.includes("LOCAL_MODEL_THINKING");
+    const code = agentFailureCode(error);
     console.error(JSON.stringify({
       event: "agent_run_failed",
       requestId: request.body.requestId,
-      code: configurationError ? "provider_not_configured" : "agent_run_failed",
+      code,
+      errorType: error instanceof Error ? error.name : "UnknownError",
       durationMs: Math.round(performance.now() - started),
     }));
-    response.status(configurationError ? 400 : 502).json({
-      code: configurationError ? "provider_not_configured" : "agent_run_failed",
-      detail: configurationError ? message : "The Pi agent could not complete the request",
+    response.status(statusForFailure(code)).json({
+      code,
+      detail: code === "provider_not_configured"
+        ? message
+        : code === "provider_rate_limited"
+          ? "The selected provider is rate limited"
+          : code === "provider_timeout"
+            ? "The selected model did not finish before the request timeout"
+            : code === "agent_unreachable"
+              ? "A required agent dependency is unavailable"
+              : "The Pi agent could not complete the request",
     });
   }
 });

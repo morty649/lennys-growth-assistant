@@ -8,7 +8,9 @@ from time import perf_counter
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
+from app.agent_client import AgentServiceError
 from app.client_auth import validate_auth_configuration
 from app.database import initialize_database
 from app.dependencies import settings
@@ -44,6 +46,23 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+    @application.exception_handler(AgentServiceError)
+    async def agent_service_error_handler(request, exc: AgentServiceError):
+        logger.warning(
+            json.dumps(
+                {
+                    "event": "agent_service_error",
+                    "path": request.url.path,
+                    "code": exc.code,
+                    "status": exc.status_code,
+                }
+            )
+        )
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={"code": exc.code, "detail": exc.detail},
+        )
 
     @application.middleware("http")
     async def structured_request_log(request, call_next):

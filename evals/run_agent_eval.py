@@ -46,18 +46,30 @@ def _default_model(provider: str) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run real multi-turn sessions through POST /api/chat")
-    parser.add_argument("--set", choices=("development", "acceptance", "v02"), default="v02")
+    parser.add_argument(
+        "--set",
+        choices=("development", "acceptance", "release", "v02"),
+        default="release",
+    )
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--turn-limit", type=int)
     parser.add_argument("--provider", choices=("ollama", "anthropic", "groq"), default="ollama")
     parser.add_argument("--model")
     parser.add_argument("--run-id")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     model = args.model or _default_model(args.provider)
-    dataset_path = ROOT / f"{args.set}_sessions.json"
+    dataset_name = "v02" if args.set == "release" else args.set
+    dataset_path = ROOT / f"{dataset_name}_sessions.json"
     dataset = _load(dataset_path)
     if args.limit is not None:
+        if args.limit < 1:
+            raise SystemExit("--limit must be at least 1")
         dataset = dataset[: args.limit]
+    if args.turn_limit is not None:
+        if args.turn_limit < 1:
+            raise SystemExit("--turn-limit must be at least 1")
+        dataset = [{**case, "turns": case["turns"][: args.turn_limit]} for case in dataset]
     run_id = args.run_id or f"{args.set}-{args.provider}-{_slug(model)}"
     destination = ROOT / "results" / f"{_slug(run_id)}.json"
     identity = {
@@ -66,6 +78,8 @@ def main() -> None:
         "dataset_sha256": _checksum(dataset_path),
         "provider": args.provider,
         "model": model,
+        "session_limit": args.limit,
+        "turn_limit": args.turn_limit,
     }
     output: dict[str, Any] = {"identity": identity, "run": {}, "sessions": []}
     if args.resume and destination.exists():
@@ -158,6 +172,26 @@ def main() -> None:
                     {
                         "turn": turn_number,
                         "prompt": turn["prompt"],
+                        "answer": answer_content,
+                        "evidence": [
+                            {
+                                "id": source.get("id"),
+                                "episode_id": source.get("episode_id"),
+                                "guest": source.get("guest"),
+                                "title": source.get("title"),
+                                "timestamp": source.get("timestamp"),
+                                "excerpt": source.get("excerpt"),
+                                "route": source.get("route"),
+                                "score": source.get("score"),
+                            }
+                            for source in sources
+                        ],
+                        "manual_review": {
+                            "status": "pending",
+                            "answer_supported": None,
+                            "context_correct": None,
+                            "notes": "",
+                        },
                         "expected_episode_id": expected_episode,
                         "gold_evidence_ids": sorted(gold_evidence),
                         "top_evidence_ids": evidence_ids,

@@ -1,4 +1,4 @@
-.PHONY: up down logs ingest eval eval-dev eval-v02 eval-acceptance test build
+.PHONY: up down logs ingest eval eval-dev eval-release eval-acceptance test build
 
 up:
 	docker compose up --build
@@ -18,8 +18,8 @@ eval:
 eval-dev:
 	cd apps/api && uv run python ../../evals/run_agent_eval.py --set development --provider ollama --model qwen3:8b
 
-eval-v02:
-	cd apps/api && uv run python ../../evals/run_agent_eval.py --set v02 --provider ollama --model qwen3:8b --resume
+eval-release:
+	cd apps/api && uv run python ../../evals/run_agent_eval.py --set release --provider ollama --model qwen3:8b --resume
 
 eval-acceptance:
 	cd apps/api && uv run python ../../evals/run_agent_eval.py --set acceptance --provider ollama --resume

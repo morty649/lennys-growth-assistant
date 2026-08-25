@@ -40,7 +40,7 @@ Attempt: switch only the answer model to `qwen3:8b`, leaving `nomic-embed-text` 
 
 Result: the direct Pi gate used a model-originated transcript search, exact citations, and no-think enforcement. The five-turn gate completed every automated check with no fallback and lower total latency than the comparable 14B probe.
 
-Decision: select Qwen3 8B for v0.2 and retain 14B as the documented fallback if multi-session quality regresses.
+Decision: select Qwen3 8B for the final local configuration and retain 14B as the documented fallback if multi-session quality regresses.
 
 ## 6. Docker registry timeout
 
@@ -49,4 +49,3 @@ Attempt: rebuild the complete Compose stack after switching defaults.
 Result: Docker Hub base-image metadata requests timed out. No project build step had failed.
 
 Correction: start existing local images with recreated environment for qualification, retain the external failure in this log, and keep a clean source rebuild as a final release gate.
-

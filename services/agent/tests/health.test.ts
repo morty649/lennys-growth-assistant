@@ -28,6 +28,15 @@ test("Groq fallback is limited to genuine rate-limit errors", async () => {
   assert.equal(source.isGroqRateLimitError(new Error("invalid API key")), false);
 });
 
+test("agent failures expose stable safe categories", async () => {
+  process.env.NODE_ENV = "test";
+  const source = await import("../src/index.js");
+  assert.equal(source.agentFailureCode(new Error("request timed out")), "provider_timeout");
+  assert.equal(source.agentFailureCode(new Error("fetch failed: ECONNREFUSED")), "agent_unreachable");
+  assert.equal(source.agentFailureCode(new Error("scope classifier returned no valid routing label")), "routing_failed");
+  assert.equal(source.agentFailureCode(new Error("private provider response")), "agent_run_failed");
+});
+
 test("Anthropic cannot run without an evaluator-supplied API key", async () => {
   process.env.NODE_ENV = "test";
   process.env.ANTHROPIC_API_KEY = "";
@@ -129,6 +138,17 @@ test("Ship 30 accepts exact citation tokens as evidence IDs", async () => {
   const { normalizeEvidenceId } = await import("../src/tools.js");
   assert.equal(normalizeEvidenceId("source:guest:10:abc"), "guest:10:abc");
   assert.equal(normalizeEvidenceId("guest:10:abc"), "guest:10:abc");
+});
+
+test("Ship 30 draft gate requires full length and two evidence sources", async () => {
+  process.env.NODE_ENV = "test";
+  const source = await import("../src/index.js");
+  assert.equal(source.ship30DraftReady("A short summary [[source:a]]."), false);
+  const body = Array.from({ length: 1_150 }, (_, index) => `word${index}`).join(" ");
+  assert.equal(
+    source.ship30DraftReady(`${body} [[source:a]] [[source:b]]`),
+    true,
+  );
 });
 
 test("underspecified Ship 30 requests get one clarification without tools", async () => {

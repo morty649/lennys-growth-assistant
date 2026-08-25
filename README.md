@@ -1,8 +1,19 @@
-# Lenny's Growth Assistant v0.2
+# Lenny's Growth Assistant
 
 A conversational research agent over Lenny's Podcast transcripts. FastAPI owns sessions, retrieval, citations, and artifacts; Pi owns the model/tool loop. The local profile uses Qwen on Ollama. The cloud profile uses Groq GPT-OSS 120B, Supabase PostgreSQL, and pgvector through the same tools and grounding boundary.
 
-## What is implemented
+## Architecture overview
+
+```text
+Web UI -> FastAPI -> Pi agent -> selected Ollama, Anthropic, or Groq model
+              |          |
+              |          -> catalog, transcript search, source, and Ship 30 tools
+              -> PostgreSQL sessions/artifacts + Chroma or pgvector retrieval
+```
+
+The downloaded application is self-contained and local-first. The separately hosted demo uses the same API and agent boundaries with Supabase and Groq. See [architecture.md](docs/architecture.md) for schemas, endpoints, routing, security, and deployment topology.
+
+## Capabilities
 
 - Independent PostgreSQL sessions with bounded multi-turn context. One adaptive Pi agent decides from meaning and recent conversation whether to answer directly, inspect the corpus catalog, or search transcript evidence; there is no keyword intent router.
 - Structural transcript parsing that preserves original wording and speaker/timestamp boundaries while excluding sponsor/outro regions.
@@ -22,9 +33,14 @@ The localhost deployment remains the reproducible evaluator path. A separate clo
 
 The repository is self-contained: `episodes/` and `index/` live at its root and are mounted read-only into the API container.
 
-## Start on localhost
+## Prerequisites
 
-Prerequisites: Docker Desktop and Ollama running on the host.
+- Docker Desktop
+- Ollama running on the host
+- Enough disk space for the repository corpus, containers, `qwen3:8b`, and `nomic-embed-text`
+- Optional Anthropic or Groq API key when testing those providers locally
+
+## Installation
 
 ```bash
 ollama pull qwen3:8b
@@ -35,7 +51,33 @@ make up
 
 Open [http://localhost:3000](http://localhost:3000). All published application and data ports bind to `127.0.0.1`.
 
-## Cloud profile
+## Environment variables
+
+Copy `.env.example` to `.env`. Important settings are:
+
+| Variable | Purpose |
+|---|---|
+| `DEFAULT_PROVIDER` | Initial session provider; defaults to `ollama` |
+| `OLLAMA_MODEL`, `OLLAMA_EMBED_MODEL` | Local answer and embedding models |
+| `LOCAL_MODEL_THINKING` | Must remain `off` for the Qwen local path |
+| `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL` | Enables Claude in the localhost provider selector |
+| `GROQ_API_KEY`, `GROQ_MODEL`, `ENABLE_GROQ` | Enables Groq in the localhost provider selector |
+| `DATABASE_URL` | PostgreSQL connection used by FastAPI |
+| `VECTOR_BACKEND` | `chroma` locally or `pgvector` in the hosted profile |
+| `AUTO_INGEST`, `CORPUS_ROOT` | Corpus loading behavior and mounted data location |
+| `AUTH_MODE` | `local` for localhost or `profiles` for the protected demo |
+| `INTERNAL_TOOL_TOKEN` | Protects Pi's internal retrieval endpoints |
+
+Safe defaults and the complete list are documented in `.env.example`; hosted-only settings are in `.env.cloud.example`. Never commit `.env`.
+
+## Local and cloud model setup
+
+- **Local Ollama:** pull `qwen3:8b` and `nomic-embed-text`; no inference API key is required.
+- **Claude on localhost:** set `ANTHROPIC_API_KEY` and optionally `ANTHROPIC_MODEL`, then restart the API and agent services. Claude uses the same Pi tools and local PostgreSQL/retrieval services.
+- **Groq on localhost:** set `ENABLE_GROQ=true` and `GROQ_API_KEY`, then restart the API and agent services.
+- **Hosted demo:** configured independently with Groq on Render and PostgreSQL/pgvector on Supabase. Hosted credentials do not configure or replace the evaluator's localhost providers.
+
+## Hosted deployment
 
 The cloud profile is intentionally additive:
 
@@ -65,20 +107,29 @@ curl --noproxy '*' http://127.0.0.1:8000/api/ingest/manifest
 
 The first run builds the versioned semantic index and can take several minutes. Do not evaluate until the manifest reports matching evidence-unit and vector counts.
 
-## Verification
+## Run commands
+
+```bash
+make up       # build and run localhost
+make logs     # follow API, agent, and web logs
+make ingest   # explicitly rebuild the transcript index
+make down     # stop the stack without deleting volumes
+```
+
+## Tests
 
 ```bash
 make test
 make build
 make eval
-make eval-v02
+make eval-release
 ```
 
-The v0.2 evaluation makes 50 real `POST /api/chat` turns and checkpoints after every turn. Resume safety is bound to the dataset checksum, provider, and exact model:
+The release evaluation checkpoints after every turn. Resume safety is bound to the dataset checksum, provider, and exact model. Evaluation is separate from the fast test/build commands:
 
 ```bash
 cd apps/api
-uv run python ../../evals/run_agent_eval.py --set v02 --provider ollama --model qwen3:8b --resume
+uv run python ../../evals/run_agent_eval.py --set release --provider ollama --model qwen3:8b --resume
 ```
 
 The dataset is mechanically grounded in actual transcript Q&A units and frozen for repeatability. Its `review_status` records that origin. Automated success remains separate from manual support review.
@@ -89,8 +140,9 @@ Run the same release suite against the public Groq deployment with:
 cd apps/api
 EVAL_API_URL=https://lennys-growth-api.onrender.com \
   EVAL_USERNAME=test1 EVAL_PASSWORD='<configured password>' \
-  uv run python ../../evals/run_agent_eval.py --set v02 --provider groq \
-  --model openai/gpt-oss-120b --run-id v02-cloud-groq
+  uv run python ../../evals/run_agent_eval.py --set release --provider groq \
+  --model openai/gpt-oss-120b --limit 5 --turn-limit 3 \
+  --run-id cloud-groq-release
 ```
 
 ## Project layout
@@ -132,5 +184,5 @@ Codex CLI/ChatGPT credentials are not used as an application provider.
 - [Architecture](docs/architecture.md)
 - [Evaluation](docs/evaluation.md)
 - [Manual test plan](docs/manual-test.md)
-- [Sanitized coding-agent log](agent-transcripts/v0.1-v0.2-build-log.md)
+- [Sanitized coding-agent log](agent-transcripts/build-log.md)
 - [Cloud recovery and deployment decision](docs/what-we-messed-up-and-recovery-plan.md)

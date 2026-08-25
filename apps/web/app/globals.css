@@ -182,6 +182,15 @@ button { color: inherit; }
 .context-workspace .source-list { max-height: none; padding: 4px 18px 22px; }
 .source-card a { color: inherit; font-size: 8px; text-transform: uppercase; }
 
+:where(button, a, input, textarea, select):focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+.model-chip:has(select:focus-visible), .composer:has(textarea:focus-visible) {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
 @media (max-width: 1180px) {
   .app-shell, .app-shell.workspace-open, .app-shell.workspace-wide { grid-template-columns: 220px minmax(0, 1fr); }
   .context-workspace { position: fixed; inset: 0 0 0 auto; z-index: 12; width: min(640px, calc(100vw - 80px)); box-shadow: -8px 0 30px rgba(0,0,0,.15); }

@@ -59,7 +59,7 @@ def sanitize_html(source: str) -> str:
 
 def render_artifact(format_name: str, source: str, title: str) -> str:
     if format_name == "markdown" or "<" not in source:
-        body = markdown.markdown(source, extensions=["extra", "sane_lists"])
+        body = sanitize_html(markdown.markdown(source, extensions=["extra", "sane_lists"]))
     else:
         body = sanitize_html(source)
     safe_title = html.escape(title)
