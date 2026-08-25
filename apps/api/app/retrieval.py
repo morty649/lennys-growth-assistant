@@ -42,6 +42,21 @@ def match_guest_reference(
     for episode in episodes:
         grouped[str(episode["guest"])].add(str(episode["id"]))
 
+    exact_matches = [guest for guest in grouped if _normalize(guest) in phrases]
+    if len(exact_matches) == 1:
+        guest = exact_matches[0]
+        match = {
+            "guest": guest,
+            "episode_ids": sorted(grouped[guest]),
+            "score": 1.0,
+        }
+        return {
+            "status": "resolved",
+            "reference": reference,
+            "match": match,
+            "candidates": [match],
+        }
+
     scored: list[dict[str, Any]] = []
     for guest, episode_ids in grouped.items():
         guest_words = _normalize(guest).split()

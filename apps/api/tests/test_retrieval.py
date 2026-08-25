@@ -49,6 +49,17 @@ def test_guest_resolution_does_not_guess_between_equal_first_names() -> None:
     }
 
 
+def test_exact_catalog_name_wins_over_a_similar_initial_match() -> None:
+    episodes = [
+        {"id": "crystal-w", "guest": "Crystal W"},
+        {"id": "christina-wodtke", "guest": "Christina Wodtke"},
+    ]
+    result = match_guest_reference("Use the Crystal W episode", episodes)
+
+    assert result["status"] == "resolved"
+    assert result["match"]["guest"] == "Crystal W"
+
+
 def test_guest_resolution_ignores_unrelated_topic_queries() -> None:
     episodes = [{"id": "dan-hockenmaier", "guest": "Dan Hockenmaier"}]
     result = match_guest_reference("How should startups improve retention?", episodes)

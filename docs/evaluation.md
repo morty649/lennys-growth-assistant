@@ -26,6 +26,29 @@ make eval-v02
 
 The runner records provider, exact model, dataset checksum, run ID, per-turn sources, gold evidence, route, tool origin, context retention, citation state, execution mode, fallback reason, and latency. Checkpoints are written atomically. Resume is refused when provider, model, or dataset identity changes.
 
+### Ship 30 editorial suite
+
+`ship30_content_cases.json` contains 10 transcript-backed writing assignments. The five `gold` cases include a reader, defensible thesis, four-part narrative, exact evidence window, and required takeaway. The five `challenge` cases test whether those editorial rules transfer to new guests and topics.
+
+This suite is reviewed as writing, not reduced to keyword matching. For each generated essay, score 0-2 on each dimension:
+
+1. **Grounding:** podcast claims preserve the speaker's meaning and carry the correct evidence token.
+2. **Argument:** the essay advances one specific thesis instead of recapping sources.
+3. **Progression:** each section moves the same argument from tension through evidence to application.
+4. **Usefulness:** the reader receives a decision, diagnostic, experiment, or next action supported by the mechanism discussed.
+5. **Execution:** the result is 1,100-1,400 words, skimmable Markdown, and free of generic openings, invented stories, and repeated conclusions.
+
+An essay passes at 8/10 or better with no zero in Grounding. The suite passes when all five gold cases and at least four of five challenge cases pass. Record model, provider, source IDs, output, scores, and reviewer notes together; do not treat retrieval success alone as essay-quality success.
+
+#### Current localhost result
+
+On 2026-08-26, the 10 editorial cases achieved expected-episode Recall@8 of 10/10 against the self-contained corpus. Two bounded `qwen3:8b` generations were then run for the `retention-compounds` gold case:
+
+- The first called transcript search and essay preparation, cited three passages, and returned 1,062 words. It failed the editorial review because it was below the hard word range, opened with generic “fast-paced world” language, repeated broad advice, and introduced unsupported framing. The artifact gate correctly withheld it.
+- The second called both tools but produced no valid source tokens. The grounding guard replaced it with evidence-only output and withheld the artifact.
+
+Therefore the local 8B model has **not** passed the Ship 30 editorial gate. Retrieval and evidence scoping pass; long-form synthesis remains model-limited and should be retested with a stronger local model or a configured cloud provider. Do not hide this failure with automatic padding, uncited prose, or server-authored fallback essays.
+
 ## Automated gates
 
 - 10 sessions and exactly 50 turns complete.

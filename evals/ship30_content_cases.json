@@ -1,0 +1,127 @@
+[
+  {
+    "id": "retention-compounds",
+    "tier": "gold",
+    "reader": "a founder deciding between acquisition and retention work",
+    "prompt": "Turn Dan Hockenmaier's view of retention into a Ship 30 essay for founders deciding where to put the next growth sprint.",
+    "episode_id": "dan-hockenmaier",
+    "evidence_windows": ["00:15:45-00:16:00"],
+    "thesis": "Retention is not one metric beside acquisition; it is a multiplier that changes referrals, content, contribution margin, and the future active-customer base.",
+    "narrative": [
+      "Open on the misleading simplicity of choosing the channel with the largest immediate traffic gain.",
+      "Explain the compounding paths exposed by a growth model.",
+      "Show why resource allocation changes when second-order effects are visible.",
+      "End with a concrete before-the-next-sprint diagnostic."
+    ],
+    "required_takeaway": "Map the downstream effects of a retention change before comparing it with an acquisition lift."
+  },
+  {
+    "id": "hire-growth-after-fire",
+    "tier": "gold",
+    "reader": "an early-stage founder considering a first growth leader",
+    "prompt": "Write a Ship 30 essay explaining Casey Winters's kindle-versus-fire test for hiring a growth leader.",
+    "episode_id": "casey-winters",
+    "evidence_windows": ["00:50:31-00:51:51"],
+    "thesis": "A growth leader is an accelerant, not a substitute for product-market fit or a distribution loop that already shows signs of working.",
+    "narrative": [
+      "Hook with the expensive mistake of hiring a specialist to discover whether growth exists.",
+      "Separate founder-led kindle work from a repeatable fire strategy.",
+      "Explain what scalable distribution evidence looks like without prescribing one universal channel.",
+      "End with a hiring-readiness checklist."
+    ],
+    "required_takeaway": "Name the working loop and the evidence that it repeats before opening the role."
+  },
+  {
+    "id": "position-against-status-quo",
+    "tier": "gold",
+    "reader": "a founder rewriting product positioning",
+    "prompt": "Create a Ship 30 essay from April Dunford's method for finding real competitive alternatives.",
+    "episode_id": "april-dunford",
+    "evidence_windows": ["00:38:57-00:39:20", "00:40:06-00:40:53"],
+    "thesis": "The competitor in a positioning exercise is whatever the customer would actually do without the product—including manual work or doing nothing—not merely the logo in the same software category.",
+    "narrative": [
+      "Open with a positioning page that sounds interchangeable because it began from a category list.",
+      "Replace the category frame with the customer's fallback behavior.",
+      "Use the repeated 'so what?' move to translate capabilities into differentiated value.",
+      "End with a short alternative-capability-value workshop."
+    ],
+    "required_takeaway": "Interview customers about their fallback, then connect each differentiated capability to a consequence they value."
+  },
+  {
+    "id": "automate-customer-discovery",
+    "tier": "gold",
+    "reader": "a product manager whose team repeatedly skips discovery",
+    "prompt": "Write a Ship 30 essay on Teresa Torres's approach to making weekly customer interviews sustainable.",
+    "episode_id": "teresa-torres",
+    "evidence_windows": ["00:25:51-00:26:50"],
+    "thesis": "Continuous discovery becomes a habit when recruiting is designed as infrastructure, not left as a recurring act of willpower.",
+    "narrative": [
+      "Hook with the calendar promise that disappears under delivery pressure.",
+      "Identify manual recruiting as the hidden bottleneck.",
+      "Explain the in-product opt-in and automated scheduling mechanism.",
+      "End with one recruiting path the team can automate this week."
+    ],
+    "required_takeaway": "Create a standing recruiting channel that puts an interview on the calendar without fresh outreach each week."
+  },
+  {
+    "id": "outcomes-not-roadmaps",
+    "tier": "gold",
+    "reader": "a product leader trying to create empowered teams",
+    "prompt": "Turn Marty Cagan's distinction between feature teams and empowered product teams into a Ship 30 essay.",
+    "episode_id": "marty-cagan",
+    "evidence_windows": ["00:20:46-00:21:01", "00:26:51-00:27:50"],
+    "thesis": "A team is not empowered because it runs ceremonies autonomously; it is empowered when it owns a customer or business problem and has the knowledge needed to produce an outcome.",
+    "narrative": [
+      "Open on the false signal of autonomy inside an output roadmap.",
+      "Contrast assigned features and dates with assigned problems and outcomes.",
+      "Explain why deep customer, business, market, and constraint knowledge becomes essential.",
+      "End with a test for rewriting one roadmap item as a problem assignment."
+    ],
+    "required_takeaway": "Give one team a measurable problem plus the context to solve it, not a feature with a disguised deadline."
+  },
+  {
+    "id": "first-growth-hire-scope",
+    "tier": "challenge",
+    "reader": "a founder defining the first growth role",
+    "prompt": "Write a grounded Ship 30 essay about Crystal W's criteria for a first growth hire.",
+    "episode_id": "crystal-w",
+    "evidence_windows": ["00:50:58-00:51:11", "00:52:44-00:52:49", "00:53:54-00:54:50"],
+    "required_takeaway": "Define the largest known growth gap and hire for sound experimentation in that bounded area."
+  },
+  {
+    "id": "airbnb-pm-change",
+    "tier": "challenge",
+    "reader": "a product executive evaluating functional product organizations",
+    "prompt": "Write a grounded Ship 30 essay correcting the claim that Airbnb eliminated product management.",
+    "episode_id": "brian-chesky",
+    "evidence_windows": ["00:05:04-00:05:56", "00:06:46-00:07:42"],
+    "required_takeaway": "Separate product development, product marketing, and program management responsibilities before copying an org design headline."
+  },
+  {
+    "id": "too-early-for-growth-team",
+    "tier": "challenge",
+    "reader": "a founder with early customers but weak retention",
+    "prompt": "Write a grounded Ship 30 essay about Elena Verna's test for whether a startup is ready for a growth team.",
+    "episode_id": "elena-verna",
+    "evidence_windows": ["00:10:09-00:11:32"],
+    "required_takeaway": "Treat retention, product-market fit, and enough analyzable users as prerequisites rather than problems a growth team will repair."
+  },
+  {
+    "id": "measure-product-market-fit",
+    "tier": "challenge",
+    "reader": "a founder looking for a usable product-market-fit signal",
+    "prompt": "Write a grounded Ship 30 essay explaining Rahul Vohra's very-disappointed survey and how to use it responsibly.",
+    "episode_id": "rahul-vohra",
+    "evidence_windows": ["00:54:07-00:55:30"],
+    "required_takeaway": "Measure the very-disappointed segment and learn from the users who value the product most instead of treating one threshold as proof by itself."
+  },
+  {
+    "id": "strategy-disguised-as-execution",
+    "tier": "challenge",
+    "reader": "a product leader responding to cross-team misalignment",
+    "prompt": "Write a grounded Ship 30 essay on Shreyas Doshi's warning that execution problems may really be strategy problems.",
+    "episode_id": "shreyas-doshi",
+    "evidence_windows": ["00:53:20-00:54:21", "00:56:32-00:57:19"],
+    "required_takeaway": "Test whether teams share a strategy before adding meetings, reviews, or communication process."
+  }
+]

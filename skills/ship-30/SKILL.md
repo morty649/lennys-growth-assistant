@@ -10,13 +10,34 @@ Use this skill only after `search_transcripts` has returned sufficient evidence.
 
 ## Required result
 
-- Produce Markdown of approximately 1,250 words; 1,100-1,400 words is acceptable.
+- Produce Markdown of approximately 1,250 words. Aim for 1,200-1,350 words; 1,100-1,400 is the hard acceptance range.
 - Make one specific promise to one identifiable reader.
 - Open with a strong hook, build a clear narrative, and finish with one useful takeaway or next action.
 - Ground every podcast-derived factual claim in the supplied evidence and append an exact `[[source:ID]]` token to that sentence.
 - Clearly label recommendations or experiments that are the assistant's synthesis rather than a guest's claim.
 - Preserve speaker attribution, qualifications, uncertainty, and disagreement.
 - If the evidence cannot support the requested thesis, narrow the thesis or explain what evidence is missing.
+
+## Editorial standard
+
+The essay is not a transcript recap. It must make one useful argument that the evidence earns.
+
+- State a sharp thesis that could be disagreed with. Avoid broad subjects such as “retention is important.”
+- Build three or four sections that advance the same argument; do not write one disconnected summary per guest.
+- In every main section, move through **evidence -> interpretation -> consequence -> action**.
+- Give the reader a decision, diagnostic, experiment, or behavior they can use—not merely “focus on customers,” “align the team,” or another generic maxim.
+- Prefer a precise tension, counterintuitive contrast, or costly mistake as the hook. Never open with “In today's fast-paced world,” a dictionary definition, or a rhetorical question whose answer is obvious.
+- Do not manufacture a personal story, case study, statistic, quotation, or outcome. Paraphrase transcript evidence accurately.
+- Delete filler that could appear in an essay on any business topic. Names, mechanisms, tradeoffs, and qualifications should carry the piece.
+
+Use this approximate word budget to prevent a short model from stopping after an outline:
+
+- Hook and promise: 120-150 words
+- Problem and stakes: 180-220 words
+- Three evidence-led sections: 230-270 words each
+- Application and specific takeaway: 200-250 words
+
+Draft all sections before concluding. The final answer must be the essay itself, not planning notes or commentary about the skill.
 
 ## Planning framework
 
@@ -57,3 +78,12 @@ Before drafting, establish:
 - Never attach a citation to a sentence that contains unsupported bridge claims.
 - Separate `What the guests establish` from `What to try next` when proposing new experiments.
 - Do not include a references dump; citations should appear beside the claims they support.
+
+## Final edit
+
+Before returning the essay, silently check:
+
+1. The central thesis is visible in the hook and conclusion.
+2. Every transcript-derived claim has the correct source token and no source token is attached to original synthesis.
+3. The advice follows from the cited mechanism and includes a concrete next action.
+4. The piece is 1,100-1,400 words, uses descriptive headings, and contains no generic opening, repeated conclusion, or source-by-source recap.

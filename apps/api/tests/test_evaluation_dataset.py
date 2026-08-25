@@ -44,3 +44,20 @@ def test_mixed_routing_acceptance_dataset_remains_a_dynamic_agent_fixture() -> N
         for session in sessions
         for turn in session["turns"]
     )
+
+
+def test_ship30_content_set_has_five_gold_and_five_challenge_cases() -> None:
+    cases = json.loads((ROOT / "evals/ship30_content_cases.json").read_text())
+
+    assert len(cases) == 10
+    assert len({case["id"] for case in cases}) == 10
+    assert len({case["episode_id"] for case in cases}) == 10
+    assert [case["tier"] for case in cases].count("gold") == 5
+    assert [case["tier"] for case in cases].count("challenge") == 5
+    assert all(case["evidence_windows"] for case in cases)
+    assert all(case["required_takeaway"] for case in cases)
+    assert all(
+        case.get("thesis") and len(case.get("narrative", [])) == 4
+        for case in cases
+        if case["tier"] == "gold"
+    )
