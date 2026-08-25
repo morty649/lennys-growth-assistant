@@ -63,6 +63,7 @@ async def run_adaptive_agent(
         None,
     )
     if clarification:
+        fallback_reason = payload.get("fallbackReasonCode")
         return AgentResult(
             text=clarification,
             evidence=[],
@@ -73,8 +74,8 @@ async def run_adaptive_agent(
             actual_model=payload.get("model") or model,
             execution_mode="direct",
             grounding_state="not_applicable",
-            used_fallback=False,
-            fallback_reason_code="entity_clarification",
+            used_fallback=bool(fallback_reason),
+            fallback_reason_code=fallback_reason or "entity_clarification",
             thinking_mode=payload.get("thinkingMode"),
             latency_ms=(perf_counter() - started) * 1000,
         )
@@ -85,6 +86,7 @@ async def run_adaptive_agent(
     text = SOURCE_TOKEN.sub("", str(payload.get("text") or "")).strip()
     if not text:
         raise RuntimeError("The local model returned an empty answer")
+    fallback_reason = payload.get("fallbackReasonCode")
     return AgentResult(
         text=text,
         evidence=[],
@@ -95,8 +97,8 @@ async def run_adaptive_agent(
         actual_model=payload.get("model") or model,
         execution_mode="catalog" if browsed_catalog else "direct",
         grounding_state="not_applicable",
-        used_fallback=False,
-        fallback_reason_code=None,
+        used_fallback=bool(fallback_reason),
+        fallback_reason_code=fallback_reason,
         thinking_mode=payload.get("thinkingMode"),
         latency_ms=(perf_counter() - started) * 1000,
     )
@@ -244,6 +246,7 @@ def _result(
     fallback_reason: str | None = None,
     expose_model: bool = True,
 ) -> AgentResult:
+    provider_fallback_reason = payload.get("fallbackReasonCode")
     return AgentResult(
         text=text,
         evidence=evidence,
@@ -254,8 +257,8 @@ def _result(
         actual_model=(payload.get("model") or model) if expose_model else None,
         execution_mode=execution_mode,
         grounding_state=grounding_state,
-        used_fallback=used_fallback,
-        fallback_reason_code=fallback_reason,
+        used_fallback=used_fallback or bool(provider_fallback_reason),
+        fallback_reason_code=provider_fallback_reason or fallback_reason,
         thinking_mode=payload.get("thinkingMode"),
         latency_ms=(perf_counter() - started) * 1000,
     )

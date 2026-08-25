@@ -46,6 +46,8 @@ services:
         value: https://api.groq.com/openai/v1
       - key: GROQ_MODEL
         value: openai/gpt-oss-120b
+      - key: GROQ_FALLBACK_MODEL
+        value: openai/gpt-oss-20b
       - key: REQUEST_TIMEOUT_SECONDS
         value: "180"
       - key: INTERNAL_TOOL_TOKEN

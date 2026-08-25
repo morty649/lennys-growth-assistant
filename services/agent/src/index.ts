@@ -130,7 +130,7 @@ Choose by meaning and conversational context, not a keyword list. When the user 
   return scopeFromDecision(decision, payload);
 }
 
-export async function runAgent(payload: RunRequest) {
+async function runAgentOnce(payload: RunRequest) {
   assertConfigured(payload);
   const provider = payload.provider ?? "ollama";
   let mode = await decideScope(payload);
@@ -255,6 +255,32 @@ export async function runAgent(payload: RunRequest) {
     thinkingControlApplied,
     requestId: payload.requestId,
   };
+}
+
+export function isGroqRateLimitError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+  return /(?:\b429\b|rate.?limit|too many requests)/i.test(message);
+}
+
+export async function runAgent(payload: RunRequest) {
+  try {
+    return await runAgentOnce(payload);
+  } catch (error) {
+    const provider = payload.provider ?? "ollama";
+    const fallbackModel = process.env.GROQ_FALLBACK_MODEL ?? "openai/gpt-oss-20b";
+    const selectedModel = payload.model || modelFor(provider).id;
+    if (
+      provider !== "groq" ||
+      selectedModel === fallbackModel ||
+      !isGroqRateLimitError(error)
+    ) {
+      throw error;
+    }
+    return {
+      ...await runAgentOnce({ ...payload, model: fallbackModel }),
+      fallbackReasonCode: "provider_rate_limited",
+    };
+  }
 }
 
 const app = express();

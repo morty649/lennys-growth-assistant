@@ -20,6 +20,14 @@ test("the deferred Groq adapter cannot run without explicit configuration", asyn
   );
 });
 
+test("Groq fallback is limited to genuine rate-limit errors", async () => {
+  process.env.NODE_ENV = "test";
+  const source = await import("../src/index.js");
+  assert.equal(source.isGroqRateLimitError(new Error("429 Too Many Requests")), true);
+  assert.equal(source.isGroqRateLimitError(new Error("rate limit exceeded")), true);
+  assert.equal(source.isGroqRateLimitError(new Error("invalid API key")), false);
+});
+
 test("Anthropic cannot run without an evaluator-supplied API key", async () => {
   process.env.NODE_ENV = "test";
   process.env.ANTHROPIC_API_KEY = "";
