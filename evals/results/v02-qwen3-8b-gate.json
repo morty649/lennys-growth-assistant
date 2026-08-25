@@ -1,0 +1,250 @@
+{
+  "identity": {
+    "run_id": "v02-qwen3-8b-gate",
+    "dataset": "v02",
+    "dataset_sha256": "a114240d9442d41b5479854cdecb40a7c62c52f7d86e6e68fa81c9db0f81ad60",
+    "provider": "ollama",
+    "model": "qwen3:8b"
+  },
+  "run": {
+    "evaluated_at": "2026-08-25T07:19:17.111164+00:00",
+    "dataset": "v02",
+    "provider": "ollama",
+    "model": "qwen3:8b",
+    "run_id": "v02-qwen3-8b-gate",
+    "dataset_sha256": "a114240d9442d41b5479854cdecb40a7c62c52f7d86e6e68fa81c9db0f81ad60",
+    "sessions": 1,
+    "turns": 5,
+    "elapsed_seconds": 243.68467229100133,
+    "recall_at_5": 1.0,
+    "recall_at_8": 1.0,
+    "mrr_at_8": 1.0,
+    "route_accuracy": 1.0,
+    "model_tool_call_rate": 1.0,
+    "context_retention_rate": 1.0,
+    "citation_presence_rate": 1.0,
+    "supported_rate": 1.0,
+    "fallback_rate": 0.0,
+    "latency_p50_ms": 50935.91622999997,
+    "latency_p95_ms": 60234.28352799999,
+    "complete": true,
+    "gates": {
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "route_accuracy": true,
+      "model_tool_call_rate": true,
+      "context_retention_rate": true,
+      "citation_presence_rate": true,
+      "fallback_rate": true
+    },
+    "automated_passed": true,
+    "manual_support_review": "pending",
+    "passed": false
+  },
+  "sessions": [
+    {
+      "case_id": "v02-001-ada-chen-rekhi",
+      "session_id": "af4dad35-7328-4f70-bc73-d922b4b6fbcd",
+      "guest": "Ada Chen Rekhi",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Ada Chen Rekhi, how do they answer: \"Often, people ask friends for advice on just like, \"Hey, what should I do here? What can I maybe talk about on this podcast?\" Your approach had a lot of structure to it. So maybe two questions just like, what is the actual structure to this concept? And then two, just people... You can often ask friends for advice, but you also don't want to over bug them with questions. How do you think about just not over asking everyone questions all the time, but all decisions you want to make? So I guess the question is, when do you use this versus just not?\"",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2",
+            "ada-chen-rekhi:794:02b3412f4691596b",
+            "ada-chen-rekhi:2888:bf82bf1972040d86"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 52774.77652299996
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:2699:26ee574f525751b8",
+            "ada-chen-rekhi:354:547b566c86ed7607",
+            "ada-chen-rekhi:1982:37a5b56338e56b09",
+            "ada-chen-rekhi:465:af52cb3cc0d5f09c",
+            "ada-chen-rekhi:1273:3de491c9cc8bf651",
+            "ada-chen-rekhi:3780:c4c506bab93db1ec"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 37241.83330800002
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:919:a70c03bfb9ccb33c",
+            "ada-chen-rekhi:774:c42a34bd21dac242",
+            "ada-chen-rekhi:3267:c1f3a8828fbf32fe"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 50935.91622999997
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:794:02b3412f4691596b",
+            "ada-chen-rekhi:282:90c6cde3397207d2",
+            "ada-chen-rekhi:621:33be2968f660c0ef"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 42130.13931099993
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2",
+            "ada-chen-rekhi:3907:5c30519ba9f688bd",
+            "ada-chen-rekhi:833:ae5797eaff50374b",
+            "ada-chen-rekhi:200:d24ece1bd5b5aa66",
+            "ada-chen-rekhi:1454:531b8a7aa7289f35",
+            "ada-chen-rekhi:4597:ad1674491c1b4eab"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 60234.28352799999
+        }
+      ]
+    }
+  ]
+}

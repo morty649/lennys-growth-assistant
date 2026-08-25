@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mixed-social-research",
+    "turns": [
+      {"prompt": "Hey whatsup", "expected_intent": "social", "expects_sources": false},
+      {"prompt": "What did Casey Winters say about when to hire a growth leader?", "expected_intent": "transcript_research", "expects_sources": true},
+      {"prompt": "What practical example did he give?", "expected_intent": "transcript_followup", "expects_sources": true},
+      {"prompt": "Thanks", "expected_intent": "social", "expects_sources": false},
+      {"prompt": "What is WhatsApp?", "expected_intent": "general", "expects_sources": false}
+    ]
+  },
+  {
+    "id": "repair-does-not-inherit",
+    "turns": [
+      {"prompt": "How does Rahul Vohra measure product-market fit?", "expected_intent": "transcript_research", "expects_sources": true},
+      {"prompt": "Which exact passage supports that?", "expected_intent": "transcript_followup", "expects_sources": true},
+      {"prompt": "can't you just talk normally", "expected_intent": "social", "expects_sources": false},
+      {"prompt": "Tell me more", "expected_intent": "general", "expects_sources": false},
+      {"prompt": "How does two-factor authentication work?", "expected_intent": "general", "expects_sources": false}
+    ]
+  },
+  {
+    "id": "product-research-followups",
+    "turns": [
+      {"prompt": "What makes an empowered product team different from a feature team in Lenny's podcast?", "expected_intent": "transcript_research", "expects_sources": true},
+      {"prompt": "What caveat should I preserve?", "expected_intent": "transcript_followup", "expects_sources": true},
+      {"prompt": "Compare the podcast views of Marty Cagan and Brian Chesky on product management", "expected_intent": "transcript_research", "expects_sources": true},
+      {"prompt": "what the fuck", "expected_intent": "social", "expects_sources": false},
+      {"prompt": "What can you do?", "expected_intent": "app_help", "expects_sources": false}
+    ]
+  }
+]

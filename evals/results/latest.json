@@ -1,0 +1,663 @@
+{
+  "summary": {
+    "evaluated_at": "2026-08-25T04:48:27.380396+00:00",
+    "cases": 40,
+    "recall_at_5": 1.0,
+    "recall_at_8": 1.0,
+    "mrr_at_8": 0.9708333333333334,
+    "route_accuracy": 1.0
+  },
+  "results": [
+    {
+      "id": "aparna-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "aparna-chennapragada",
+        "aparna-chennapragada",
+        "aparna-chennapragada"
+      ]
+    },
+    {
+      "id": "aparna-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "aparna-chennapragada",
+        "aparna-chennapragada",
+        "aparna-chennapragada"
+      ]
+    },
+    {
+      "id": "elena-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "elena-verna",
+        "elena-verna",
+        "elena-verna-30",
+        "elena-verna-30",
+        "elena-verna",
+        "elena-verna",
+        "elena-verna-40",
+        "elena-verna-20"
+      ]
+    },
+    {
+      "id": "elena-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 0.5,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "elena-verna-40",
+        "elena-verna",
+        "elena-verna-40",
+        "elena-verna-40",
+        "elena-verna-30",
+        "elena-verna",
+        "elena-verna",
+        "elena-verna-30"
+      ]
+    },
+    {
+      "id": "gibson-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "gibson-biddle",
+        "gibson-biddle",
+        "gibson-biddle"
+      ]
+    },
+    {
+      "id": "gibson-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "gibson-biddle",
+        "gibson-biddle",
+        "gibson-biddle"
+      ]
+    },
+    {
+      "id": "marty-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "marty-cagan-20",
+        "marty-cagan-20",
+        "marty-cagan-20",
+        "marty-cagan-20",
+        "marty-cagan",
+        "marty-cagan",
+        "marty-cagan",
+        "marty-cagan"
+      ]
+    },
+    {
+      "id": "marty-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "marty-cagan-20",
+        "marty-cagan-20",
+        "marty-cagan-20",
+        "marty-cagan",
+        "marty-cagan",
+        "marty-cagan-20",
+        "marty-cagan",
+        "marty-cagan"
+      ]
+    },
+    {
+      "id": "shreyas-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "shreyas-doshi",
+        "shreyas-doshi-live",
+        "shreyas-doshi-live",
+        "shreyas-doshi",
+        "shreyas-doshi",
+        "shreyas-doshi-live"
+      ]
+    },
+    {
+      "id": "shreyas-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "shreyas-doshi",
+        "shreyas-doshi-live",
+        "shreyas-doshi-live",
+        "shreyas-doshi",
+        "shreyas-doshi",
+        "shreyas-doshi-live"
+      ]
+    },
+    {
+      "id": "chip-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "chip-huyen",
+        "chip-huyen",
+        "chip-huyen"
+      ]
+    },
+    {
+      "id": "chip-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "chip-huyen",
+        "chip-huyen",
+        "chip-huyen"
+      ]
+    },
+    {
+      "id": "bret-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "bret-taylor",
+        "bret-taylor",
+        "bret-taylor"
+      ]
+    },
+    {
+      "id": "bret-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "bret-taylor",
+        "bret-taylor",
+        "bret-taylor"
+      ]
+    },
+    {
+      "id": "ries-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries"
+      ]
+    },
+    {
+      "id": "ries-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries",
+        "eric-ries"
+      ]
+    },
+    {
+      "id": "perri-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "melissa-perri",
+        "melissa-perri",
+        "melissa-perri",
+        "melissa-perri",
+        "melissa-perri-denise-tilles",
+        "melissa-perri-denise-tilles",
+        "melissa-perri-denise-tilles",
+        "melissa-perri-denise-tilles"
+      ]
+    },
+    {
+      "id": "perri-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "melissa-perri",
+        "melissa-perri",
+        "melissa-perri",
+        "melissa-perri",
+        "melissa-perri-denise-tilles",
+        "melissa-perri-denise-tilles",
+        "melissa-perri-denise-tilles",
+        "melissa-perri-denise-tilles"
+      ]
+    },
+    {
+      "id": "singer-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer"
+      ]
+    },
+    {
+      "id": "singer-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer",
+        "ryan-singer"
+      ]
+    },
+    {
+      "id": "norton-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "ken-norton",
+        "ken-norton",
+        "ken-norton"
+      ]
+    },
+    {
+      "id": "norton-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "ken-norton",
+        "ken-norton",
+        "ken-norton"
+      ]
+    },
+    {
+      "id": "ellis-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "sean-ellis",
+        "sean-ellis",
+        "sean-ellis"
+      ]
+    },
+    {
+      "id": "ellis-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "sean-ellis",
+        "sean-ellis",
+        "sean-ellis"
+      ]
+    },
+    {
+      "id": "moore-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore"
+      ]
+    },
+    {
+      "id": "moore-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest+topic",
+      "top_episode_ids": [
+        "geoffrey-moore",
+        "geoffrey-moore",
+        "geoffrey-moore"
+      ]
+    },
+    {
+      "id": "moesta-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "bob-moesta",
+        "bob-moesta-20",
+        "bob-moesta",
+        "bob-moesta",
+        "bob-moesta-20",
+        "bob-moesta",
+        "bob-moesta-20",
+        "bob-moesta-20"
+      ]
+    },
+    {
+      "id": "moesta-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 0.3333333333333333,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "bob-moesta-20",
+        "bob-moesta-20",
+        "bob-moesta",
+        "bob-moesta-20",
+        "bob-moesta-20",
+        "bob-moesta",
+        "bob-moesta",
+        "bob-moesta"
+      ]
+    },
+    {
+      "id": "maples-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr"
+      ]
+    },
+    {
+      "id": "maples-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr",
+        "mike-maples-jr"
+      ]
+    },
+    {
+      "id": "bier-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier"
+      ]
+    },
+    {
+      "id": "bier-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier",
+        "nikita-bier"
+      ]
+    },
+    {
+      "id": "sriram-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi"
+      ]
+    },
+    {
+      "id": "sriram-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi",
+        "sriram-and-aarthi"
+      ]
+    },
+    {
+      "id": "shishir-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra"
+      ]
+    },
+    {
+      "id": "shishir-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra",
+        "shishir-mehrotra"
+      ]
+    },
+    {
+      "id": "belsky-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky"
+      ]
+    },
+    {
+      "id": "belsky-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky",
+        "scott-belsky"
+      ]
+    },
+    {
+      "id": "itwaru-1",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru"
+      ]
+    },
+    {
+      "id": "itwaru-2",
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "reciprocal_rank_at_8": 1.0,
+      "route_correct": true,
+      "actual_route": "guest",
+      "top_episode_ids": [
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru",
+        "christine-itwaru"
+      ]
+    }
+  ]
+}

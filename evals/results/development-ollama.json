@@ -1,0 +1,462 @@
+{
+  "run": {
+    "evaluated_at": "2026-08-25T05:15:08.452274+00:00",
+    "dataset": "development",
+    "provider": "ollama",
+    "sessions": 1,
+    "turns": 5,
+    "elapsed_seconds": 327.74855183399995,
+    "recall_at_5": 1.0,
+    "recall_at_8": 1.0,
+    "mrr_at_8": 1.0,
+    "route_accuracy": 1.0,
+    "model_tool_call_rate": 1.0,
+    "context_retention_rate": 1.0,
+    "citation_presence_rate": 1.0,
+    "supported_rate": 1.0,
+    "fallback_rate": 0.0,
+    "latency_p50_ms": 51908.25077499994,
+    "latency_p95_ms": 96215.913001,
+    "complete": true,
+    "gates": {
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "route_accuracy": true,
+      "model_tool_call_rate": true,
+      "context_retention_rate": true,
+      "citation_presence_rate": true,
+      "fallback_rate": true
+    },
+    "passed": true
+  },
+  "sessions": [
+    {
+      "case_id": "v01-001-ada-chen-rekhi",
+      "session_id": "2b61d813-3c04-4bbc-9194-10b0de993e33",
+      "guest": "Ada Chen Rekhi",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Ada Chen Rekhi, how do they answer: \"Often, people ask friends for advice on just like, \"Hey, what should I do here? What can I maybe talk about on this podcast?\" Your approach had a lot of structure to it. So maybe two questions just like, what is the actual structure to this concept? And then two, just people... You can often ask friends for advice, but you also don't want to over bug them with questions. How do you think about just not over asking everyone questions all the time, but all decisions you want to make? So I guess the question is, when do you use this versus just not?\"",
+          "expected_episode_id": "ada-chen-rekhi",
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 80437.50874499982
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "top_episode_ids": [
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 50504.83523100002
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 48325.614398000194
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "ada-chen-rekhi",
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 96215.913001
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "top_episode_ids": [
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 51908.25077499994
+        }
+      ]
+    },
+    {
+      "case_id": "v01-002-adam-fishman",
+      "session_id": "f78da053-afe5-4c11-be3b-aa5962f8d1a7",
+      "guest": "Adam Fishman",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Adam Fishman, how do they answer: \"Nailed it. Wow, that was very contained and clear. Let's plug the newsletter real quick. What's the URL? Is it fishmanafnewsletter.com?\"",
+          "expected_episode_id": "adam-fishman",
+          "top_episode_ids": [
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 67877.73528099978
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "adam-fishman",
+          "top_episode_ids": [
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 100236.05250500032
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "adam-fishman",
+          "top_episode_ids": [
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 62961.432695999974
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "adam-fishman",
+          "top_episode_ids": [
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 39747.23926800016
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "adam-fishman",
+          "top_episode_ids": [
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 45021.575688000215
+        },
+        {
+          "turn": 6,
+          "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+          "expected_episode_id": "adam-fishman",
+          "top_episode_ids": [
+            "nancy-duarte",
+            "nancy-duarte",
+            "matt-abrahams",
+            "matthew-dicks",
+            "peter-deng",
+            "matt-abrahams"
+          ],
+          "recall_at_5": false,
+          "recall_at_8": false,
+          "reciprocal_rank_at_8": 0,
+          "source_routes": [
+            "global"
+          ],
+          "route_correct": false,
+          "model_tool_call": true,
+          "context_retained": false,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 72277.09873999993
+        }
+      ]
+    },
+    {
+      "case_id": "v01-003-adam-grenier",
+      "session_id": "a8087f83-bfdd-42c3-bda6-072c4efdc406",
+      "guest": "Adam Grenier",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Adam Grenier, how do they answer: \"Speaking of moving and adjusting and iterating, I know you're big into improv. How serious are you about improv?\"",
+          "expected_episode_id": "adam-grenier",
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 52633.796025000265
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "adam-grenier",
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 50780.83902200023
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "adam-grenier",
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 51020.58156500016
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "adam-grenier",
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 78125.51086899976
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2001 @@
+{
+  "identity": {
+    "run_id": "v02-qwen3-8b-e2e",
+    "dataset": "v02",
+    "dataset_sha256": "a114240d9442d41b5479854cdecb40a7c62c52f7d86e6e68fa81c9db0f81ad60",
+    "provider": "ollama",
+    "model": "qwen3:8b"
+  },
+  "run": {
+    "evaluated_at": "2026-08-25T08:07:56.863318+00:00",
+    "dataset": "v02",
+    "provider": "ollama",
+    "model": "qwen3:8b",
+    "run_id": "v02-qwen3-8b-e2e",
+    "dataset_sha256": "a114240d9442d41b5479854cdecb40a7c62c52f7d86e6e68fa81c9db0f81ad60",
+    "sessions": 10,
+    "turns": 50,
+    "elapsed_seconds": 2741.5752057909995,
+    "recall_at_5": 0.96,
+    "recall_at_8": 0.96,
+    "mrr_at_8": 0.96,
+    "route_accuracy": 0.96,
+    "model_tool_call_rate": 1.0,
+    "context_retention_rate": 0.96,
+    "citation_presence_rate": 1.0,
+    "supported_rate": 0.96,
+    "fallback_rate": 0.16,
+    "latency_p50_ms": 49776.728605500015,
+    "latency_p95_ms": 84181.89791199984,
+    "complete": true,
+    "gates": {
+      "recall_at_5": true,
+      "recall_at_8": true,
+      "route_accuracy": true,
+      "model_tool_call_rate": true,
+      "context_retention_rate": true,
+      "citation_presence_rate": true,
+      "fallback_rate": false
+    },
+    "automated_passed": false,
+    "manual_support_review": "pending",
+    "passed": false
+  },
+  "sessions": [
+    {
+      "case_id": "v02-001-ada-chen-rekhi",
+      "session_id": "557c1681-20f8-4a0f-91ba-7794b57f93f9",
+      "guest": "Ada Chen Rekhi",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Ada Chen Rekhi, how do they answer: \"Often, people ask friends for advice on just like, \"Hey, what should I do here? What can I maybe talk about on this podcast?\" Your approach had a lot of structure to it. So maybe two questions just like, what is the actual structure to this concept? And then two, just people... You can often ask friends for advice, but you also don't want to over bug them with questions. How do you think about just not over asking everyone questions all the time, but all decisions you want to make? So I guess the question is, when do you use this versus just not?\"",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2",
+            "ada-chen-rekhi:2531:c0a1734b9f890202",
+            "ada-chen-rekhi:682:0caf58431705578e",
+            "ada-chen-rekhi:2135:634d9278bbb281ab",
+            "ada-chen-rekhi:354:547b566c86ed7607",
+            "ada-chen-rekhi:1360:95b112ad6464736f"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 32259.338432000048
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:465:af52cb3cc0d5f09c",
+            "ada-chen-rekhi:3804:df05f16bf3d93306",
+            "ada-chen-rekhi:2699:26ee574f525751b8"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 27432.09618000003
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:919:a70c03bfb9ccb33c",
+            "ada-chen-rekhi:774:c42a34bd21dac242",
+            "ada-chen-rekhi:3267:c1f3a8828fbf32fe"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 47998.77156399998
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2",
+            "ada-chen-rekhi:621:33be2968f660c0ef",
+            "ada-chen-rekhi:3090:235a39b22b58ce67"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 52186.555190000036
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "ada-chen-rekhi",
+          "gold_evidence_ids": [
+            "ada-chen-rekhi:282:90c6cde3397207d2"
+          ],
+          "top_evidence_ids": [
+            "ada-chen-rekhi:465:af52cb3cc0d5f09c",
+            "ada-chen-rekhi:354:547b566c86ed7607",
+            "ada-chen-rekhi:2931:7c1015db50af5d0d",
+            "ada-chen-rekhi:1870:997e494cd1955018",
+            "ada-chen-rekhi:4441:b38e7f04ef821c70",
+            "ada-chen-rekhi:521:482799a11d1a84e1"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi",
+            "ada-chen-rekhi"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 49879.331148000005
+        }
+      ]
+    },
+    {
+      "case_id": "v02-002-adam-fishman",
+      "session_id": "b8c6fc0e-638b-4ee0-ac56-731c37976c06",
+      "guest": "Adam Fishman",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Adam Fishman, how do they answer: \"Nailed it. Wow, that was very contained and clear. Let's plug the newsletter real quick. What's the URL? Is it fishmanafnewsletter.com?\"",
+          "expected_episode_id": "adam-fishman",
+          "gold_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819"
+          ],
+          "top_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819",
+            "adam-fishman:3810:b7e02bd8a39bf4f2",
+            "adam-fishman:270:3668cc5dfb74dc1c",
+            "adam-fishman:596:1bd75f2d96b836fc",
+            "adam-fishman:1124:b33bbbfdfd5d83d9",
+            "adam-fishman:2566:80c545a01c596abe"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 43696.36393600001
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "adam-fishman",
+          "gold_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819"
+          ],
+          "top_evidence_ids": [
+            "adam-fishman:2331:2d3cbdbc3a761846",
+            "adam-fishman:1093:777855e82cc74a80",
+            "adam-fishman:1014:4e1eb91760203e50"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 54363.43631700015
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "adam-fishman",
+          "gold_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819"
+          ],
+          "top_evidence_ids": [
+            "adam-fishman:3764:151ce7b8ee6f6265",
+            "adam-fishman:1954:db35ef28265fb195",
+            "adam-fishman:3140:9d529b0629594a6d"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 83041.46191199993
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "adam-fishman",
+          "gold_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819"
+          ],
+          "top_evidence_ids": [],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [],
+          "recall_at_5": false,
+          "recall_at_8": false,
+          "reciprocal_rank_at_8": 0,
+          "source_routes": [],
+          "route_correct": false,
+          "model_tool_call": true,
+          "context_retained": false,
+          "grounding_state": "insufficient",
+          "citation_present": false,
+          "used_fallback": false,
+          "execution_mode": "abstention",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": "insufficient_evidence",
+          "latency_ms": 31403.75826399986
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "adam-fishman",
+          "gold_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819"
+          ],
+          "top_evidence_ids": [
+            "adam-fishman:331:a76e3403276a4819",
+            "adam-fishman:484:60138a2e7fca5fa4",
+            "adam-fishman:3810:b7e02bd8a39bf4f2",
+            "adam-fishman:3140:9d529b0629594a6d",
+            "adam-fishman:1860:0d62b7789b304931",
+            "adam-fishman:2566:80c545a01c596abe"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman",
+            "adam-fishman"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 40960.130977000066
+        }
+      ]
+    },
+    {
+      "case_id": "v02-003-adam-grenier",
+      "session_id": "cdc0b9ec-e03a-40fb-b18e-c996ff652022",
+      "guest": "Adam Grenier",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Adam Grenier, how do they answer: \"Speaking of moving and adjusting and iterating, I know you're big into improv. How serious are you about improv?\"",
+          "expected_episode_id": "adam-grenier",
+          "gold_evidence_ids": [
+            "adam-grenier:334:7ae87a0758bfe49e"
+          ],
+          "top_evidence_ids": [
+            "adam-grenier:334:7ae87a0758bfe49e",
+            "adam-grenier:3603:8e66856db5b0314a",
+            "adam-grenier:666:444e61cc01cec263",
+            "adam-grenier:479:0f5fb1511fd7e919",
+            "adam-grenier:403:437abbc2b1f84f67",
+            "adam-grenier:996:ac31c3b213edfb85"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 61690.750111999936
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "adam-grenier",
+          "gold_evidence_ids": [
+            "adam-grenier:334:7ae87a0758bfe49e"
+          ],
+          "top_evidence_ids": [
+            "adam-grenier:581:2f6ef31f8d7f85ad",
+            "adam-grenier:858:5a52576163834934",
+            "adam-grenier:2873:ba8f8bf5d9901d90",
+            "adam-grenier:1099:9cf0f0504024e4b4",
+            "adam-grenier:1223:792a371d7d79cad7",
+            "adam-grenier:2380:b8a0f63f7cffbb99"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 66708.43411499982
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "adam-grenier",
+          "gold_evidence_ids": [
+            "adam-grenier:334:7ae87a0758bfe49e"
+          ],
+          "top_evidence_ids": [
+            "adam-grenier:1737:70aa515612206a8d",
+            "adam-grenier:957:4c9a258966d473f6",
+            "adam-grenier:581:2f6ef31f8d7f85ad"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 37096.255642000186
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "adam-grenier",
+          "gold_evidence_ids": [
+            "adam-grenier:334:7ae87a0758bfe49e"
+          ],
+          "top_evidence_ids": [
+            "adam-grenier:666:444e61cc01cec263",
+            "adam-grenier:403:437abbc2b1f84f67",
+            "adam-grenier:3406:7177e0662e6bd2cc"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 42142.856935000054
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "adam-grenier",
+          "gold_evidence_ids": [
+            "adam-grenier:334:7ae87a0758bfe49e"
+          ],
+          "top_evidence_ids": [
+            "adam-grenier:666:444e61cc01cec263",
+            "adam-grenier:752:ed200665a1a68fb1",
+            "adam-grenier:3603:8e66856db5b0314a",
+            "adam-grenier:334:7ae87a0758bfe49e",
+            "adam-grenier:403:437abbc2b1f84f67",
+            "adam-grenier:479:0f5fb1511fd7e919"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier",
+            "adam-grenier"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 47247.063147000066
+        }
+      ]
+    },
+    {
+      "case_id": "v02-004-aishwarya-naresh-reganti-kiriti-badam",
+      "session_id": "a34605e7-269d-4d85-bad2-271310215b82",
+      "guest": "Aishwarya Naresh Reganti + Kiriti Badam",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Aishwarya Naresh Reganti + Kiriti Badam, how do they answer: \"So just to summarize what you're sharing here, essentially, people have been building product, software products for a long time. We're now in a world where the software you're building is one, non-deterministic, can just do things differently. As you said, you go to booking.com, you find a hotel, it's going to be the same experience every time. You'll see different hotels, but it's a predictable experience. With AI, you can't predict that it's going to be the exact same thing, the thing that you plan it to be every time. And then the other is there's this trade-off between agency and control. How much will the AI do for you versus how much should the person still be in charge? And what I'm hearing is the big point here is this significantly changes the way you should be building product. And we're going to talk about the impact on how the product development lifecycle should change as a result.?\"",
+          "expected_episode_id": "aishwarya-naresh-reganti-kiriti-badam",
+          "gold_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011"
+          ],
+          "top_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011",
+            "aishwarya-naresh-reganti-kiriti-badam:2648:b9baf4628380912a",
+            "aishwarya-naresh-reganti-kiriti-badam:3915:cb170e8fb4e4f131"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 93570.42012500006
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "aishwarya-naresh-reganti-kiriti-badam",
+          "gold_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011"
+          ],
+          "top_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:2648:b9baf4628380912a",
+            "aishwarya-naresh-reganti-kiriti-badam:1031:fcb034b64e082ef8",
+            "aishwarya-naresh-reganti-kiriti-badam:749:df4ca70d8a080b41"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 49958.287021999924
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "aishwarya-naresh-reganti-kiriti-badam",
+          "gold_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011"
+          ],
+          "top_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:2342:0e377665cd169b52",
+            "aishwarya-naresh-reganti-kiriti-badam:2278:6fe3bbc0964d393c",
+            "aishwarya-naresh-reganti-kiriti-badam:593:91490ce19a6a0264"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 80221.87362
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "aishwarya-naresh-reganti-kiriti-badam",
+          "gold_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011"
+          ],
+          "top_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:1184:cb88913c6b2bcb12",
+            "aishwarya-naresh-reganti-kiriti-badam:417:f251465a87bc9676",
+            "aishwarya-naresh-reganti-kiriti-badam:2192:71de3bfdccc9dd8f"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 37343.47001699985
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "aishwarya-naresh-reganti-kiriti-badam",
+          "gold_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011"
+          ],
+          "top_evidence_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam:5152:39c11f3026f424ed",
+            "aishwarya-naresh-reganti-kiriti-badam:3556:207b4ff2eb46673f",
+            "aishwarya-naresh-reganti-kiriti-badam:2833:517797228ddce94c"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam",
+            "aishwarya-naresh-reganti-kiriti-badam"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 37643.67014200002
+        }
+      ]
+    },
+    {
+      "case_id": "v02-005-albert-cheng",
+      "session_id": "c4aae54d-7aa3-47ae-a242-e76ea7b361cc",
+      "guest": "Albert Cheng",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Albert Cheng, how do they answer: \"What I want to start with is to give us a little insight into how you became what you became. There's an interesting pattern I found across a bunch of recent guests, which is many people were very good at piano when they were younger and were very serious piano players. For example, Head of ChatGPT, Nick Turley was almost going to become professional jazz pianist. You were very serious as a piano player earlier in your career. How did you go from pianist to one of the top growth minds in the world briefly?\"",
+          "expected_episode_id": "albert-cheng",
+          "gold_evidence_ids": [
+            "albert-cheng:348:3144a28fd60d3bbd"
+          ],
+          "top_evidence_ids": [
+            "albert-cheng:348:3144a28fd60d3bbd",
+            "albert-cheng:2672:161c37d7dc1406f1",
+            "albert-cheng:2260:2ee387140bba7a10"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "albert-cheng",
+            "albert-cheng",
+            "albert-cheng"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 49753.51881400002
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "albert-cheng",
+          "gold_evidence_ids": [
+            "albert-cheng:348:3144a28fd60d3bbd"
+          ],
+          "top_evidence_ids": [
+            "albert-cheng:3505:d49385db4d961cb2",
+            "albert-cheng:449:94d84f7194ebc437",
+            "albert-cheng:3846:2a66bca0e5fc270d"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "albert-cheng",
+            "albert-cheng",
+            "albert-cheng"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 28676.11134599997
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "albert-cheng",
+          "gold_evidence_ids": [
+            "albert-cheng:348:3144a28fd60d3bbd"
+          ],
+          "top_evidence_ids": [
+            "albert-cheng:3989:71bc4caa37357edd",
+            "albert-cheng:3030:91c02cb5bd1c132d",
+            "albert-cheng:1614:fd4884fb7b52b773"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "albert-cheng",
+            "albert-cheng",
+            "albert-cheng"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 74599.824076
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "albert-cheng",
+          "gold_evidence_ids": [
+            "albert-cheng:348:3144a28fd60d3bbd"
+          ],
+          "top_evidence_ids": [
+            "albert-cheng:3882:9e1ed965b0f1198a",
+            "albert-cheng:4070:1a6fb9fe70e77467",
+            "albert-cheng:4751:37084b63121a4d98"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "albert-cheng",
+            "albert-cheng",
+            "albert-cheng"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 42828.712852999844
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "albert-cheng",
+          "gold_evidence_ids": [
+            "albert-cheng:348:3144a28fd60d3bbd"
+          ],
+          "top_evidence_ids": [],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [],
+          "recall_at_5": false,
+          "recall_at_8": false,
+          "reciprocal_rank_at_8": 0,
+          "source_routes": [],
+          "route_correct": false,
+          "model_tool_call": true,
+          "context_retained": false,
+          "grounding_state": "insufficient",
+          "citation_present": false,
+          "used_fallback": false,
+          "execution_mode": "abstention",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": "insufficient_evidence",
+          "latency_ms": 28681.020429
+        }
+      ]
+    },
+    {
+      "case_id": "v02-006-alex-hardimen",
+      "session_id": "fe53f21f-5990-46e2-9dee-ccd003555bef",
+      "guest": "Alex Hardimen",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Alex Hardimen, how do they answer: \"I'm curious. Okay. Wait, you were leading the news product at Facebook during the election?\"",
+          "expected_episode_id": "alex-hardimen",
+          "gold_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37"
+          ],
+          "top_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37",
+            "alex-hardimen:400:2c8f88b487293ae0",
+            "alex-hardimen:4080:673db0c5364ca8de"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alex-hardimen",
+            "alex-hardimen",
+            "alex-hardimen"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 41740.41597799987
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "alex-hardimen",
+          "gold_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37"
+          ],
+          "top_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37",
+            "alex-hardimen:3779:a4e5b3308f6b6cd8",
+            "alex-hardimen:508:2b075fa7b1fbfaea"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alex-hardimen",
+            "alex-hardimen",
+            "alex-hardimen"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 42497.62781199979
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "alex-hardimen",
+          "gold_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37"
+          ],
+          "top_evidence_ids": [
+            "alex-hardimen:1533:10d2048546801356",
+            "alex-hardimen:2220:3ac5df449df2d1dd",
+            "alex-hardimen:3556:66a2a44c61a15aa5"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alex-hardimen",
+            "alex-hardimen",
+            "alex-hardimen"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 49968.581481
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "alex-hardimen",
+          "gold_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37"
+          ],
+          "top_evidence_ids": [
+            "alex-hardimen:4190:9bdea5a0d762d753",
+            "alex-hardimen:1533:10d2048546801356",
+            "alex-hardimen:2907:71293911f883eac5"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alex-hardimen",
+            "alex-hardimen",
+            "alex-hardimen"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 47941.75106300008
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "alex-hardimen",
+          "gold_evidence_ids": [
+            "alex-hardimen:540:3d9a507b998f4c37"
+          ],
+          "top_evidence_ids": [
+            "alex-hardimen:2094:d687ddeea22da93e",
+            "alex-hardimen:2220:3ac5df449df2d1dd",
+            "alex-hardimen:508:2b075fa7b1fbfaea"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alex-hardimen",
+            "alex-hardimen",
+            "alex-hardimen"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 53189.12377400011
+        }
+      ]
+    },
+    {
+      "case_id": "v02-007-alex-komoroske",
+      "session_id": "9ef25223-d493-490d-b8ee-9a02c45c91ae",
+      "guest": "Alex Komoroske",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Alex Komoroske, how do they answer: \"As we get into the conversation, people get to see how deeply you think about stuff. Part of the reason you're able to think so deeply about stuff is you have this practice where you take time to reflect and share and crystallize. There's so much power in just forcing yourself to write it out, I imagine versus, just not.?\"",
+          "expected_episode_id": "alex-komoroske",
+          "gold_evidence_ids": [
+            "alex-komoroske:459:dce65480f21c8fa9"
+          ],
+          "top_evidence_ids": [
+            "alex-komoroske:3518:a730f8e7b39bfc81",
+            "alex-komoroske:2006:67b187a42010e596",
+            "alex-komoroske:4842:9b05d9b993e3aa6a"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 48207.29906499991
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "alex-komoroske",
+          "gold_evidence_ids": [
+            "alex-komoroske:459:dce65480f21c8fa9"
+          ],
+          "top_evidence_ids": [
+            "alex-komoroske:2006:67b187a42010e596",
+            "alex-komoroske:4305:9d52a6ba8ff2b4e4",
+            "alex-komoroske:3698:940486af3e84ff72"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 49649.52660600011
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "alex-komoroske",
+          "gold_evidence_ids": [
+            "alex-komoroske:459:dce65480f21c8fa9"
+          ],
+          "top_evidence_ids": [
+            "alex-komoroske:1468:4a00bd32a8828a4b",
+            "alex-komoroske:2142:3612077fbb4d5368",
+            "alex-komoroske:3123:aa5e56b1e0d26584"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 53166.86273200002
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "alex-komoroske",
+          "gold_evidence_ids": [
+            "alex-komoroske:459:dce65480f21c8fa9"
+          ],
+          "top_evidence_ids": [
+            "alex-komoroske:459:dce65480f21c8fa9",
+            "alex-komoroske:3870:9170243149c8a47a",
+            "alex-komoroske:3035:ac2576a07abb6868"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 81343.97491300025
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "alex-komoroske",
+          "gold_evidence_ids": [
+            "alex-komoroske:459:dce65480f21c8fa9"
+          ],
+          "top_evidence_ids": [
+            "alex-komoroske:381:f6777622cdfe09c8",
+            "alex-komoroske:459:dce65480f21c8fa9",
+            "alex-komoroske:538:2763c3068b36f79d",
+            "alex-komoroske:4291:64d83be5bee706c4",
+            "alex-komoroske:4048:9b214fc38154dfa7",
+            "alex-komoroske:5039:db090f40d7bb9bc7"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske",
+            "alex-komoroske"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "source",
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 140047.34464700005
+        }
+      ]
+    },
+    {
+      "case_id": "v02-008-alexander-embiricos",
+      "session_id": "35ce6bc4-e1f4-4a52-9f24-a4dd580408d3",
+      "guest": "Alexander Embiricos",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Alexander Embiricos, how do they answer: \"We hear this a lot about feels like every AI company is just like, \"Oh my God, I can't believe how fast they're moving.\" Is there an example of just like, \"Wow, that wouldn't have happened this quickly anywhere else\"?\"",
+          "expected_episode_id": "alexander-embiricos",
+          "gold_evidence_ids": [
+            "alexander-embiricos:371:5d1289f8fae66ebf"
+          ],
+          "top_evidence_ids": [
+            "alexander-embiricos:371:5d1289f8fae66ebf",
+            "alexander-embiricos:3214:8436874f220ed46e",
+            "alexander-embiricos:525:b910a5d17d4ca8f5"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alexander-embiricos",
+            "alexander-embiricos",
+            "alexander-embiricos"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 47639.35935400013
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "alexander-embiricos",
+          "gold_evidence_ids": [
+            "alexander-embiricos:371:5d1289f8fae66ebf"
+          ],
+          "top_evidence_ids": [
+            "alexander-embiricos:2336:c2a2312f5b21091e",
+            "alexander-embiricos:371:5d1289f8fae66ebf",
+            "alexander-embiricos:4031:ba7ca753419fda6e"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alexander-embiricos",
+            "alexander-embiricos",
+            "alexander-embiricos"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 30785.987096999634
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "alexander-embiricos",
+          "gold_evidence_ids": [
+            "alexander-embiricos:371:5d1289f8fae66ebf"
+          ],
+          "top_evidence_ids": [
+            "alexander-embiricos:3865:f9607acb491c588b",
+            "alexander-embiricos:2875:a548a94bf898ae89",
+            "alexander-embiricos:1795:3b24a07ccd6c4660"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alexander-embiricos",
+            "alexander-embiricos",
+            "alexander-embiricos"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 51275.96102399957
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "alexander-embiricos",
+          "gold_evidence_ids": [
+            "alexander-embiricos:371:5d1289f8fae66ebf"
+          ],
+          "top_evidence_ids": [
+            "alexander-embiricos:4178:218f566243214ffb",
+            "alexander-embiricos:3881:a6e7248977dcc1f2",
+            "alexander-embiricos:4120:fa637a85edb2daa4"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alexander-embiricos",
+            "alexander-embiricos",
+            "alexander-embiricos"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 55793.25389999985
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "alexander-embiricos",
+          "gold_evidence_ids": [
+            "alexander-embiricos:371:5d1289f8fae66ebf"
+          ],
+          "top_evidence_ids": [
+            "alexander-embiricos:3865:f9607acb491c588b",
+            "alexander-embiricos:2875:a548a94bf898ae89",
+            "alexander-embiricos:4149:7d013d65c5d74dc3"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alexander-embiricos",
+            "alexander-embiricos",
+            "alexander-embiricos"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "incomplete_citation_coverage",
+          "latency_ms": 84181.89791199984
+        }
+      ]
+    },
+    {
+      "case_id": "v02-009-alisa-cohn",
+      "session_id": "be48b35d-b44f-4f54-8cc0-1cc19c013580",
+      "guest": "Alisa Cohn",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Alisa Cohn, how do they answer: \"Oh, I love this life coaching we're doing. Yeah, so it's like what happens if they get sad and upset?\"",
+          "expected_episode_id": "alisa-cohn",
+          "gold_evidence_ids": [
+            "alisa-cohn:386:74dd4c60c0294db1"
+          ],
+          "top_evidence_ids": [
+            "alisa-cohn:386:74dd4c60c0294db1",
+            "alisa-cohn:4104:8d400ccbdb7637a5",
+            "alisa-cohn:294:c3a30d2078b7ec2f",
+            "alisa-cohn:1308:a28148fd31b051eb",
+            "alisa-cohn:1485:36900d3fa8e71533",
+            "alisa-cohn:4032:560cdf74642776c9"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 64855.55486300018
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "alisa-cohn",
+          "gold_evidence_ids": [
+            "alisa-cohn:386:74dd4c60c0294db1"
+          ],
+          "top_evidence_ids": [
+            "alisa-cohn:3718:7632c28e6ab7fe5c",
+            "alisa-cohn:2456:6ee2c4ededd69a03",
+            "alisa-cohn:471:2b06e8af4681a87a"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 45182.357729000156
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "alisa-cohn",
+          "gold_evidence_ids": [
+            "alisa-cohn:386:74dd4c60c0294db1"
+          ],
+          "top_evidence_ids": [
+            "alisa-cohn:471:2b06e8af4681a87a",
+            "alisa-cohn:589:19b1bb8aeaa81836",
+            "alisa-cohn:1736:6ac1b2554b265aa8"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 75939.64841000024
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "alisa-cohn",
+          "gold_evidence_ids": [
+            "alisa-cohn:386:74dd4c60c0294db1"
+          ],
+          "top_evidence_ids": [
+            "alisa-cohn:503:76b1b6849f121da3",
+            "alisa-cohn:2142:92865f8b357eec1b",
+            "alisa-cohn:2273:fd9a86dc86806370"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "missing_valid_citations",
+          "latency_ms": 78960.34070199994
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "alisa-cohn",
+          "gold_evidence_ids": [
+            "alisa-cohn:386:74dd4c60c0294db1"
+          ],
+          "top_evidence_ids": [
+            "alisa-cohn:1641:41f1e02fc5739be0",
+            "alisa-cohn:471:2b06e8af4681a87a",
+            "alisa-cohn:700:34c2d6fe42108423"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "alisa-cohn",
+            "alisa-cohn",
+            "alisa-cohn"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 45494.73881300037
+        }
+      ]
+    },
+    {
+      "case_id": "v02-010-ami-vora",
+      "session_id": "071c6778-0f37-4a2b-b687-0f43888416cc",
+      "guest": "Ami Vora",
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "In the conversation with Ami Vora, how do they answer: \"I love this metaphor of putting on the coat of the job, of just feeling out what it would be to work there. I imagine that was something that you did before you joined Faire, which I want to talk about, but let me transition a bit to talking about Meta and specifically, Boz. The CTO of Meta was on this podcast a few months ago and he said something about you that I want to read.?\"",
+          "expected_episode_id": "ami-vora",
+          "gold_evidence_ids": [
+            "ami-vora:596:59d6ce9254d79620"
+          ],
+          "top_evidence_ids": [
+            "ami-vora:494:9511dd25abe4c327",
+            "ami-vora:596:59d6ce9254d79620",
+            "ami-vora:1582:52ead7b8872994e1"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ami-vora",
+            "ami-vora",
+            "ami-vora"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 59929.15723599981
+        },
+        {
+          "turn": 2,
+          "prompt": "What concrete example do they use to make that point?",
+          "expected_episode_id": "ami-vora",
+          "gold_evidence_ids": [
+            "ami-vora:596:59d6ce9254d79620"
+          ],
+          "top_evidence_ids": [
+            "ami-vora:3491:8b1fb8cceaa8fb41",
+            "ami-vora:1582:52ead7b8872994e1",
+            "ami-vora:494:9511dd25abe4c327"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ami-vora",
+            "ami-vora",
+            "ami-vora"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 77028.85382600015
+        },
+        {
+          "turn": 3,
+          "prompt": "What caveat or qualification should I preserve?",
+          "expected_episode_id": "ami-vora",
+          "gold_evidence_ids": [
+            "ami-vora:596:59d6ce9254d79620"
+          ],
+          "top_evidence_ids": [
+            "ami-vora:4278:cddf1909b54d1b37",
+            "ami-vora:4210:b0c97c95127459eb",
+            "ami-vora:1855:c940ca3e0021b0e4"
+          ],
+          "gold_recall_at_5": false,
+          "gold_recall_at_8": false,
+          "top_episode_ids": [
+            "ami-vora",
+            "ami-vora",
+            "ami-vora"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 78565.95078600003
+        },
+        {
+          "turn": 4,
+          "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+          "expected_episode_id": "ami-vora",
+          "gold_evidence_ids": [
+            "ami-vora:596:59d6ce9254d79620"
+          ],
+          "top_evidence_ids": [
+            "ami-vora:494:9511dd25abe4c327",
+            "ami-vora:1582:52ead7b8872994e1",
+            "ami-vora:596:59d6ce9254d79620"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ami-vora",
+            "ami-vora",
+            "ami-vora"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": false,
+          "execution_mode": "model",
+          "requested_provider": "ollama",
+          "actual_provider": "ollama",
+          "fallback_reason_code": null,
+          "latency_ms": 43956.38747800012
+        },
+        {
+          "turn": 5,
+          "prompt": "Which exact transcript passage supports that summary?",
+          "expected_episode_id": "ami-vora",
+          "gold_evidence_ids": [
+            "ami-vora:596:59d6ce9254d79620"
+          ],
+          "top_evidence_ids": [
+            "ami-vora:494:9511dd25abe4c327",
+            "ami-vora:596:59d6ce9254d79620",
+            "ami-vora:1582:52ead7b8872994e1"
+          ],
+          "gold_recall_at_5": true,
+          "gold_recall_at_8": true,
+          "top_episode_ids": [
+            "ami-vora",
+            "ami-vora",
+            "ami-vora"
+          ],
+          "recall_at_5": true,
+          "recall_at_8": true,
+          "reciprocal_rank_at_8": 1.0,
+          "source_routes": [
+            "guest+topic"
+          ],
+          "route_correct": true,
+          "model_tool_call": true,
+          "context_retained": true,
+          "grounding_state": "supported",
+          "citation_present": true,
+          "used_fallback": true,
+          "execution_mode": "evidence_only",
+          "requested_provider": "ollama",
+          "actual_provider": null,
+          "fallback_reason_code": "incomplete_citation_coverage",
+          "latency_ms": 49799.938397000005
+        }
+      ]
+    }
+  ]
+}

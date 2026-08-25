@@ -1,0 +1,55 @@
+{
+  "verified_on": "2026-08-25",
+  "status": "passed",
+  "path": "POST /api/chat -> FastAPI -> Pi -> Ollama Qwen -> search_transcripts",
+  "requested_provider": "ollama",
+  "requested_model": "qwen3:14b-q4_K_M",
+  "actual_provider": "ollama",
+  "actual_model": "qwen3:14b-q4_K_M",
+  "thinking_mode": "off",
+  "thinking_transport_control": {
+    "field": "reasoning_effort",
+    "value": "none",
+    "assertion_tested": true
+  },
+  "execution_mode": "model",
+  "grounding_state": "supported",
+  "fallback_reason_code": null,
+  "latency_ms": 39119.31247499888,
+  "answer_characters": 537,
+  "factual_sentences": 2,
+  "factual_sentences_with_valid_citations": 2,
+  "tool_run": {
+    "name": "search_transcripts",
+    "origin": "model",
+    "status": "complete",
+    "duration_ms": 605.4714170000007,
+    "input": {
+      "guest": "Aparna Chennapragada",
+      "query": "practical advice prototyping with AI",
+      "topic": "ai"
+    }
+  },
+  "sources": {
+    "count": 3,
+    "episode_ids": ["aparna-chennapragada"],
+    "route": "guest+topic"
+  },
+  "failure_evidence_before_pass": [
+    {
+      "execution_mode": "evidence_only",
+      "fallback_reason_code": "provider_timeout",
+      "latency_ms": 151756.29848500103
+    },
+    {
+      "execution_mode": "evidence_only",
+      "fallback_reason_code": "missing_valid_citations",
+      "latency_ms": 80466.89912000147
+    },
+    {
+      "execution_mode": "evidence_only",
+      "fallback_reason_code": "missing_valid_citations",
+      "latency_ms": 50775.24706500117
+    }
+  ]
+}

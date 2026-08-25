@@ -1,0 +1,734 @@
+[
+  {
+    "id": "v01-001-ada-chen-rekhi",
+    "guest": "Ada Chen Rekhi",
+    "episode_id": "ada-chen-rekhi",
+    "title": "Feeling stuck? Here's how to know when it's time to leave your job | Ada Chen Rekhi",
+    "topics": [
+      "decision making",
+      "executive coaching"
+    ],
+    "gold_evidence_ids": [
+      "ada-chen-rekhi:282:90c6cde3397207d2"
+    ],
+    "gold_timestamp": "00:04:42-00:05:12",
+    "seed_question": "Often, people ask friends for advice on just like, \"Hey, what should I do here? What can I maybe talk about on this podcast?\" Your approach had a lot of structure to it. So maybe two questions just like, what is the actual structure to this concept? And then two, just people... You can often ask friends for advice, but you also don't want to over bug them with questions. How do you think about just not over asking everyone questions all the time, but all decisions you want to make? So I guess the question is, when do you use this versus just not?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ada Chen Rekhi, how do they answer: \"Often, people ask friends for advice on just like, \"Hey, what should I do here? What can I maybe talk about on this podcast?\" Your approach had a lot of structure to it. So maybe two questions just like, what is the actual structure to this concept? And then two, just people... You can often ask friends for advice, but you also don't want to over bug them with questions. How do you think about just not over asking everyone questions all the time, but all decisions you want to make? So I guess the question is, when do you use this versus just not?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-002-adam-fishman",
+    "guest": "Adam Fishman",
+    "episode_id": "adam-fishman",
+    "title": "How to build a high-performing growth team | Adam Fishman (Patreon, Lyft, Imperfect Foods)",
+    "topics": [
+      "career development",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "adam-fishman:331:a76e3403276a4819"
+    ],
+    "gold_timestamp": "00:05:31-00:06:15",
+    "seed_question": "Nailed it. Wow, that was very contained and clear. Let's plug the newsletter real quick. What's the URL? Is it fishmanafnewsletter.com?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Adam Fishman, how do they answer: \"Nailed it. Wow, that was very contained and clear. Let's plug the newsletter real quick. What's the URL? Is it fishmanafnewsletter.com?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-003-adam-grenier",
+    "guest": "Adam Grenier",
+    "episode_id": "adam-grenier",
+    "title": "When to invest in new acquisition channels | Adam Grenier (Uber, MasterClass)",
+    "topics": [
+      "experimentation",
+      "product led growth",
+      "uber"
+    ],
+    "gold_evidence_ids": [
+      "adam-grenier:334:7ae87a0758bfe49e"
+    ],
+    "gold_timestamp": "00:05:34-00:06:42",
+    "seed_question": "Speaking of moving and adjusting and iterating, I know you're big into improv. How serious are you about improv?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Adam Grenier, how do they answer: \"Speaking of moving and adjusting and iterating, I know you're big into improv. How serious are you about improv?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-004-aishwarya-naresh-reganti-kiriti-badam",
+    "guest": "Aishwarya Naresh Reganti + Kiriti Badam",
+    "episode_id": "aishwarya-naresh-reganti-kiriti-badam",
+    "title": "Why most AI products fail: Lessons from 50+ AI deployments at OpenAI, Google & Amazon",
+    "topics": [
+      "openai",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "aishwarya-naresh-reganti-kiriti-badam:649:f43bee8f48040011"
+    ],
+    "gold_timestamp": "00:10:49-00:11:39",
+    "seed_question": "So just to summarize what you're sharing here, essentially, people have been building product, software products for a long time. We're now in a world where the software you're building is one, non-deterministic, can just do things differently. As you said, you go to booking.com, you find a hotel, it's going to be the same experience every time. You'll see different hotels, but it's a predictable experience. With AI, you can't predict that it's going to be the exact same thing, the thing that you plan it to be every time. And then the other is there's this trade-off between agency and control. How much will the AI do for you versus how much should the person still be in charge? And what I'm hearing is the big point here is this significantly changes the way you should be building product. And we're going to talk about the impact on how the product development lifecycle should change as a result.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Aishwarya Naresh Reganti + Kiriti Badam, how do they answer: \"So just to summarize what you're sharing here, essentially, people have been building product, software products for a long time. We're now in a world where the software you're building is one, non-deterministic, can just do things differently. As you said, you go to booking.com, you find a hotel, it's going to be the same experience every time. You'll see different hotels, but it's a predictable experience. With AI, you can't predict that it's going to be the exact same thing, the thing that you plan it to be every time. And then the other is there's this trade-off between agency and control. How much will the AI do for you versus how much should the person still be in charge? And what I'm hearing is the big point here is this significantly changes the way you should be building product. And we're going to talk about the impact on how the product development lifecycle should change as a result.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-005-albert-cheng",
+    "guest": "Albert Cheng",
+    "episode_id": "albert-cheng",
+    "title": "Finding hidden growth opportunities in your product | Albert Cheng (Duolingo, Grammarly, Chess.com)",
+    "topics": [
+      "ab testing",
+      "experimentation",
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "albert-cheng:348:3144a28fd60d3bbd"
+    ],
+    "gold_timestamp": "00:05:48-00:07:04",
+    "seed_question": "What I want to start with is to give us a little insight into how you became what you became. There's an interesting pattern I found across a bunch of recent guests, which is many people were very good at piano when they were younger and were very serious piano players. For example, Head of ChatGPT, Nick Turley was almost going to become professional jazz pianist. You were very serious as a piano player earlier in your career. How did you go from pianist to one of the top growth minds in the world briefly?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Albert Cheng, how do they answer: \"What I want to start with is to give us a little insight into how you became what you became. There's an interesting pattern I found across a bunch of recent guests, which is many people were very good at piano when they were younger and were very serious piano players. For example, Head of ChatGPT, Nick Turley was almost going to become professional jazz pianist. You were very serious as a piano player earlier in your career. How did you go from pianist to one of the top growth minds in the world briefly?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-006-alex-hardimen",
+    "guest": "Alex Hardimen",
+    "episode_id": "alex-hardimen",
+    "title": "An inside look at how the New York Times builds product | Alex Hardiman (CPO, the New York Times)",
+    "topics": [
+      "facebook",
+      "product management",
+      "product strategy"
+    ],
+    "gold_evidence_ids": [
+      "alex-hardimen:540:3d9a507b998f4c37"
+    ],
+    "gold_timestamp": "00:09:00-00:10:06",
+    "seed_question": "I'm curious. Okay. Wait, you were leading the news product at Facebook during the election?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Alex Hardimen, how do they answer: \"I'm curious. Okay. Wait, you were leading the news product at Facebook during the election?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-007-alex-komoroske",
+    "guest": "Alex Komoroske",
+    "episode_id": "alex-komoroske",
+    "title": "Thinking like a gardener, slime mold, the adjacent possible: Product advice from Alex Komoroske",
+    "topics": [
+      "google",
+      "product management",
+      "stripe"
+    ],
+    "gold_evidence_ids": [
+      "alex-komoroske:459:dce65480f21c8fa9"
+    ],
+    "gold_timestamp": "00:07:39-00:08:18",
+    "seed_question": "As we get into the conversation, people get to see how deeply you think about stuff. Part of the reason you're able to think so deeply about stuff is you have this practice where you take time to reflect and share and crystallize. There's so much power in just forcing yourself to write it out, I imagine versus, just not.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Alex Komoroske, how do they answer: \"As we get into the conversation, people get to see how deeply you think about stuff. Part of the reason you're able to think so deeply about stuff is you have this practice where you take time to reflect and share and crystallize. There's so much power in just forcing yourself to write it out, I imagine versus, just not.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-008-alexander-embiricos",
+    "guest": "Alexander Embiricos",
+    "episode_id": "alexander-embiricos",
+    "title": "How to drive word of mouth | Nilan Peiris (CPO of Wise)",
+    "topics": [
+      "ai",
+      "engineering",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "alexander-embiricos:371:5d1289f8fae66ebf"
+    ],
+    "gold_timestamp": "00:06:11-00:06:52",
+    "seed_question": "We hear this a lot about feels like every AI company is just like, \"Oh my God, I can't believe how fast they're moving.\" Is there an example of just like, \"Wow, that wouldn't have happened this quickly anywhere else\"?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Alexander Embiricos, how do they answer: \"We hear this a lot about feels like every AI company is just like, \"Oh my God, I can't believe how fast they're moving.\" Is there an example of just like, \"Wow, that wouldn't have happened this quickly anywhere else\"?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-009-alisa-cohn",
+    "guest": "Alisa Cohn",
+    "episode_id": "alisa-cohn",
+    "title": "Scripts for navigating difficult conversations | Alisa Cohn (executive coach)",
+    "topics": [
+      "executive coaching"
+    ],
+    "gold_evidence_ids": [
+      "alisa-cohn:386:74dd4c60c0294db1"
+    ],
+    "gold_timestamp": "00:06:26-00:07:20",
+    "seed_question": "Oh, I love this life coaching we're doing. Yeah, so it's like what happens if they get sad and upset?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Alisa Cohn, how do they answer: \"Oh, I love this life coaching we're doing. Yeah, so it's like what happens if they get sad and upset?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-010-ami-vora",
+    "guest": "Ami Vora",
+    "episode_id": "ami-vora",
+    "title": "Making an impact through authenticity and curiosity | Ami Vora (CPO at Faire, ex-WhatsApp, FB, IG)",
+    "topics": [
+      "facebook",
+      "leadership",
+      "meta"
+    ],
+    "gold_evidence_ids": [
+      "ami-vora:596:59d6ce9254d79620"
+    ],
+    "gold_timestamp": "00:09:56-00:10:58",
+    "seed_question": "I love this metaphor of putting on the coat of the job, of just feeling out what it would be to work there. I imagine that was something that you did before you joined Faire, which I want to talk about, but let me transition a bit to talking about Meta and specifically, Boz. The CTO of Meta was on this podcast a few months ago and he said something about you that I want to read.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ami Vora, how do they answer: \"I love this metaphor of putting on the coat of the job, of just feeling out what it would be to work there. I imagine that was something that you did before you joined Faire, which I want to talk about, but let me transition a bit to talking about Meta and specifically, Boz. The CTO of Meta was on this podcast a few months ago and he said something about you that I want to read.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-011-amjad-masad",
+    "guest": "Amjad Masad",
+    "episode_id": "amjad-masad",
+    "title": "Behind the product: Replit | Amjad Masad (co-founder and CEO)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "amjad-masad:1011:ec1c1959737419fd"
+    ],
+    "gold_timestamp": "00:16:51-00:17:56",
+    "seed_question": "What's the limitation of what this can do today? What can't you do? Say you're like, you have zero coding experience, what sorts of products can you not yet build with something like this that might be possible in the future? How far does this take you now?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Amjad Masad, how do they answer: \"What's the limitation of what this can do today? What can't you do? Say you're like, you have zero coding experience, what sorts of products can you not yet build with something like this that might be possible in the future? How far does this take you now?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-012-andrew-wilkinson",
+    "guest": "Andrew Wilkinson",
+    "episode_id": "andrew-wilkinson",
+    "title": "I’ve run 75+ businesses. Here’s why you’re probably chasing the wrong idea. | Andrew Wilkinson",
+    "topics": [
+      "entrepreneurship",
+      "network effects",
+      "venture capital"
+    ],
+    "gold_evidence_ids": [
+      "andrew-wilkinson:318:00bcd88246972923"
+    ],
+    "gold_timestamp": "00:05:18-00:06:26",
+    "seed_question": "Amazing. Okay. Yeah, I think the benefit is for us is we get to learn from your experience. Let me just ask you this question, what is your best advice for coming up with a great startup idea?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Andrew Wilkinson, how do they answer: \"Amazing. Okay. Yeah, I think the benefit is for us is we get to learn from your experience. Let me just ask you this question, what is your best advice for coming up with a great startup idea?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-013-andy-johns",
+    "guest": "Andy Johns",
+    "episode_id": "andy-johns",
+    "title": "When enough is enough | Andy Johns (ex-FB, Twitter, Quora)",
+    "topics": [
+      "career development",
+      "leadership",
+      "mental health"
+    ],
+    "gold_evidence_ids": [
+      "andy-johns:329:2711b8a9aed88e4d"
+    ],
+    "gold_timestamp": "00:05:29-00:06:43",
+    "seed_question": "Well, on that topic, I'd love for you to just walk us through the path that you've taken. Basically, you're like me in a sense. You're helping companies build product, drive growth, worked with some of the best companies in the world, and then things took a turn. So could you just start with a brief overview of what happened?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Andy Johns, how do they answer: \"Well, on that topic, I'd love for you to just walk us through the path that you've taken. Basically, you're like me in a sense. You're helping companies build product, drive growth, worked with some of the best companies in the world, and then things took a turn. So could you just start with a brief overview of what happened?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-014-andy-raskin",
+    "guest": "Andy Raskin",
+    "episode_id": "andy-raskin",
+    "title": "The power of strategic narrative | Andy Raskin",
+    "topics": [
+      "storytelling"
+    ],
+    "gold_evidence_ids": [
+      "andy-raskin:433:a4b4278fff6e9183"
+    ],
+    "gold_timestamp": "00:07:13-00:08:19",
+    "seed_question": "And how many years ago was this at this point?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Andy Raskin, how do they answer: \"And how many years ago was this at this point?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-015-anneka-gupta",
+    "guest": "Anneka Gupta",
+    "episode_id": "anneka-gupta",
+    "title": "Becoming more strategic, navigating difficult colleagues, founder mode, more | Anneka Gupta",
+    "topics": [
+      "decision making",
+      "feedback",
+      "founder mode"
+    ],
+    "gold_evidence_ids": [
+      "anneka-gupta:225:6a3a33ce0aba6016"
+    ],
+    "gold_timestamp": "00:03:45-00:04:18",
+    "seed_question": "I love this advice. It's something that I've recently seen also in public speaking. If you can just reframe your thinking from \"I'm scared of this\" to \"This is going to be fun. I'm going to have so much fun doing this. It's going to be like this energy and anxiety I'm feeling is me feeling like it's going to be a lot of fun.\" So, spending a little more time here, how do you actually do this? So in this case, you shared an example of basically you have to fire a bunch of people, not something one can quickly think about how to have fun with that. How did you do this? Is it just in your mind you're like, \"I'm going to have fun with this,\" or is there something tactically people can do to make something fun?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Anneka Gupta, how do they answer: \"I love this advice. It's something that I've recently seen also in public speaking. If you can just reframe your thinking from \"I'm scared of this\" to \"This is going to be fun. I'm going to have so much fun doing this. It's going to be like this energy and anxiety I'm feeling is me feeling like it's going to be a lot of fun.\" So, spending a little more time here, how do you actually do this? So in this case, you shared an example of basically you have to fire a bunch of people, not something one can quickly think about how to have fun with that. How did you do this? Is it just in your mind you're like, \"I'm going to have fun with this,\" or is there something tactically people can do to make something fun?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-016-annie-duke",
+    "guest": "Annie Duke",
+    "episode_id": "annie-duke",
+    "title": "This will make you a better decision maker | Annie Duke (Thinking In Bets, former pro poker player)",
+    "topics": [
+      "slack",
+      "venture capital"
+    ],
+    "gold_evidence_ids": [
+      "annie-duke:841:b8af0b64d14ef2e7"
+    ],
+    "gold_timestamp": "00:14:01-00:15:08",
+    "seed_question": "This is really valuable, good advice. I need to hear this. My wife is going to need to hear this, too. She's always worried about the soft spot on our kid's head and getting hit into some things.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Annie Duke, how do they answer: \"This is really valuable, good advice. I need to hear this. My wife is going to need to hear this, too. She's always worried about the soft spot on our kid's head and getting hit into some things.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  }
+]

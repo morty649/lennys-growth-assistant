@@ -1,0 +1,90 @@
+name: lenny-growth-local
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-lenny_growth}
+      POSTGRES_USER: ${POSTGRES_USER:-lenny}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lenny_local_password}
+    ports:
+      - "127.0.0.1:${POSTGRES_HOST_PORT:-5433}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lenny} -d ${POSTGRES_DB:-lenny_growth}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  chroma:
+    image: chromadb/chroma:1.0.20
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - chroma-data:/data
+    environment:
+      IS_PERSISTENT: "TRUE"
+      PERSIST_DIRECTORY: /data
+      ANONYMIZED_TELEMETRY: "FALSE"
+
+  api:
+    build: ./apps/api
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://lenny:lenny_local_password@postgres:5432/lenny_growth}
+      CHROMA_HOST: ${CHROMA_HOST:-chroma}
+      CHROMA_PORT: ${CHROMA_PORT:-8000}
+      CORPUS_ROOT: ${CORPUS_ROOT:-/corpus}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434/v1}
+      AGENT_URL: ${AGENT_URL:-http://agent:8787}
+      INTERNAL_TOOL_TOKEN: ${INTERNAL_TOOL_TOKEN:-local-dev-tool-token-change-me}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./episodes:/corpus/episodes:ro
+      - ./index:/corpus/index:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      chroma:
+        condition: service_started
+    restart: unless-stopped
+
+  agent:
+    build: ./services/agent
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      API_INTERNAL_URL: ${API_INTERNAL_URL:-http://api:8000}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434/v1}
+      INTERNAL_TOOL_TOKEN: ${INTERNAL_TOOL_TOKEN:-local-dev-tool-token-change-me}
+      LOCAL_MODEL_THINKING: ${LOCAL_MODEL_THINKING:-off}
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - ./skills:/app/skills:ro
+    depends_on:
+      api:
+        condition: service_started
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./apps/web
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  chroma-data:

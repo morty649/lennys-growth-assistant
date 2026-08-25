@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-08-25",
+  "evidence_build_version": "conversation-v2",
+  "embedding_version": "ollama:nomic-embed-text:v1",
+  "episodes": 303,
+  "evidence_units": 16469,
+  "vectors": 16469,
+  "parity": true
+}

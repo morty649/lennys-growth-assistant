@@ -1,0 +1,16 @@
+.env
+.DS_Store
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+node_modules/
+.next/
+dist/
+.wrangler/
+data/chroma/
+data/postgres/
+coverage/
+playwright-report/
+test-results/

@@ -1,0 +1,3628 @@
+[
+  {
+    "id": "v01-017-annie-pearl",
+    "guest": "Annie Pearl",
+    "episode_id": "annie-pearl",
+    "title": "Behind the scenes of Calendly’s rapid growth | Annie Pearl (CPO)",
+    "topics": [
+      "enterprise sales",
+      "okrs",
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "annie-pearl:364:54ccabf33c1b6e81"
+    ],
+    "gold_timestamp": "00:06:04-00:07:07",
+    "seed_question": "Transitioning a little bit to product, the main focus of chat, you transitioned into product from being a lawyer. You told me at one point that a lot of people ask you for advice about how to transition into product from other functions, especially non-technical functions as someone without a technical background. So, what advice do you give people when they ask you how to transition into a product role?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Annie Pearl, how do they answer: \"Transitioning a little bit to product, the main focus of chat, you transitioned into product from being a lawyer. You told me at one point that a lot of people ask you for advice about how to transition into product from other functions, especially non-technical functions as someone without a technical background. So, what advice do you give people when they ask you how to transition into a product role?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-018-anton-osika",
+    "guest": "Anton Osika",
+    "episode_id": "anton-osika",
+    "title": "Building Lovable: $10M ARR in 60 days with 15 people | Anton Osika (CEO and co-founder)",
+    "topics": [
+      "product development",
+      "startup growth"
+    ],
+    "gold_evidence_ids": [
+      "anton-osika:441:321a751ae6121064"
+    ],
+    "gold_timestamp": "00:07:21-00:07:42",
+    "seed_question": "I love the way that you guys describe it and you didn't mention it, but I think it's building the last piece of software ever. How do you phrase that?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Anton Osika, how do they answer: \"I love the way that you guys describe it and you didn't mention it, but I think it's building the last piece of software ever. How do you phrase that?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-019-anuj-rathi",
+    "guest": "Anuj Rathi",
+    "episode_id": "anuj-rathi",
+    "title": "The full-stack PM | Anuj Rathi (Swiggy, Jupiter Money, Flipkart)",
+    "topics": [
+      "product management",
+      "product strategy",
+      "user experience"
+    ],
+    "gold_evidence_ids": [
+      "anuj-rathi:320:f55b13ec5a9ad909"
+    ],
+    "gold_timestamp": "00:05:20-00:05:33",
+    "seed_question": "Awesome. You're very modest. I wanted to start with a question about product in India, and I'm just curious just how is product management and product building in general just most different in India?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Anuj Rathi, how do they answer: \"Awesome. You're very modest. I wanted to start with a question about product in India, and I'm just curious just how is product management and product building in general just most different in India?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-020-aparna-chennapragada",
+    "guest": "Aparna Chennapragada",
+    "episode_id": "aparna-chennapragada",
+    "title": "Microsoft CPO: If you aren’t prototyping with AI you’re doing it wrong | Aparna Chennapragada",
+    "topics": [],
+    "gold_evidence_ids": [
+      "aparna-chennapragada:390:0095b18669b2f8f4"
+    ],
+    "gold_timestamp": "00:06:30-00:07:16",
+    "seed_question": "Yeah. I never saw these corollaries between these two things. I didn't realize you actually did shows, and you're working on a set. I wasn't going to ask you for a joke, but if you're working on a whole thing about AI, is there something that you can share from that set?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Aparna Chennapragada, how do they answer: \"Yeah. I never saw these corollaries between these two things. I didn't realize you actually did shows, and you're working on a set. I wasn't going to ask you for a joke, but if you're working on a whole thing about AI, is there something that you can share from that set?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-021-april-dunford",
+    "guest": "April Dunford",
+    "episode_id": "april-dunford",
+    "title": "A step-by-step guide to crafting a sales pitch that wins | April Dunford (author of Sales Pitch)",
+    "topics": [
+      "business strategy",
+      "customer experience",
+      "entrepreneurship"
+    ],
+    "gold_evidence_ids": [
+      "april-dunford:227:fed76b885e367cd9"
+    ],
+    "gold_timestamp": "00:03:47-00:04:44",
+    "seed_question": "April, thank you so much for being here. Welcome back to the podcast.",
+    "turns": [
+      {
+        "prompt": "In the conversation with April Dunford, how do they answer: \"April, thank you so much for being here. Welcome back to the podcast.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-022-april-dunford-20",
+    "guest": "April Dunford 2.0",
+    "episode_id": "april-dunford-20",
+    "title": "How to nail your product positioning | April Dunford (Obviously Awesome)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "april-dunford-20:227:b49cf7059fc66bf4"
+    ],
+    "gold_timestamp": "00:03:47-00:04:44",
+    "seed_question": "April, thank you so much for being here. Welcome back to the podcast.",
+    "turns": [
+      {
+        "prompt": "In the conversation with April Dunford 2.0, how do they answer: \"April, thank you so much for being here. Welcome back to the podcast.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-023-archie-abrams",
+    "guest": "Archie Abrams",
+    "episode_id": "archie-abrams",
+    "title": "How to speak more confidently and persuasively | Matt Abrahams (professor, speaker, author)",
+    "topics": [
+      "entrepreneurship",
+      "growth strategy",
+      "product development"
+    ],
+    "gold_evidence_ids": [
+      "archie-abrams:524:8f7a9d7dd70dd838"
+    ],
+    "gold_timestamp": "00:08:44-00:09:44",
+    "seed_question": "One of the main reasons companies focus so much on churn and retention is because it costs them a lot of money to drive new customers and users. I imagine there's almost an implied it's really cheap for you all to find new customers because of maybe the brand and word of mouth. Is that true?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Archie Abrams, how do they answer: \"One of the main reasons companies focus so much on churn and retention is because it costs them a lot of money to drive new customers and users. I imagine there's almost an implied it's really cheap for you all to find new customers because of maybe the brand and word of mouth. Is that true?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-024-arielle-jackson",
+    "guest": "Arielle Jackson",
+    "episode_id": "arielle-jackson",
+    "title": "The art of building legendary brands | Arielle Jackson (Google, Square, First Round Capital)",
+    "topics": [
+      "google"
+    ],
+    "gold_evidence_ids": [
+      "arielle-jackson:421:541c18305db0ce48"
+    ],
+    "gold_timestamp": "00:07:01-00:08:08",
+    "seed_question": "We're going to talk about positioning a bunch, but while we're on the topic, what was the positioning of that product while we're talking about it?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Arielle Jackson, how do they answer: \"We're going to talk about positioning a bunch, but while we're on the topic, what was the positioning of that product while we're talking about it?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-025-asha-sharma",
+    "guest": "Asha Sharma",
+    "episode_id": "asha-sharma",
+    "title": "How 80,000 companies build with AI: Products as organisms and the death of org charts | Asha Sharma",
+    "topics": [
+      "microsoft",
+      "product development"
+    ],
+    "gold_evidence_ids": [
+      "asha-sharma:381:8ec530cc4f552a2c"
+    ],
+    "gold_timestamp": "00:06:21-00:07:16",
+    "seed_question": "So when I hear this, what I'm thinking about is when I had Michael Truell in the podcast, the Cursor CEO, he talked a lot about how their big moat is the data that they capture from people using Cursor, accepting certain suggestions, not accepting other suggestions. Is that what you're talking about here? Just the proprietary data that companies gather from people using their product or is there something beyond that even?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Asha Sharma, how do they answer: \"So when I hear this, what I'm thinking about is when I had Michael Truell in the podcast, the Cursor CEO, he talked a lot about how their big moat is the data that they capture from people using Cursor, accepting certain suggestions, not accepting other suggestions. Is that what you're talking about here? Just the proprietary data that companies gather from people using their product or is there something beyond that even?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-026-austin-hay",
+    "guest": "Austin Hay",
+    "episode_id": "austin-hay",
+    "title": "The ultimate guide to Martech | Austin Hay (Reforge, Ramp, Runway)",
+    "topics": [
+      "ai",
+      "entrepreneurship",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "austin-hay:377:f4b92a56c5736daf"
+    ],
+    "gold_timestamp": "00:06:17-00:07:16",
+    "seed_question": "So, if someone listening to this that has done growth or has a growth PM may be like, oh, but this is sort of what I do. What is the difference between someone that just runs growth or has a growth team versus someone that's specifically a MarTech person?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Austin Hay, how do they answer: \"So, if someone listening to this that has done growth or has a growth PM may be like, oh, but this is sort of what I do. What is the difference between someone that just runs growth or has a growth team versus someone that's specifically a MarTech person?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-027-ayo-omojola",
+    "guest": "Ayo Omojola",
+    "episode_id": "ayo-omojola",
+    "title": "Frameworks for product differentiation, team building, and first principles thinking | Ayo Omojola",
+    "topics": [
+      "team building"
+    ],
+    "gold_evidence_ids": [
+      "ayo-omojola:399:d3f6093e6f586781"
+    ],
+    "gold_timestamp": "00:06:39-00:07:08",
+    "seed_question": "Holy moley, okay. And this is just a side project of yours?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ayo Omojola, how do they answer: \"Holy moley, okay. And this is just a side project of yours?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-028-bangaly-kaba",
+    "guest": "Bangaly Kaba",
+    "episode_id": "bangaly-kaba",
+    "title": "Unorthodox frameworks for growing your product, career, and impact | Bangaly Kaba (YT, IG, FB)",
+    "topics": [
+      "facebook",
+      "growth strategy",
+      "mentorship"
+    ],
+    "gold_evidence_ids": [
+      "bangaly-kaba:217:a81861338604637b"
+    ],
+    "gold_timestamp": "00:03:37-00:07:18",
+    "seed_question": "That is hilarious. That's a new strategy for me to get people on the podcast just say they're going to be on the podcast and then the pressure will start.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Bangaly Kaba, how do they answer: \"That is hilarious. That's a new strategy for me to get people on the podcast just say they're going to be on the podcast and then the pressure will start.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-029-barbra-gago",
+    "guest": "Barbra Gago",
+    "episode_id": "barbra-gago",
+    "title": "Category creation and brand building | Barbra Gago (Pando, Miro, Greenhouse, Culture Amp)",
+    "topics": [
+      "brand building",
+      "entrepreneurship",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "barbra-gago:301:d5c38ec1fcf58f5e"
+    ],
+    "gold_timestamp": "00:05:01-00:05:50",
+    "seed_question": "And you've got a startup now, so maybe you just mention that briefly and then we'll talk about it at the end again. Yeah. What are you working on now?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Barbra Gago, how do they answer: \"And you've got a startup now, so maybe you just mention that briefly and then we'll talk about it at the end again. Yeah. What are you working on now?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-030-ben-horowitz",
+    "guest": "Ben Horowitz",
+    "episode_id": "ben-horowitz",
+    "title": "$46B of hard truths: Why founders fail and why you need to run toward fear | Ben Horowitz (a16z)",
+    "topics": [
+      "decision making",
+      "founder mode",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "ben-horowitz:466:b3f3da6d1a91896d"
+    ],
+    "gold_timestamp": "00:07:46-00:08:50",
+    "seed_question": "So the lesson there is just success is just a bunch of little things. It's not this, \"Cool, I got here in a big thing.\"",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ben Horowitz, how do they answer: \"So the lesson there is just success is just a bunch of little things. It's not this, \"Cool, I got here in a big thing.\"?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-031-ben-williams",
+    "guest": "Ben Williams",
+    "episode_id": "ben-williams",
+    "title": "How Snyk built a product-led growth juggernaut | Ben Williams (VP of Product at Snyk)",
+    "topics": [
+      "experimentation",
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "ben-williams:446:e3e201f7dff88418"
+    ],
+    "gold_timestamp": "00:07:26-00:07:40",
+    "seed_question": "Awesome. To give folks a sense of just how successful and big Snyk has gotten, one is just what does Snyk do, we haven't even talked about that yet, and then two, just some stats about the scale of the company and the business at this point.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ben Williams, how do they answer: \"Awesome. To give folks a sense of just how successful and big Snyk has gotten, one is just what does Snyk do, we haven't even talked about that yet, and then two, just some stats about the scale of the company and the business at this point.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-032-benjamin-lauzier",
+    "guest": "Benjamin Lauzier",
+    "episode_id": "benjamin-lauzier",
+    "title": "How marketplaces win: Liquidity, growth levers, quality, more | Benjamin Lauzier (Lyft, Thumbtack)",
+    "topics": [
+      "growth strategy",
+      "uber"
+    ],
+    "gold_evidence_ids": [
+      "benjamin-lauzier:460:233547e3fded82d8"
+    ],
+    "gold_timestamp": "00:07:40-00:08:46",
+    "seed_question": "i'm going to come back to\nlet's get back to that. So, you work with a ton of marketplaces, you've built a bunch of marketplaces. What do you find is the biggest struggle to building a successful marketplace business? The most common problem people run into.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Benjamin Lauzier, how do they answer: \"i'm going to come back to\nlet's get back to that. So, you work with a ton of marketplaces, you've built a bunch of marketplaces. What do you find is the biggest struggle to building a successful marketplace business? The most common problem people run into.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-033-benjamin-mann",
+    "guest": "Benjamin Mann",
+    "episode_id": "benjamin-mann",
+    "title": "How marketplaces win: Liquidity, growth levers, quality, more | Benjamin Lauzier (Lyft, Thumbtack)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "benjamin-mann:386:2c7c8afee44b4802"
+    ],
+    "gold_timestamp": "00:06:26-00:07:48",
+    "seed_question": "Yeah. We're going to talk about a lot of this stuff that you've mentioned. In terms of the offers do you think, is this a real number that you're seeing this $100 million signing bonus, is that a real thing? I don't know if you've actually seen that.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Benjamin Mann, how do they answer: \"Yeah. We're going to talk about a lot of this stuff that you've mentioned. In terms of the offers do you think, is this a real number that you're seeing this $100 million signing bonus, is that a real thing? I don't know if you've actually seen that.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-034-bill-carr",
+    "guest": "Bill Carr",
+    "episode_id": "bill-carr",
+    "title": "Unpacking Amazon’s unique ways of working | Bill Carr (author of Working Backwards)",
+    "topics": [
+      "hiring"
+    ],
+    "gold_evidence_ids": [
+      "bill-carr:342:52d021939dc3445c"
+    ],
+    "gold_timestamp": "00:05:42-00:06:43",
+    "seed_question": "Awesome. Okay. So, maybe we will come back to that, because that is also really powerful mechanism. So, the question I wanted to ask about this is there are companies that are bigger than Amazon, that are more successful than Amazon, that have been around longer than Amazon, but I don't think any other company has contributed so many unique, new ways of working and also been able to coin them into such shareable ways. What would you say it is about Amazon that enables this sort of way of working and also just making things so just proliferate through the culture?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Bill Carr, how do they answer: \"Awesome. Okay. So, maybe we will come back to that, because that is also really powerful mechanism. So, the question I wanted to ask about this is there are companies that are bigger than Amazon, that are more successful than Amazon, that have been around longer than Amazon, but I don't think any other company has contributed so many unique, new ways of working and also been able to coin them into such shareable ways. What would you say it is about Amazon that enables this sort of way of working and also just making things so just proliferate through the culture?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-035-bob-baxley",
+    "guest": "Bob Baxley",
+    "episode_id": "bob-baxley",
+    "title": "35 years of product design wisdom from Apple, Disney, Pinterest and beyond | Bob Baxley",
+    "topics": [
+      "product management",
+      "user experience"
+    ],
+    "gold_evidence_ids": [
+      "bob-baxley:271:81fce304b3d34aaa"
+    ],
+    "gold_timestamp": "00:04:31-00:05:33",
+    "seed_question": "Wow. Well, I really appreciate that. That means a lot coming from you. There's so much I want to talk about in our conversation. There's a story that I hear that you often tell, which is when somebody asked Steve Jobs once, what is your favorite product that you've built that you work on? And his answer, what's that story?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Bob Baxley, how do they answer: \"Wow. Well, I really appreciate that. That means a lot coming from you. There's so much I want to talk about in our conversation. There's a story that I hear that you often tell, which is when somebody asked Steve Jobs once, what is your favorite product that you've built that you work on? And his answer, what's that story?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-036-bob-moesta",
+    "guest": "Bob Moesta",
+    "episode_id": "bob-moesta",
+    "title": "How to find work you love | Bob Moesta (Jobs-to-be-Done co-creator, author of \"Job Moves”)",
+    "topics": [
+      "customer research",
+      "innovation",
+      "product development"
+    ],
+    "gold_evidence_ids": [
+      "bob-moesta:449:2498cbecfce48036"
+    ],
+    "gold_timestamp": "00:07:29-00:08:29",
+    "seed_question": "To maybe follow up on this example a bit, how often do you find these jobs emerge after they've developed a product, in this case I guess Snickers or Milky Way, how often is it just like they see this problem and actually apply this approach even accidentally?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Bob Moesta, how do they answer: \"To maybe follow up on this example a bit, how often do you find these jobs emerge after they've developed a product, in this case I guess Snickers or Milky Way, how often is it just like they see this problem and actually apply this approach even accidentally?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-037-bob-moesta-20",
+    "guest": "Bob Moesta 2.0",
+    "episode_id": "bob-moesta-20",
+    "title": "The ultimate guide to JTBD | Bob Moesta (co-creator of the framework)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "bob-moesta-20:318:50f685d826c7731b"
+    ],
+    "gold_timestamp": "00:05:18-00:06:00",
+    "seed_question": "The reason I'm excited to have you back on the podcast is because I've heard from so many listeners that they're either struggling to find a job in this market or hate the job that they're in. They're not sure what to do about it. Or on the flip side, they're trying to hire amazing people or keep amazing people and they're having a hard time doing that. And luckily you just wrote a new book called Job Moves that I have right here that has a very different set of advice and different perspective on how to approach these problems. And if I may, the job to be done of this episode is to help people find a job that they love, find a better job, decide when to leave a job and hire and keep amazing people. How's that sound?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Bob Moesta 2.0, how do they answer: \"The reason I'm excited to have you back on the podcast is because I've heard from so many listeners that they're either struggling to find a job in this market or hate the job that they're in. They're not sure what to do about it. Or on the flip side, they're trying to hire amazing people or keep amazing people and they're having a hard time doing that. And luckily you just wrote a new book called Job Moves that I have right here that has a very different set of advice and different perspective on how to approach these problems. And if I may, the job to be done of this episode is to help people find a job that they love, find a better job, decide when to leave a job and hire and keep amazing people. How's that sound?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-038-boz",
+    "guest": "Boz",
+    "episode_id": "boz",
+    "title": "Making Meta | Andrew ‘Boz’ Bosworth (CTO)",
+    "topics": [
+      "communication",
+      "facebook",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "boz:441:ed5fa25282e9b302"
+    ],
+    "gold_timestamp": "00:07:21-00:08:26",
+    "seed_question": "Another fun fact about you is you were basically the 10th engineer at Facebook, initially, way before it was a clear success story. I imagine there was a lot of pain and suffering and struggle that people don't often hear about those early days. They see a movie like The Social Network. It looks like, \"Oh, that was so much fun. I've got to start a company. It's going to become a trillion-dollar success story.\" I'm curious just what those early days were like. Are there memories that stand out to you?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Boz, how do they answer: \"Another fun fact about you is you were basically the 10th engineer at Facebook, initially, way before it was a clear success story. I imagine there was a lot of pain and suffering and struggle that people don't often hear about those early days. They see a movie like The Social Network. It looks like, \"Oh, that was so much fun. I've got to start a company. It's going to become a trillion-dollar success story.\" I'm curious just what those early days were like. Are there memories that stand out to you?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-039-brandon-chu",
+    "guest": "Brandon Chu",
+    "episode_id": "brandon-chu",
+    "title": "AI prompt engineering in 2025: What works and what doesn’t | Sander Schulhoff",
+    "topics": [
+      "career development",
+      "decision making",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "brandon-chu:422:9bdbe8668620c7a5"
+    ],
+    "gold_timestamp": "00:07:02-00:08:05",
+    "seed_question": "Amazing. So I was looking at your LinkedIn and just hearing this story, especially the Shopify piece, it's a pretty incredible trajectory. And imagine a lot of people listening to this may be like, \"Shit. How do I follow a similar path? How do I do it Brandon did.\" Do you have any advice about what it was that helped you, either habits, skills, behaviors that helped you get to where you're today that maybe newer PMs could learn from?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Brandon Chu, how do they answer: \"Amazing. So I was looking at your LinkedIn and just hearing this story, especially the Shopify piece, it's a pretty incredible trajectory. And imagine a lot of people listening to this may be like, \"Shit. How do I follow a similar path? How do I do it Brandon did.\" Do you have any advice about what it was that helped you, either habits, skills, behaviors that helped you get to where you're today that maybe newer PMs could learn from?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-040-brendan-foody",
+    "guest": "Brendan Foody",
+    "episode_id": "brendan-foody",
+    "title": "Why experts writing AI evals is creating the fastest-growing companies in history | Brendan Foody",
+    "topics": [
+      "ai",
+      "entrepreneurship",
+      "hiring"
+    ],
+    "gold_evidence_ids": [
+      "brendan-foody:445:352f71c26a002304"
+    ],
+    "gold_timestamp": "00:07:25-00:07:39",
+    "seed_question": "So people hearing this, they're like, \"Oh, yeah. Okay, shit. I got to really pay attention to this eval stuff.\" Any advice about learning how to do this well? What companies that are doing this well are doing differently? Help people get better at this thing.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Brendan Foody, how do they answer: \"So people hearing this, they're like, \"Oh, yeah. Okay, shit. I got to really pay attention to this eval stuff.\" Any advice about learning how to do this well? What companies that are doing this well are doing differently? Help people get better at this thing.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-041-bret-taylor",
+    "guest": "Bret Taylor",
+    "episode_id": "bret-taylor",
+    "title": "He saved OpenAI, invented the “Like” button, and built Google Maps: Bret Taylor (Sierra)",
+    "topics": [
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "bret-taylor:722:778b349f974579eb"
+    ],
+    "gold_timestamp": "00:12:02-00:13:19",
+    "seed_question": "So I was looking at your resume and you basically have been very successful at every level of the career ladder and in such a huge variety of roles. So let me just read a few of these things for folks that aren't super familiar with your background. You were CTO of Meta, you were co-CEO of Salesforce, you're also CPO and COO at Salesforce. At Google, you joined as an associate product manager where you famously, you didn't mention this but you rebuilt Google Maps on weekend. We're not going to talk about that. You're chairman of the board at OpenAI. You were chairman of the board at Twitter. You've also founded three different companies, one social network, one productivity docs company called Quip, and now, Sierra. Fun fact, at FriendFeed you invented the like button and I don't know if people know that and also just the newsfeed, I'll just throw that out there to give you some credit.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Bret Taylor, how do they answer: \"So I was looking at your resume and you basically have been very successful at every level of the career ladder and in such a huge variety of roles. So let me just read a few of these things for folks that aren't super familiar with your background. You were CTO of Meta, you were co-CEO of Salesforce, you're also CPO and COO at Salesforce. At Google, you joined as an associate product manager where you famously, you didn't mention this but you rebuilt Google Maps on weekend. We're not going to talk about that. You're chairman of the board at OpenAI. You were chairman of the board at Twitter. You've also founded three different companies, one social network, one productivity docs company called Quip, and now, Sierra. Fun fact, at FriendFeed you invented the like button and I don't know if people know that and also just the newsfeed, I'll just throw that out there to give you some credit.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-042-brian-balfour",
+    "guest": "Brian Balfour",
+    "episode_id": "brian-balfour",
+    "title": "Why ChatGPT will be the next big growth channel (and how to capitalize on it) | Brian Balfour",
+    "topics": [
+      "ai",
+      "entrepreneurship",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "brian-balfour:624:d433c621730bfa1e"
+    ],
+    "gold_timestamp": "00:10:24-00:11:23",
+    "seed_question": "Okay. This is amazing. Essentially what you're saying is we follow these ways to grow, there's SEO, there's paid growth, there's sales. All these channels have been around for a long time. They're extremely saturated. Everyone's always complaining SEO's dead, it can't grow, the SEO, anymore. It can't grow. Word of mouth is so hard, there's so many amazing things now that's hard. Paid is so hard. It's just all this money just-",
+    "turns": [
+      {
+        "prompt": "In the conversation with Brian Balfour, how do they answer: \"Okay. This is amazing. Essentially what you're saying is we follow these ways to grow, there's SEO, there's paid growth, there's sales. All these channels have been around for a long time. They're extremely saturated. Everyone's always complaining SEO's dead, it can't grow, the SEO, anymore. It can't grow. Word of mouth is so hard, there's so many amazing things now that's hard. Paid is so hard. It's just all this money just-?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-043-brian-chesky",
+    "guest": "Brian Chesky",
+    "episode_id": "brian-chesky",
+    "title": "Brian Chesky’s new playbook",
+    "topics": [
+      "growth strategy",
+      "leadership",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "brian-chesky:931:f9681559c73ef07f"
+    ],
+    "gold_timestamp": "00:15:31-00:16:08",
+    "seed_question": "Yeah, exactly. Exactly. So I'm going to pull on a couple threads. The first is this idea of a single roadmap you talked about. And what this reminds me of is I was talking to another very prominent CEO of a public company and he pointed out that there's this cycle that he sees a lot of founders go through where they initially run the show, they're in charge, they tell people what to build, and then over time they're encouraged to delegate and to empower and it leads to a bunch of optimization work and small thinking maybe. And you talked about bureaucracy and politics. And then eventually you realize I need to take the reins again and drive the ship and take back control of what's happening. And it feels like you went on that journey.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Brian Chesky, how do they answer: \"Yeah, exactly. Exactly. So I'm going to pull on a couple threads. The first is this idea of a single roadmap you talked about. And what this reminds me of is I was talking to another very prominent CEO of a public company and he pointed out that there's this cycle that he sees a lot of founders go through where they initially run the show, they're in charge, they tell people what to build, and then over time they're encouraged to delegate and to empower and it leads to a bunch of optimization work and small thinking maybe. And you talked about bureaucracy and politics. And then eventually you realize I need to take the reins again and drive the ship and take back control of what's happening. And it feels like you went on that journey.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-044-brian-tolkin",
+    "guest": "Brian Tolkin",
+    "episode_id": "brian-tolkin",
+    "title": "Lessons from scaling Uber and Opendoor | Brian Tolkin (Head of Product at Opendoor, ex-Uber)",
+    "topics": [
+      "ab testing",
+      "uber"
+    ],
+    "gold_evidence_ids": [
+      "brian-tolkin:594:81458e9ae7437bc8"
+    ],
+    "gold_timestamp": "00:09:54-00:10:15",
+    "seed_question": "Did none of that. Sounds like you basically helped make it a thing. I know you're being very modest, I think. Coming back to your point about decentralized operations teams, something I've read is that search pricing came out of one GM and a market just testing, emailing all the drivers, hey, we're going to give you extra if you drive on Saturday night. Is that true?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Brian Tolkin, how do they answer: \"Did none of that. Sounds like you basically helped make it a thing. I know you're being very modest, I think. Coming back to your point about decentralized operations teams, something I've read is that search pricing came out of one GM and a market just testing, emailing all the drivers, hey, we're going to give you extra if you drive on Saturday night. Is that true?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-045-cam-adams",
+    "guest": "Cam Adams",
+    "episode_id": "cam-adams",
+    "title": "Inside Canva: Coaches not managers, giving away your Legos, and embracing AI | Cameron Adams",
+    "topics": [
+      "ai",
+      "growth strategy",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "cam-adams:722:c25f7875da85ee1d"
+    ],
+    "gold_timestamp": "00:12:02-00:12:26",
+    "seed_question": "I really like this point you made about how you didn't know any better almost, and it reminds me of something else I heard about Canva. It took you guys a long time to hire outside execs. Almost all your leaders are homegrown and it took you a long time to even hire outside of Australia. Its even higher in the US. Can you just talk about why that's been so important and just the impact that has come out of hiring people internally and helping people be promoted internally?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Cam Adams, how do they answer: \"I really like this point you made about how you didn't know any better almost, and it reminds me of something else I heard about Canva. It took you guys a long time to hire outside execs. Almost all your leaders are homegrown and it took you a long time to even hire outside of Australia. Its even higher in the US. Can you just talk about why that's been so important and just the impact that has come out of hiring people internally and helping people be promoted internally?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-046-camille-fournier",
+    "guest": "Camille Fournier",
+    "episode_id": "camille-fournier",
+    "title": "The things engineers are desperate for PMs to understand | Camille Fournier (“The Manager’s Path”)",
+    "topics": [
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "camille-fournier:536:e410eaca737a4a49"
+    ],
+    "gold_timestamp": "00:08:56-00:09:18",
+    "seed_question": "That's really interesting, the last one. So you're saying if you keep engineers from having a voice in what you're building and prioritizing, that's what encourages engineers to rethink, let's just rebuild this thing, let's use a new framework, let's rewrite this system.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Camille Fournier, how do they answer: \"That's really interesting, the last one. So you're saying if you keep engineers from having a voice in what you're building and prioritizing, that's what encourages engineers to rethink, let's just rebuild this thing, let's use a new framework, let's rewrite this system.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-047-camille-hearst",
+    "guest": "Camille Hearst",
+    "episode_id": "camille-hearst",
+    "title": "Monetizing passions, scaling marketplaces, and stories from a creator economy vet | Camille Hearst",
+    "topics": [
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "camille-hearst:348:7a106e3d68e8b4e6"
+    ],
+    "gold_timestamp": "00:05:48-00:07:09",
+    "seed_question": "What are some of those ways just to give people a sense of what might be happening?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Camille Hearst, how do they answer: \"What are some of those ways just to give people a sense of what might be happening?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-048-camille-ricketts",
+    "guest": "Camille Ricketts",
+    "episode_id": "camille-ricketts",
+    "title": "How Notion leveraged community to build a $10B business | Camille Ricketts",
+    "topics": [
+      "enterprise sales",
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "camille-ricketts:272:2c059ca73bcab003"
+    ],
+    "gold_timestamp": "00:04:32-00:04:51",
+    "seed_question": "Absolutely, my pleasure. You have such a fascinating background working at so many world-class companies with so many fascinating people. Could you just take a minute to talk about some of the wonderful things you've done in your career just to set a little context for folks?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Camille Ricketts, how do they answer: \"Absolutely, my pleasure. You have such a fascinating background working at so many world-class companies with so many fascinating people. Could you just take a minute to talk about some of the wonderful things you've done in your career just to set a little context for folks?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-049-carilu-dietrich",
+    "guest": "Carilu Dietrich",
+    "episode_id": "carilu-dietrich",
+    "title": "How to achieve hypergrowth in your business and career | Carilu Dietrich (Atlassian)",
+    "topics": [
+      "enterprise sales",
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "carilu-dietrich:640:334e6d698e178813"
+    ],
+    "gold_timestamp": "00:10:40-00:12:04",
+    "seed_question": "There's so many things I want to double click on there. The last piece, it's the advice I always give people when they're early in their career is to go find a company that's going to do super well. That one experience is going to transform your entire career. Having the logo on your resume, the people you meet, the experience you get financially. But that begs the question, how do you find that? How do you pick a company? I think in your advising today, you join later where it's a little more obvious. \"Okay, they're doing great.\" Do you have any advice or lessons about how to identify earlier where to go work and how to be lucky in that pick?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Carilu Dietrich, how do they answer: \"There's so many things I want to double click on there. The last piece, it's the advice I always give people when they're early in their career is to go find a company that's going to do super well. That one experience is going to transform your entire career. Having the logo on your resume, the people you meet, the experience you get financially. But that begs the question, how do you find that? How do you pick a company? I think in your advising today, you join later where it's a little more obvious. \"Okay, they're doing great.\" Do you have any advice or lessons about how to identify earlier where to go work and how to be lucky in that pick?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-050-carole-robin",
+    "guest": "Carole Robin",
+    "episode_id": "carole-robin",
+    "title": "How to build deeper, more robust relationships | Carole Robin (Stanford professor, “Touchy Feely”)",
+    "topics": [
+      "communication",
+      "feedback",
+      "leadership"
+    ],
+    "gold_evidence_ids": [
+      "carole-robin:490:497d5d742cb8ecd0"
+    ],
+    "gold_timestamp": "00:08:10-00:09:20",
+    "seed_question": "To give people a little more motivation to really dig in and pay deep attention to this. What are some of the benefits you've seen from people moving further along the spectrum, building more robust relationships and more exceptional relationships?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Carole Robin, how do they answer: \"To give people a little more motivation to really dig in and pay deep attention to this. What are some of the benefits you've seen from people moving further along the spectrum, building more robust relationships and more exceptional relationships?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-051-casey-winters",
+    "guest": "Casey Winters",
+    "episode_id": "casey-winters",
+    "title": "Why most product managers are unprepared for the demands of a real startup | Casey Winters",
+    "topics": [
+      "growth strategy",
+      "product management",
+      "product market fit"
+    ],
+    "gold_evidence_ids": [
+      "casey-winters:411:75df82dd5c76299a"
+    ],
+    "gold_timestamp": "00:06:51-00:07:11",
+    "seed_question": "I'll be more specific, so one of the things that you mentioned that you're working on is thinking about trade offs and being very explicit about trade offs you're making, communicating why you made certain trade offs and then just generally communicating that upward to executives and then across the company, so I'm curious just to hear what you've learned around how to communicate trade offs and internal communication?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Casey Winters, how do they answer: \"I'll be more specific, so one of the things that you mentioned that you're working on is thinking about trade offs and being very explicit about trade offs you're making, communicating why you made certain trade offs and then just generally communicating that upward to executives and then across the company, so I'm curious just to hear what you've learned around how to communicate trade offs and internal communication?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-052-chandra-janakiraman",
+    "guest": "Chandra Janakiraman",
+    "episode_id": "chandra-janakiraman",
+    "title": "An operator’s guide to product strategy | Chandra Janakiraman (CPO at VRChat, ex-Meta, Headspace)",
+    "topics": [
+      "meta",
+      "product management",
+      "product strategy"
+    ],
+    "gold_evidence_ids": [
+      "chandra-janakiraman:629:5100874fa4d6bf83"
+    ],
+    "gold_timestamp": "00:10:29-00:11:11",
+    "seed_question": "Amazing. That's exactly what I want to do here. The point you made about the why, I think everyone listening to this that's been in product for long enough has heard that of just, \"Your team doesn't understand why we're doing this.\" I've heard that a number of times, as much as you think you're killing it, there's always that, you forget sometimes to do that or you aren't doing it great. And I love that basically the solution to that is the strategy solves that problem of helping people connect the dots and understand why this is the roadmap, why this is the strategy. Okay, so before we get into it, just one more context question, what's just the best way to think about what you're about to share and also who's it for? Who needs to hear this briefly?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Chandra Janakiraman, how do they answer: \"Amazing. That's exactly what I want to do here. The point you made about the why, I think everyone listening to this that's been in product for long enough has heard that of just, \"Your team doesn't understand why we're doing this.\" I've heard that a number of times, as much as you think you're killing it, there's always that, you forget sometimes to do that or you aren't doing it great. And I love that basically the solution to that is the strategy solves that problem of helping people connect the dots and understand why this is the roadmap, why this is the strategy. Okay, so before we get into it, just one more context question, what's just the best way to think about what you're about to share and also who's it for? Who needs to hear this briefly?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-053-chip-conley",
+    "guest": "Chip Conley",
+    "episode_id": "chip-conley",
+    "title": "Mastering product strategy and growing as a PM | Maggie Crowley (Toast, Drift, TripAdvisor)",
+    "topics": [
+      "airbnb",
+      "company culture",
+      "founder mode"
+    ],
+    "gold_evidence_ids": [
+      "chip-conley:1108:08dcdbf7218634a3"
+    ],
+    "gold_timestamp": "00:18:28-00:19:25",
+    "seed_question": "For people in this position, a lot of people work for founders, especially now that founder mode is a thing. Every founder is just like, \"I'm the founder, you got to do what I tell you. It's founder mode. Again, this is how we win. We're in founder mode.\" You shared really good insight of building credibility as a really good lever to work better with someone like that. Is there anything else you just think as tactics to be effective with founders in founder mode?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Chip Conley, how do they answer: \"For people in this position, a lot of people work for founders, especially now that founder mode is a thing. Every founder is just like, \"I'm the founder, you got to do what I tell you. It's founder mode. Again, this is how we win. We're in founder mode.\" You shared really good insight of building credibility as a really good lever to work better with someone like that. Is there anything else you just think as tactics to be effective with founders in founder mode?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-054-chip-huyen",
+    "guest": "Chip Huyen",
+    "episode_id": "chip-huyen",
+    "title": "Al Engineering 101 with Chip Huyen (Nvidia, Stanford, Netflix)",
+    "topics": [
+      "machine learning"
+    ],
+    "gold_evidence_ids": [
+      "chip-huyen:409:8a8ee0cbd2d598f4"
+    ],
+    "gold_timestamp": "00:06:49-00:07:34",
+    "seed_question": "I love your just broader advice is just simple like, to build successful AI apps, talk to users, build better data, write better prompts, optimize the user experience, versus just like, what is the latest and greatest? What's the best model to use right now? What's happening in AI? Let me follow this thread of this idea of fine-tuning and basically post-training. There's all these terms that people hear in AI, and I think this is going to be a really good opportunity for people to learn what we're actually talking about, since you actually do these things, you build these things, you work with companies doing these things. There's a few terms I want to sprinkle in through the conversation, but let's start with this one. What's the simplest way for someone to understand? What is the difference between pre-training and post-training and then just how fine-tuning fits into that, just what fine-tuning actually is?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Chip Huyen, how do they answer: \"I love your just broader advice is just simple like, to build successful AI apps, talk to users, build better data, write better prompts, optimize the user experience, versus just like, what is the latest and greatest? What's the best model to use right now? What's happening in AI? Let me follow this thread of this idea of fine-tuning and basically post-training. There's all these terms that people hear in AI, and I think this is going to be a really good opportunity for people to learn what we're actually talking about, since you actually do these things, you build these things, you work with companies doing these things. There's a few terms I want to sprinkle in through the conversation, but let's start with this one. What's the simplest way for someone to understand? What is the difference between pre-training and post-training and then just how fine-tuning fits into that, just what fine-tuning actually is?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-055-chris-hutchins",
+    "guest": "Chris Hutchins",
+    "episode_id": "chris-hutchins",
+    "title": "Launching and growing a podcast | Chris Hutchins (All the Hacks, Wealthfront, Google)",
+    "topics": [
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "chris-hutchins:422:ccaab4d7591cffb8"
+    ],
+    "gold_timestamp": "00:07:02-00:08:00",
+    "seed_question": "Oh, newsletter. I love it. All right, coming back to your last gig at Wealthfront, from what I understand your title was New product Strategy and Andy Rachleff, who was the CEO for a while, kind of legendary figure. He co-founded Benchmark. He's just like this brain that... I listen to him every time I hear him on a podcast. He basically pulled you into Wealthfront and specifically wanted you to focus on figuring out new business ideas, new business lines, new product lines within Wealthfront. Is that right?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Chris Hutchins, how do they answer: \"Oh, newsletter. I love it. All right, coming back to your last gig at Wealthfront, from what I understand your title was New product Strategy and Andy Rachleff, who was the CEO for a while, kind of legendary figure. He co-founded Benchmark. He's just like this brain that... I listen to him every time I hear him on a podcast. He basically pulled you into Wealthfront and specifically wanted you to focus on figuring out new business ideas, new business lines, new product lines within Wealthfront. Is that right?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-056-christian-idiodi",
+    "guest": "Christian Idiodi",
+    "episode_id": "christian-idiodi",
+    "title": "The essence of product management | Christian Idiodi (SVPG)",
+    "topics": [
+      "leadership",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "christian-idiodi:465:72080fc0e1531891"
+    ],
+    "gold_timestamp": "00:07:45-00:08:06",
+    "seed_question": "I have exactly the same perspective. When people say they don't like product managers, exactly what I tell them is, you just haven't worked with a great product manager. A great PM makes everything easier for you. If you want to be a PM, people would hate to lose on their team. I would never want to lose Christian on my team as a PM. Is there something they could do maybe or change to become that person?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Christian Idiodi, how do they answer: \"I have exactly the same perspective. When people say they don't like product managers, exactly what I tell them is, you just haven't worked with a great product manager. A great PM makes everything easier for you. If you want to be a PM, people would hate to lose on their team. I would never want to lose Christian on my team as a PM. Is there something they could do maybe or change to become that person?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-057-christina-wodtke",
+    "guest": "Christina Wodtke",
+    "episode_id": "christina-wodtke",
+    "title": "The ultimate guide to OKRs | Christina Wodtke (Stanford)",
+    "topics": [
+      "okrs",
+      "product development",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "christina-wodtke:459:d2182dcb24914179"
+    ],
+    "gold_timestamp": "00:07:39-00:08:40",
+    "seed_question": "So, I'll start with, you talked about the benefits of OKR. If you had to just boil down, here's what OKRs can do for you as a company, as an organization, what would that be? What's just the main benefit of OKRs at your company?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Christina Wodtke, how do they answer: \"So, I'll start with, you talked about the benefits of OKR. If you had to just boil down, here's what OKRs can do for you as a company, as an organization, what would that be? What's just the main benefit of OKRs at your company?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-058-christine-itwaru",
+    "guest": "Christine Itwaru",
+    "episode_id": "christine-itwaru",
+    "title": "Understanding the role of product ops | Christine Itwaru (Pendo)",
+    "topics": [
+      "product led growth",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "christine-itwaru:248:5da4de2430375f82"
+    ],
+    "gold_timestamp": "00:04:08-00:05:11",
+    "seed_question": "Awesome. Well, here we are, and obviously, we're going to be talking about product ops. You've been in the product ops role for seemingly feels like as long as the role has existed. I'd love to know when you think the role actually and we're going to talk about just when this spurred happened in product ops. I hate this term, but it feels like you're a thought leader in the product ops space. I've never actually worked with anyone in product ops. I've never had a product ops team, so I have a ton of questions. I imagine many people listening also have and are also just curious about this emerging role.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Christine Itwaru, how do they answer: \"Awesome. Well, here we are, and obviously, we're going to be talking about product ops. You've been in the product ops role for seemingly feels like as long as the role has existed. I'd love to know when you think the role actually and we're going to talk about just when this spurred happened in product ops. I hate this term, but it feels like you're a thought leader in the product ops space. I've never actually worked with anyone in product ops. I've never had a product ops team, so I have a ton of questions. I imagine many people listening also have and are also just curious about this emerging role.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-059-christopher-lochhead",
+    "guest": "Christopher Lochhead",
+    "episode_id": "christopher-lochhead",
+    "title": "How to become a category pirate | Christopher Lochhead (Author of Play Bigger, Niche Down, more)",
+    "topics": [
+      "entrepreneurship",
+      "product market fit"
+    ],
+    "gold_evidence_ids": [
+      "christopher-lochhead:217:1183925eacb568c3"
+    ],
+    "gold_timestamp": "00:03:37-00:05:09",
+    "seed_question": "Christopher, thank you so much for being here.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Christopher Lochhead, how do they answer: \"Christopher, thank you so much for being here.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-060-christopher-miller",
+    "guest": "Christopher Miller",
+    "episode_id": "christopher-miller",
+    "title": "Relentless curiosity, radical accountability, and HubSpot’s winning growth formula | Chris Miller",
+    "topics": [
+      "career development",
+      "experimentation",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "christopher-miller:333:35c4a3ed40205528"
+    ],
+    "gold_timestamp": "00:05:33-00:05:58",
+    "seed_question": "One thing I took away from what you just shared is that you are given these two teams to lead, which aren't necessarily connected, but I think it tells me that you're doing a great job at HubSpot and I'm going to try to pierce through your modesty and I'm curious, what is it that you think you've done really well or been successful at that got the leaders at HubSpot to decide to give you this other team that feels like an incredibly important initiative in this time of AI?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Christopher Miller, how do they answer: \"One thing I took away from what you just shared is that you are given these two teams to lead, which aren't necessarily connected, but I think it tells me that you're doing a great job at HubSpot and I'm going to try to pierce through your modesty and I'm curious, what is it that you think you've done really well or been successful at that got the leaders at HubSpot to decide to give you this other team that feels like an incredibly important initiative in this time of AI?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-061-claire-butler",
+    "guest": "Claire Butler",
+    "episode_id": "claire-butler",
+    "title": "An inside look at Figma’s unique GTM motion | Claire Butler (first GTM hire)",
+    "topics": [
+      "community building",
+      "product led growth"
+    ],
+    "gold_evidence_ids": [
+      "claire-butler:433:17e83d0c64554378"
+    ],
+    "gold_timestamp": "00:07:13-00:07:50",
+    "seed_question": "Who could like it better now that everyone loves Figma and that's just what it is? Do you think Figma would've been as successful with that name, looking back?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Claire Butler, how do they answer: \"Who could like it better now that everyone loves Figma and that's just what it is? Do you think Figma would've been as successful with that name, looking back?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-062-claire-hughes-johnson",
+    "guest": "Claire Hughes Johnson",
+    "episode_id": "claire-hughes-johnson",
+    "title": "Lessons from scaling Stripe | Claire Hughes Johnson (ex-COO of Stripe)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "claire-hughes-johnson:361:be6affb793274805"
+    ],
+    "gold_timestamp": "00:06:01-00:06:20",
+    "seed_question": "I want to talk about John and Patrick a little bit. But before that, something I wanted to ask is I find that when I write stuff, I am able to better understand and crystallize my own thinking. And I'm curious, having written this book, what is it that you were able to better understand and crystallize in your own thinking through that process?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Claire Hughes Johnson, how do they answer: \"I want to talk about John and Patrick a little bit. But before that, something I wanted to ask is I find that when I write stuff, I am able to better understand and crystallize my own thinking. And I'm curious, having written this book, what is it that you were able to better understand and crystallize in your own thinking through that process?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-063-claire-vo",
+    "guest": "Claire Vo",
+    "episode_id": "claire-vo",
+    "title": "Bending the universe in your favor | Claire Vo (LaunchDarkly, Color, Optimizely, ChatPRD)",
+    "topics": [
+      "ai",
+      "career development",
+      "entrepreneurship"
+    ],
+    "gold_evidence_ids": [
+      "claire-vo:322:159309dcec3137c7"
+    ],
+    "gold_timestamp": "00:05:22-00:06:20",
+    "seed_question": "Here's my question. If you had to boil down what you think your secret sauce has been to progressing so far and so quickly throughout your PM career, what might that be?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Claire Vo, how do they answer: \"Here's my question. If you had to boil down what you think your secret sauce has been to progressing so far and so quickly throughout your PM career, what might that be?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-064-crystal-w",
+    "guest": "Crystal W",
+    "episode_id": "crystal-w",
+    "title": "How to scrappily hire for, measure, and unlock growth | Crystal Widjaja, Gojek and Kumu",
+    "topics": [
+      "analytics",
+      "career development",
+      "entrepreneurship"
+    ],
+    "gold_evidence_ids": [
+      "crystal-w:2090:a6440db9dd6e4743"
+    ],
+    "gold_timestamp": "00:34:50-00:35:57",
+    "seed_question": "Got it. Okay. So it's see what's working, find the constraints. And then step two is basically what can you do to the product to optimize the funnel/loop to make it go even faster?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Crystal W, how do they answer: \"Got it. Okay. So it's see what's working, find the constraints. And then step two is basically what can you do to the product to optimize the funnel/loop to make it go even faster?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-065-dalton-caldwell",
+    "guest": "Dalton Caldwell",
+    "episode_id": "dalton-caldwell",
+    "title": "Lessons from 1,000+ YC startups: Resilience, tar pit ideas, pivoting, more | Dalton Caldwell (YC)",
+    "topics": [
+      "product market fit"
+    ],
+    "gold_evidence_ids": [
+      "dalton-caldwell:424:a86541f5969fdbc3"
+    ],
+    "gold_timestamp": "00:07:04-00:08:26",
+    "seed_question": "I know that you'd give a talk that's exactly called that, How Not To Die. Just to pull on this thread a little bit more, what is the general advice you share there for people that also don't want to die?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dalton Caldwell, how do they answer: \"I know that you'd give a talk that's exactly called that, How Not To Die. Just to pull on this thread a little bit more, what is the general advice you share there for people that also don't want to die?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-066-dan-hockenmaier",
+    "guest": "Dan Hockenmaier",
+    "episode_id": "dan-hockenmaier",
+    "title": "Developing a growth model + marketplace growth strategy | Dan Hockenmaier",
+    "topics": [
+      "analytics",
+      "entrepreneurship",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "dan-hockenmaier:143:7bf0cdccb4a929d4"
+    ],
+    "gold_timestamp": "00:02:23-00:04:01",
+    "seed_question": "Supporting growth and learning has always been Amplitude's core focus, right?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dan Hockenmaier, how do they answer: \"Supporting growth and learning has always been Amplitude's core focus, right?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-067-dan-shipper",
+    "guest": "Dan Shipper",
+    "episode_id": "dan-shipper",
+    "title": "The AI-native startup: 5 products, 7-figure revenue, 100% AI-written code. | Dan Shipper (Every)",
+    "topics": [
+      "entrepreneurship"
+    ],
+    "gold_evidence_ids": [
+      "dan-shipper:418:cf680087d0c4fa63"
+    ],
+    "gold_timestamp": "00:06:58-00:08:18",
+    "seed_question": "I like optimistic takes about AI, so this is great. And to your point, TBD if this is good for other countries, but good for the US. What else? What else you got? What other hot takes?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dan Shipper, how do they answer: \"I like optimistic takes about AI, so this is great. And to your point, TBD if this is good for other countries, but good for the US. What else? What else you got? What other hot takes?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-068-daniel-lereya",
+    "guest": "Daniel Lereya",
+    "episode_id": "daniel-lereya",
+    "title": "Daniel Lereya",
+    "topics": [],
+    "gold_evidence_ids": [
+      "daniel-lereya:640:8c634d4a74215457"
+    ],
+    "gold_timestamp": "00:10:40-00:11:23",
+    "seed_question": "There's so much here. And, I have so many threads I want to follow on. One is just, there's this metaphor of the four-minute mile, where no one thought it was possible, and then someone did it, and then everyone started beating that record. So I like that this is highlighting, there's just so much power in seeing somebody else accomplish something you thought was impossible, and that unlocks the way you think. And, I love that you saw it as a gift. A lot of companies do this, they're in this place and they're like, \"No way.\" It's like when the iPhone launch like, \"No one needs that. There's no keyboard.\" And a lot of people deny that it's a thing they should be paying attention to. I love that you saw it as like, \"Okay, we need to move. Things have changed. We're not doing things. We're not going to be competitive long-term.\"",
+    "turns": [
+      {
+        "prompt": "In the conversation with Daniel Lereya, how do they answer: \"There's so much here. And, I have so many threads I want to follow on. One is just, there's this metaphor of the four-minute mile, where no one thought it was possible, and then someone did it, and then everyone started beating that record. So I like that this is highlighting, there's just so much power in seeing somebody else accomplish something you thought was impossible, and that unlocks the way you think. And, I love that you saw it as a gift. A lot of companies do this, they're in this place and they're like, \"No way.\" It's like when the iPhone launch like, \"No one needs that. There's no keyboard.\" And a lot of people deny that it's a thing they should be paying attention to. I love that you saw it as like, \"Okay, we need to move. Things have changed. We're not doing things. We're not going to be competitive long-term.\"?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-069-david-placek",
+    "guest": "David Placek",
+    "episode_id": "david-placek",
+    "title": "Building a culture of excellence | David Singleton (CTO of Stripe)",
+    "topics": [
+      "business strategy",
+      "decision making",
+      "entrepreneurship"
+    ],
+    "gold_evidence_ids": [
+      "david-placek:567:daaf48b834e8d02b"
+    ],
+    "gold_timestamp": "00:09:27-00:10:54",
+    "seed_question": "Wow. There's so much here already. So this idea of you're not going to know it when you see it is something that people come in with thinking like, \"Once I see it, it'll be obvious.\" Just why is that almost never the case? Is it because the name has to be something that is uncomfortable?",
+    "turns": [
+      {
+        "prompt": "In the conversation with David Placek, how do they answer: \"Wow. There's so much here already. So this idea of you're not going to know it when you see it is something that people come in with thinking like, \"Once I see it, it'll be obvious.\" Just why is that almost never the case? Is it because the name has to be something that is uncomfortable?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-070-david-singleton",
+    "guest": "David Singleton",
+    "episode_id": "david-singleton",
+    "title": "Building a culture of excellence | David Singleton (CTO of Stripe)",
+    "topics": [
+      "product development",
+      "stripe"
+    ],
+    "gold_evidence_ids": [
+      "david-singleton:305:7bbbbb27b9b02fe7"
+    ],
+    "gold_timestamp": "00:05:05-00:05:44",
+    "seed_question": "So as I was preparing for this conversation, I kind of realized that the Stripe alumni are just killing it on this podcast, both in terms of the number of people that have come from Stripe and also just in terms of the quality and the popularity of some of the episodes. So folks like Claire Hughes Johnson, and Shreyas Doshi and Eeke. And my first question essentially, what is it that you all do that allows you to attract hire, close, keep people of that caliber? And I'm not going to accept just we keep a high bar or we just spend a lot of time on hiring. I'm curious just like what is it that you all do that other companies don't do that's maybe unique to the way Stripe finds and hires?",
+    "turns": [
+      {
+        "prompt": "In the conversation with David Singleton, how do they answer: \"So as I was preparing for this conversation, I kind of realized that the Stripe alumni are just killing it on this podcast, both in terms of the number of people that have come from Stripe and also just in terms of the quality and the popularity of some of the episodes. So folks like Claire Hughes Johnson, and Shreyas Doshi and Eeke. And my first question essentially, what is it that you all do that allows you to attract hire, close, keep people of that caliber? And I'm not going to accept just we keep a high bar or we just spend a lot of time on hiring. I'm curious just like what is it that you all do that other companies don't do that's maybe unique to the way Stripe finds and hires?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-071-deb-liu",
+    "guest": "Deb Liu",
+    "episode_id": "deb-liu",
+    "title": "Succeeding as an introvert, building zero-to-one, and PM’ing your career like a product | Deb Liu",
+    "topics": [
+      "career development",
+      "facebook",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "deb-liu:586:f98b13ebe3dbf15a"
+    ],
+    "gold_timestamp": "00:09:46-00:11:00",
+    "seed_question": "So one takeaway might be from this, the phrase, fake it till you make it. Any thoughts on just how to... I imagine many people right now are like, \"Oh, I'm trying to get a job as a pm. How do I do this? That sounds great. I'm going to pass this interview, figure out the job after I joined.\"",
+    "turns": [
+      {
+        "prompt": "In the conversation with Deb Liu, how do they answer: \"So one takeaway might be from this, the phrase, fake it till you make it. Any thoughts on just how to... I imagine many people right now are like, \"Oh, I'm trying to get a job as a pm. How do I do this? That sounds great. I'm going to pass this interview, figure out the job after I joined.\"?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-072-dhanji-r-prasanna",
+    "guest": "Dhanji R. Prasanna",
+    "episode_id": "dhanji-r-prasanna",
+    "title": "How Block is becoming the most AI-native enterprise in the world | Dhanji R. Prasanna",
+    "topics": [
+      "ai"
+    ],
+    "gold_evidence_ids": [
+      "dhanji-r-prasanna:415:4e456333ab257975"
+    ],
+    "gold_timestamp": "00:06:55-00:07:00",
+    "seed_question": "Let me just say it's important to note you were not CTO at this point. You were just a senior engineer kind of person?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dhanji R. Prasanna, how do they answer: \"Let me just say it's important to note you were not CTO at this point. You were just a senior engineer kind of person?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-073-dharmesh-shah",
+    "guest": "Dharmesh Shah",
+    "episode_id": "dharmesh-shah",
+    "title": "Zigging vs. zagging: How HubSpot built a $30B company | Dharmesh Shah (co-founder/CTO)",
+    "topics": [
+      "ai",
+      "company culture",
+      "product development"
+    ],
+    "gold_evidence_ids": [
+      "dharmesh-shah:391:406df531e4f805cb"
+    ],
+    "gold_timestamp": "00:06:31-00:07:33",
+    "seed_question": "Okay. Final fact. So Kipp, is that how you pronounce his name? Kipp, your CMO?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dharmesh Shah, how do they answer: \"Okay. Final fact. So Kipp, is that how you pronounce his name? Kipp, your CMO?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-074-dmitry-zlokazov",
+    "guest": "Dmitry Zlokazov",
+    "episode_id": "dmitry-zlokazov",
+    "title": "How Revolut trains world-class PMs: The “Local CEO” model, raw intellect & building wow products",
+    "topics": [
+      "product management",
+      "user experience"
+    ],
+    "gold_evidence_ids": [
+      "dmitry-zlokazov:387:90610afd7f05518d"
+    ],
+    "gold_timestamp": "00:06:27-00:07:28",
+    "seed_question": "Awesome. And then just to give people a few kind of scale of the company, how many employees are there roughly? I think the last valuation something around 60 billion. I don't know if you can even comment on that, but just what are some numbers real quick for people to understand the scale of the company at this point?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dmitry Zlokazov, how do they answer: \"Awesome. And then just to give people a few kind of scale of the company, how many employees are there roughly? I think the last valuation something around 60 billion. I don't know if you can even comment on that, but just what are some numbers real quick for people to understand the scale of the company at this point?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-075-donna-lichaw",
+    "guest": "Donna Lichaw",
+    "episode_id": "donna-lichaw",
+    "title": "How to discover your superpowers, own your story, and unlock personal growth | Donna Lichaw",
+    "topics": [
+      "career development",
+      "executive coaching"
+    ],
+    "gold_evidence_ids": [
+      "donna-lichaw:519:c73f0d6fd86e48f1"
+    ],
+    "gold_timestamp": "00:08:39-00:09:21",
+    "seed_question": "Along those same lines, what's interesting is you actually found that this idea of storytelling was actually much more effective in your coaching practice. Instead of helping them figure out the story of the product, it's the story of the person. And so transitioning into the meat of your approach to coaching, I think you call it story-driven leadership. Essentially, your finding is that story and the person's story is extremely important and powerful in helping them level up as a leader and also seeing them as the hero of their story. I guess just with that foundation, can you just talk about why that is so powerful, the idea of figuring out your own story and why you need to be the hero of your own story and just what all this means?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Donna Lichaw, how do they answer: \"Along those same lines, what's interesting is you actually found that this idea of storytelling was actually much more effective in your coaching practice. Instead of helping them figure out the story of the product, it's the story of the person. And so transitioning into the meat of your approach to coaching, I think you call it story-driven leadership. Essentially, your finding is that story and the person's story is extremely important and powerful in helping them level up as a leader and also seeing them as the hero of their story. I guess just with that foundation, can you just talk about why that is so powerful, the idea of figuring out your own story and why you need to be the hero of your own story and just what all this means?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-076-dr-fei-fei-li",
+    "guest": "Dr. Fei Fei Li",
+    "episode_id": "dr-fei-fei-li",
+    "title": "The Godmother of AI on jobs, robots & why world models are next | Dr. Fei-Fei Li",
+    "topics": [],
+    "gold_evidence_ids": [
+      "dr-fei-fei-li:503:20d3965e71591084"
+    ],
+    "gold_timestamp": "00:08:23-00:09:51",
+    "seed_question": "Coming back to the point you just made about how it's kind of up to us about where this all goes, what is it you think we need to get right? How do we set things on a path? I know this is a very difficult question to answer, but just what's your advice? What do you think we should be keeping in mind?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dr. Fei Fei Li, how do they answer: \"Coming back to the point you just made about how it's kind of up to us about where this all goes, what is it you think we need to get right? How do we set things on a path? I know this is a very difficult question to answer, but just what's your advice? What do you think we should be keeping in mind?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-077-drew-houston",
+    "guest": "Drew Houston",
+    "episode_id": "drew-houston",
+    "title": "Behind the founder | Drew Houston (Dropbox)",
+    "topics": [
+      "founder mode",
+      "google",
+      "microsoft"
+    ],
+    "gold_evidence_ids": [
+      "drew-houston:466:1d9d5b7225409519"
+    ],
+    "gold_timestamp": "00:07:46-00:08:56",
+    "seed_question": "This was you trying to figure out how to get Paul Graham's attention?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Drew Houston, how do they answer: \"This was you trying to figure out how to get Paul Graham's attention?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-078-dylan-field",
+    "guest": "Dylan Field",
+    "episode_id": "dylan-field",
+    "title": "Figma’s CEO: Why AI makes design, craft, and quality the new moat for startups | Dylan Field",
+    "topics": [
+      "ai",
+      "product development",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "dylan-field:542:69ba0c0a180eac9a"
+    ],
+    "gold_timestamp": "00:09:02-00:09:29",
+    "seed_question": "I've got follow up questions. Can you control where the raccoon take you or are they just deciding on their own what's happening?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dylan Field, how do they answer: \"I've got follow up questions. Can you control where the raccoon take you or are they just deciding on their own what's happening?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-079-dylan-field-20",
+    "guest": "Dylan Field 2.0",
+    "episode_id": "dylan-field-20",
+    "title": "Dylan Field live at Figma's Config: Intuition, simplicity, and the future of design",
+    "topics": [],
+    "gold_evidence_ids": [
+      "dylan-field-20:23:669ba36a0c00a631"
+    ],
+    "gold_timestamp": "00:00:23-00:00:51",
+    "seed_question": "Is there a counterintuitive decision you made along the journey of Figma?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Dylan Field 2.0, how do they answer: \"Is there a counterintuitive decision you made along the journey of Figma?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-080-ebi-atawodi",
+    "guest": "Ebi Atawodi",
+    "episode_id": "ebi-atawodi",
+    "title": "Crafting a compelling product vision | Ebi Atawodi (YouTube, Netflix, Uber)",
+    "topics": [
+      "google",
+      "leadership",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "ebi-atawodi:466:e612a295ee191aac"
+    ],
+    "gold_timestamp": "00:07:46-00:08:20",
+    "seed_question": "Can you just summarize them again and are some examples you can share if here's a really good vision that it hits on these, and then if you have another example of a bad vision, that would be really helpful?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ebi Atawodi, how do they answer: \"Can you just summarize them again and are some examples you can share if here's a really good vision that it hits on these, and then if you have another example of a bad vision, that would be really helpful?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-081-edwin-chen",
+    "guest": "Edwin Chen",
+    "episode_id": "edwin-chen",
+    "title": "The $1B Al company training ChatGPT, Claude & Gemini on the path to responsible AGI | Edwin Chen",
+    "topics": [
+      "openai",
+      "venture capital"
+    ],
+    "gold_evidence_ids": [
+      "edwin-chen:2072:d1ac9079d69174d7"
+    ],
+    "gold_timestamp": "00:34:32-00:35:29",
+    "seed_question": "This connects to reinforcement learning. This is something that you're big on and something I'm hearing more and more is just becoming a big deal in the world of post-training. Can you just help people understand what is reinforcement learning and reinforcement learning environments, and why they're going to be more and more important in the future?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Edwin Chen, how do they answer: \"This connects to reinforcement learning. This is something that you're big on and something I'm hearing more and more is just becoming a big deal in the world of post-training. Can you just help people understand what is reinforcement learning and reinforcement learning environments, and why they're going to be more and more important in the future?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-082-eeke-de-milliano",
+    "guest": "Eeke de Milliano",
+    "episode_id": "eeke-de-milliano",
+    "title": "How to foster innovation and big thinking | Eeke de Milliano (Retool, Stripe)",
+    "topics": [
+      "company culture",
+      "innovation",
+      "organizational design"
+    ],
+    "gold_evidence_ids": [
+      "eeke-de-milliano:537:390b21e750a929a7"
+    ],
+    "gold_timestamp": "00:08:57-00:09:57",
+    "seed_question": "One thing, that I want to dig in on... So you said when you joined, there were no PMs at Stripe. How many PMs were there when you moved into product at Stripe?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Eeke de Milliano, how do they answer: \"One thing, that I want to dig in on... So you said when you joined, there were no PMs at Stripe. How many PMs were there when you moved into product at Stripe?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-083-elena-verna",
+    "guest": "Elena Verna",
+    "episode_id": "elena-verna",
+    "title": "10 growth tactics that never work | Elena Verna (Amplitude, Miro, Dropbox, SurveyMonkey)",
+    "topics": [
+      "ab testing"
+    ],
+    "gold_evidence_ids": [
+      "elena-verna:744:7a377276918ba8d9"
+    ],
+    "gold_timestamp": "00:12:24-00:13:23",
+    "seed_question": "As you talk about this, sales is a part of what you described here, like hiring your first sales person. And I guess how do you think about your first head of growth versus salesperson? Is there anything advice there is? Like for B2B SaaS, you probably don't hire head of growth for even longer, you hire sales first or what's your advice?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Elena Verna, how do they answer: \"As you talk about this, sales is a part of what you described here, like hiring your first sales person. And I guess how do you think about your first head of growth versus salesperson? Is there anything advice there is? Like for B2B SaaS, you probably don't hire head of growth for even longer, you hire sales first or what's your advice?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-084-elena-verna-20",
+    "guest": "Elena Verna 2.0",
+    "episode_id": "elena-verna-20",
+    "title": "The ultimate guide to product-led sales | Elena Verna",
+    "topics": [],
+    "gold_evidence_ids": [
+      "elena-verna-20:398:d57dcfda97858eb3"
+    ],
+    "gold_timestamp": "00:06:38-00:07:39",
+    "seed_question": "Ooh. If people are listening to this and they're like, \"How do I get to work with Elena?\", should people reach out to you? Are you booked up? What do you suggest?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Elena Verna 2.0, how do they answer: \"Ooh. If people are listening to this and they're like, \"How do I get to work with Elena?\", should people reach out to you? Are you booked up? What do you suggest?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-085-elena-verna-30",
+    "guest": "Elena Verna 3.0",
+    "episode_id": "elena-verna-30",
+    "title": "The ultimate guide to product-led sales | Elena Verna",
+    "topics": [],
+    "gold_evidence_ids": [
+      "elena-verna-30:744:9d33963432dee428"
+    ],
+    "gold_timestamp": "00:12:24-00:13:23",
+    "seed_question": "As you talk about this, sales is a part of what you described here, like hiring your first sales person. And I guess how do you think about your first head of growth versus salesperson? Is there anything advice there is? Like for B2B SaaS, you probably don't hire head of growth for even longer, you hire sales first or what's your advice?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Elena Verna 3.0, how do they answer: \"As you talk about this, sales is a part of what you described here, like hiring your first sales person. And I guess how do you think about your first head of growth versus salesperson? Is there anything advice there is? Like for B2B SaaS, you probably don't hire head of growth for even longer, you hire sales first or what's your advice?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-086-elena-verna-40",
+    "guest": "Elena Verna 4.0",
+    "episode_id": "elena-verna-40",
+    "title": "The new AI growth playbook for 2026 | How Lovable hit $200M ARR in one year",
+    "topics": [
+      "community building",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "elena-verna-40:536:af827d4c8c28b525"
+    ],
+    "gold_timestamp": "00:08:56-00:09:19",
+    "seed_question": "Cool. I'm going to get into that next. Last question, just I want to see what you can share here. A lot of people look at these numbers, a lot of people are very skeptical these are lasting, durable numbers. Like who are these people? How is there $200 million being spent on Lovable? Anything you can add about, just give people confidence, is this real, this is going to last, this is a really durable business.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Elena Verna 4.0, how do they answer: \"Cool. I'm going to get into that next. Last question, just I want to see what you can share here. A lot of people look at these numbers, a lot of people are very skeptical these are lasting, durable numbers. Like who are these people? How is there $200 million being spent on Lovable? Anything you can add about, just give people confidence, is this real, this is going to last, this is a really durable business.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-087-eli-schwartz",
+    "guest": "Eli Schwartz",
+    "episode_id": "eli-schwartz",
+    "title": "Rethinking SEO in the age of AI | Eli Schwartz (SEO advisor, author)",
+    "topics": [
+      "ai",
+      "entrepreneurship",
+      "growth strategy"
+    ],
+    "gold_evidence_ids": [
+      "eli-schwartz:694:3d18df5920fd79c2"
+    ],
+    "gold_timestamp": "00:11:34-00:12:46",
+    "seed_question": "To maybe help people understand why this may impact SEO, if it's not obvious, is it pushes results down. People get the answer right there. They don't have to click your links. And then there's also the sponsored links at the top of the page that already are pushing you down. So basically your stuff is harder and harder to find, right?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Eli Schwartz, how do they answer: \"To maybe help people understand why this may impact SEO, if it's not obvious, is it pushes results down. People get the answer right there. They don't have to click your links. And then there's also the sponsored links at the top of the page that already are pushing you down. So basically your stuff is harder and harder to find, right?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-088-elizabeth-stone",
+    "guest": "Elizabeth Stone",
+    "episode_id": "elizabeth-stone",
+    "title": "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)",
+    "topics": [
+      "company culture"
+    ],
+    "gold_evidence_ids": [
+      "elizabeth-stone:357:77a2ad018a4ef15c"
+    ],
+    "gold_timestamp": "00:05:57-00:06:41",
+    "seed_question": "Kind along the lines of what you just talked about being a CTO. Your background is actually unusual. You're a trained economist, you got a PhD in economics. And from what I can tell, you're the first CTO of Fortune 500 company that is an economist trained in economics. First of all, is that true? I don't know if I think that's true, but you tell me.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Elizabeth Stone, how do they answer: \"Kind along the lines of what you just talked about being a CTO. Your background is actually unusual. You're a trained economist, you got a PhD in economics. And from what I can tell, you're the first CTO of Fortune 500 company that is an economist trained in economics. First of all, is that true? I don't know if I think that's true, but you tell me.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-089-emilie-gerber",
+    "guest": "Emilie Gerber",
+    "episode_id": "emilie-gerber",
+    "title": "The ultimate guide to PR | Emilie Gerber (founder of Six Eastern)",
+    "topics": [
+      "entrepreneurship",
+      "marketing",
+      "product development"
+    ],
+    "gold_evidence_ids": [
+      "emilie-gerber:535:8177714951234f87"
+    ],
+    "gold_timestamp": "00:08:55-00:10:06",
+    "seed_question": "You did a great job just defaulting, \"Here's weird questions you could ask,\" and then, wow, what an answer. Okay, so on the B2B side, I think this is really interesting. When people are thinking about doing the calculus of, \"Is it worth investing and trying to get press for a B2B business?\" Related to what we were talking about offline. So when I got these stories in Fast company, I got a story in CNBC, I got a story in Entrepreneur Magazine, and I was telling you I've seen zero growth impact from all these stories. And you'd think like, \"Wow.\" I had a story in the magazine, Entrepreneur Magazine, print edition, and nothing comes from it as far as I can tell.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Emilie Gerber, how do they answer: \"You did a great job just defaulting, \"Here's weird questions you could ask,\" and then, wow, what an answer. Okay, so on the B2B side, I think this is really interesting. When people are thinking about doing the calculus of, \"Is it worth investing and trying to get press for a B2B business?\" Related to what we were talking about offline. So when I got these stories in Fast company, I got a story in CNBC, I got a story in Entrepreneur Magazine, and I was telling you I've seen zero growth impact from all these stories. And you'd think like, \"Wow.\" I had a story in the magazine, Entrepreneur Magazine, print edition, and nothing comes from it as far as I can tell.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-090-emily-kramer",
+    "guest": "Emily Kramer",
+    "episode_id": "emily-kramer",
+    "title": "How to build a powerful marketing machine | Emily Kramer (Asana, Carta, MKT1)",
+    "topics": [
+      "growth strategy",
+      "hiring",
+      "marketing"
+    ],
+    "gold_evidence_ids": [
+      "emily-kramer:369:050e03c846b9d52d"
+    ],
+    "gold_timestamp": "00:06:09-00:07:01",
+    "seed_question": "And the first area I wanted to dig into is hiring marketing people. To non-marketing people it's such a mystery of just like, what is a marketing person? What do I expect from them? How do I hire them? How do I find them? How do I interview them? What should I avoid? So my first question is just like what mistakes have you seen founders and teams make when they're thinking about marketing and hiring marketing people?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Emily Kramer, how do they answer: \"And the first area I wanted to dig into is hiring marketing people. To non-marketing people it's such a mystery of just like, what is a marketing person? What do I expect from them? How do I hire them? How do I find them? How do I interview them? What should I avoid? So my first question is just like what mistakes have you seen founders and teams make when they're thinking about marketing and hiring marketing people?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-091-eoghan-mccabe",
+    "guest": "Eoghan McCabe",
+    "episode_id": "eoghan-mccabe",
+    "title": "How Intercom rose from the ashes by betting everything on AI | Eoghan McCabe (founder and CEO)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "eoghan-mccabe:420:4f80ca843cb6ba94"
+    ],
+    "gold_timestamp": "00:07:00-00:08:06",
+    "seed_question": "Okay. This sounds like the dream for a lot of founders, especially ones that are stuck with their existing business that isn't going very far. So, let's get to that. Let's talk about the beginning of this journey. You had a business that was working, people used it, loved it, over 100 million ARR I believe. Talk about just the state of the business at the point roughly when you decided I really need to make a big change and go AI first.",
+    "turns": [
+      {
+        "prompt": "In the conversation with Eoghan McCabe, how do they answer: \"Okay. This sounds like the dream for a lot of founders, especially ones that are stuck with their existing business that isn't going very far. So, let's get to that. Let's talk about the beginning of this journey. You had a business that was working, people used it, loved it, over 100 million ARR I believe. Talk about just the state of the business at the point roughly when you decided I really need to make a big change and go AI first.?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-092-eoy-review",
+    "guest": "Various (Year-End Review)",
+    "episode_id": "eoy-review",
+    "title": "Countdown of the top 10 episodes of the year",
+    "topics": [
+      "career growth",
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "eoy-review:452:491d34bd76d5d958"
+    ],
+    "gold_timestamp": "00:07:32-00:08:27",
+    "seed_question": "I want to shift a little bit to post that you wrote that maybe he's winning more popular posts, you wrote on the Reforge blog called, Why Most Analytics Efforts Fail. I'd love to hear your broad overview of why do most analytics efforts fail and then how do teams avoid this, maybe what are two to three things they can do?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Various (Year-End Review), how do they answer: \"I want to shift a little bit to post that you wrote that maybe he's winning more popular posts, you wrote on the Reforge blog called, Why Most Analytics Efforts Fail. I'd love to hear your broad overview of why do most analytics efforts fail and then how do teams avoid this, maybe what are two to three things they can do?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-093-eric-ries",
+    "guest": "Eric Ries",
+    "episode_id": "eric-ries",
+    "title": "Reflections on a movement | Eric Ries (creator of the Lean Startup methodology)",
+    "topics": [
+      "company culture",
+      "entrepreneurship",
+      "experimentation"
+    ],
+    "gold_evidence_ids": [
+      "eric-ries:383:6cc4d7e8b20237e7"
+    ],
+    "gold_timestamp": "00:06:23-00:07:13",
+    "seed_question": "Amazing, so I'm going to want to talk about all those things as we get into this. Something I wanted to mention is I feel like people don't give you enough credit for how many core concepts of startups and product building you've either invented or popularized. So what I know, obviously Lean methodology, then there's the term MVP, then there's the term pivot, and then also I think A/B testing, customer development, continuous deployment, vanity metrics as a term, I'm guessing there's many more, and then the Long-Term Stock Exchange. And I think the theme I get from this is there's a lot of first principles thinking that you've done, and so just a couple of questions here. One is, did you think you'd have this much impact on startup culture and language? And then just, where do you think this comes from, this first principles thinking that you seem to be really good at?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Eric Ries, how do they answer: \"Amazing, so I'm going to want to talk about all those things as we get into this. Something I wanted to mention is I feel like people don't give you enough credit for how many core concepts of startups and product building you've either invented or popularized. So what I know, obviously Lean methodology, then there's the term MVP, then there's the term pivot, and then also I think A/B testing, customer development, continuous deployment, vanity metrics as a term, I'm guessing there's many more, and then the Long-Term Stock Exchange. And I think the theme I get from this is there's a lot of first principles thinking that you've done, and so just a couple of questions here. One is, did you think you'd have this much impact on startup culture and language? And then just, where do you think this comes from, this first principles thinking that you seem to be really good at?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-094-eric-simons",
+    "guest": "Eric Simons",
+    "episode_id": "eric-simons",
+    "title": "Inside Bolt: From near-death to one of the fastest-growing products in history | Eric Simons",
+    "topics": [
+      "product management",
+      "startup growth",
+      "venture capital"
+    ],
+    "gold_evidence_ids": [
+      "eric-simons:494:6896924943bc0ace"
+    ],
+    "gold_timestamp": "00:08:14-00:09:19",
+    "seed_question": "Mind-boggling is an excellent way to describe what you just shared. A million monthly active users, you're at 40 million annual recurring revenue, five months into the business. Is that right?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Eric Simons, how do they answer: \"Mind-boggling is an excellent way to describe what you just shared. A million monthly active users, you're at 40 million annual recurring revenue, five months into the business. Is that right?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-095-ethan-evans",
+    "guest": "Ethan Evans",
+    "episode_id": "ethan-evans",
+    "title": "Taking control of your career | Ethan Evans (Amazon)",
+    "topics": [
+      "product management"
+    ],
+    "gold_evidence_ids": [
+      "ethan-evans:330:7898b43ffed5d7aa"
+    ],
+    "gold_timestamp": "00:05:30-00:06:31",
+    "seed_question": "Okay. So for people that haven't read this post, or maybe for folks that have and maybe could use a refresher, let's spend a little time here. Could you just briefly describe this idea of The Magic Loop that you wrote about?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ethan Evans, how do they answer: \"Okay. So for people that haven't read this post, or maybe for folks that have and maybe could use a refresher, let's spend a little time here. Could you just briefly describe this idea of The Magic Loop that you wrote about?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  },
+  {
+    "id": "v01-096-ethan-evans-20",
+    "guest": "Ethan Evans 2.0",
+    "episode_id": "ethan-evans-20",
+    "title": "Taking control of your career | Ethan Evans (Amazon)",
+    "topics": [],
+    "gold_evidence_ids": [
+      "ethan-evans-20:330:75271e1f427530aa"
+    ],
+    "gold_timestamp": "00:05:30-00:06:31",
+    "seed_question": "Okay. So for people that haven't read this post, or maybe for folks that have and maybe could use a refresher, let's spend a little time here. Could you just briefly describe this idea of The Magic Loop that you wrote about?",
+    "turns": [
+      {
+        "prompt": "In the conversation with Ethan Evans 2.0, how do they answer: \"Okay. So for people that haven't read this post, or maybe for folks that have and maybe could use a refresher, let's spend a little time here. Could you just briefly describe this idea of The Magic Loop that you wrote about?\"",
+        "expected_route": "guest",
+        "requires_context": false
+      },
+      {
+        "prompt": "What concrete example do they use to make that point?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "What caveat or qualification should I preserve?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Turn that into one practical lesson, but do not generalize beyond what they said.",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Which exact transcript passage supports that summary?",
+        "expected_route": "guest",
+        "requires_context": true
+      },
+      {
+        "prompt": "Give me a two-sentence final recap with the guest and source still explicit.",
+        "expected_route": "guest",
+        "requires_context": true
+      }
+    ],
+    "review_status": "generated_from_transcript_structure"
+  }
+]
