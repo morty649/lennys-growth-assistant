@@ -1,0 +1,64 @@
+services:
+  - type: web
+    name: lennys-growth-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./deploy/cloud/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health/live
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEPLOYMENT_MODE
+        value: cloud
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: AGENT_HOST
+        value: 127.0.0.1
+      - key: AGENT_PORT
+        value: 8787
+      - key: AGENT_URL
+        value: http://127.0.0.1:8787
+      - key: API_INTERNAL_URL
+        value: http://127.0.0.1:8000
+      - key: CORPUS_ROOT
+        value: /app/corpus
+      - key: VECTOR_BACKEND
+        value: pgvector
+      - key: EMBEDDING_BACKEND
+        value: supabase
+      - key: SUPABASE_EMBED_FUNCTION
+        value: embed
+      - key: AUTO_INGEST
+        value: "true"
+      - key: AUTH_MODE
+        value: anonymous
+      - key: CHAT_RATE_LIMIT
+        value: "20"
+      - key: CHAT_RATE_WINDOW_SECONDS
+        value: "3600"
+      - key: DEFAULT_PROVIDER
+        value: groq
+      - key: ENABLE_GROQ
+        value: "true"
+      - key: GROQ_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: REQUEST_TIMEOUT_SECONDS
+        value: "180"
+      - key: INTERNAL_TOOL_TOKEN
+        generateValue: true
+      - key: ANONYMOUS_TOKEN_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: WEB_ORIGIN
+        sync: false

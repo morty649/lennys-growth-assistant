@@ -1,4 +1,6 @@
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, Header
+
+from app.dependencies import verify_internal
 
 from app.indexing import corpus_manifest, ingestion_state, run_ingestion
 from app.schemas import IngestStatus
@@ -17,7 +19,13 @@ def ingest_manifest():
 
 
 @router.post("/api/ingest", response_model=IngestStatus, status_code=202)
-def ingest(background_tasks: BackgroundTasks, force: bool = False, limit: int | None = None):
+def ingest(
+    background_tasks: BackgroundTasks,
+    force: bool = False,
+    limit: int | None = None,
+    x_internal_token: str | None = Header(default=None),
+):
+    verify_internal(x_internal_token)
     if ingestion_state.snapshot()["state"] == "running":
         return ingestion_state.snapshot()
     background_tasks.add_task(run_ingestion, limit, force)

@@ -21,12 +21,18 @@ export function modelFor(provider: Provider, requestedModel?: string, detailedOu
   }
   if (provider === "groq") {
     return {
-      id: requestedModel || process.env.GROQ_MODEL || "qwen/qwen3.6-27b",
-      name: "Qwen 3.6 27B on Groq", api: "openai-completions", provider: "groq",
+      id: requestedModel || process.env.GROQ_MODEL || "openai/gpt-oss-120b",
+      name: "GPT-OSS 120B on Groq", api: "openai-completions", provider: "groq",
       baseUrl: process.env.GROQ_BASE_URL ?? "https://api.groq.com/openai/v1", reasoning: true,
       input: ["text"], cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
-      contextWindow: 131_072, maxTokens: 1_024,
-      compat: { supportsDeveloperRole: false, supportsReasoningEffort: false, maxTokensField: "max_tokens", thinkingFormat: "qwen" },
+      contextWindow: 131_072, maxTokens: detailedOutput ? 3_200 : 1_024,
+      compat: {
+        supportsDeveloperRole: true,
+        supportsReasoningEffort: true,
+        maxTokensField: "max_completion_tokens",
+        thinkingFormat: "openai",
+        supportsStrictMode: false,
+      },
     };
   }
   return {

@@ -13,8 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: "Lenny's Growth Assistant",
   description: "Evidence-grounded product and growth intelligence from Lenny's Podcast.",
+  openGraph: {
+    title: "Lenny's Growth Assistant",
+    description: 'Grounded product and growth intelligence',
+    images: ['/og.png'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Lenny's Growth Assistant",
+    description: 'Grounded product and growth intelligence',
+    images: ['/og.png'],
+  },
 };
 
 export default function RootLayout({

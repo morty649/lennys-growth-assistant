@@ -6,16 +6,18 @@ from uuid import UUID
 
 from pydantic import BaseModel, Field
 
+Provider = Literal["ollama", "anthropic", "groq"]
+
 
 class SessionCreate(BaseModel):
     title: str = Field(default="New investigation", min_length=1, max_length=120)
-    provider: Literal["ollama", "anthropic"] = "ollama"
+    provider: Provider | None = None
     model: str | None = None
 
 
 class SessionUpdate(BaseModel):
     title: str | None = Field(default=None, min_length=1, max_length=120)
-    provider: Literal["ollama", "anthropic"] | None = None
+    provider: Provider | None = None
     model: str | None = None
 
 
@@ -43,7 +45,7 @@ class MessageView(BaseModel):
 class ChatRequest(BaseModel):
     session_id: UUID
     message: str = Field(min_length=1, max_length=12_000)
-    provider: Literal["ollama", "anthropic"] | None = None
+    provider: Provider | None = None
     model: str | None = None
 
 
@@ -132,3 +134,8 @@ class IngestStatus(BaseModel):
     episodes_processed: int = 0
     evidence_units: int = 0
     error: str | None = None
+
+
+class ClientTokenView(BaseModel):
+    token: str
+    expires_at: datetime | None = None

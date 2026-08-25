@@ -85,7 +85,7 @@ export default function Home() {
           setMessages(nextMessages); setArtifacts(nextArtifacts);
         } else await createSession();
       } catch (cause) {
-        setError(cause instanceof Error ? cause.message : 'Could not reach the local API');
+        setError(cause instanceof Error ? cause.message : 'Could not reach the assistant API');
       }
     })();
   }, [createSession]);
@@ -132,7 +132,7 @@ export default function Home() {
       setSessions(await listSessions());
     } catch (cause) {
       if (activeIdRef.current === originSessionId) {
-        setError(cause instanceof Error ? cause.message : 'The local agent did not answer');
+        setError(cause instanceof Error ? cause.message : 'The agent did not answer');
       }
     } finally { setBusySessionId(null); }
   }
@@ -197,7 +197,7 @@ export default function Home() {
               return <article className={`message ${message.role}`} key={message.id}><div className="message-label">{message.role === 'user' ? 'YOU' : 'L/G_ AGENT'}{message.metadata?.execution_mode ? ` · ${message.metadata.execution_mode.replace('_', ' ')}` : ''}</div><RichText sources={messageSources} onCitation={() => openSources(message)}>{message.content}</RichText>{message.role === 'assistant' && !message.id.startsWith('local-') && <>{showAnswerMeta && <div className="answer-meta">{message.metadata?.actual_model && <span>{message.metadata.actual_model}</span>}{message.metadata?.grounding_state && message.metadata.grounding_state !== 'not_applicable' && <span>{message.metadata.grounding_state}</span>}{message.metadata?.latency_ms ? <span>{(message.metadata.latency_ms / 1000).toFixed(1)}s</span> : null}</div>}{(messageSources.length > 0 || message.metadata?.artifact_available) && <div className="message-actions">{messageSources.length > 0 && <button onClick={() => openSources(message)} type="button">{messageSources.length} {messageSources.length === 1 ? 'source' : 'sources'} ↗</button>}{message.metadata?.artifact_available && <button onClick={() => void createArtifact(message)} type="button">create artifact</button>}</div>}{messageArtifacts.length > 0 && <div className="inline-artifacts">{messageArtifacts.map((artifact) => <button onClick={() => openArtifact(artifact)} type="button" key={artifact.id}><span>{artifact.format}</span><strong>{artifact.title}</strong><small>open workspace ↗</small></button>)}</div>}</>}</article>;
             })}
             {busySessionId === activeId && <article className="message assistant thinking"><div className="message-label">L/G_ AGENT · RESPONDING</div><div className="thinking-line"><span /><span /><span /></div></article>}
-            {error && <div className="error-banner"><strong>LOCAL SERVICE ERROR</strong><span>{error}</span><button onClick={() => setError('')} type="button">dismiss</button></div>}
+            {error && <div className="error-banner"><strong>SERVICE ERROR</strong><span>{error}</span><button onClick={() => setError('')} type="button">dismiss</button></div>}
             <div ref={bottomRef} />
           </div>
         </div>

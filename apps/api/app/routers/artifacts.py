@@ -4,7 +4,9 @@ import re
 from typing import Any
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+
+from app.client_auth import current_user_id
 
 from app.artifacts import render_artifact
 from app.database import (
@@ -29,14 +31,16 @@ def source_get(source_id: str):
 
 
 @router.get("/api/sessions/{session_id}/artifacts", response_model=list[ArtifactView])
-def artifacts_list(session_id: UUID):
-    require_session(session_id)
+def artifacts_list(session_id: UUID, user_id: UUID = Depends(current_user_id)):
+    require_session(session_id, user_id)
     return list_artifacts(session_id)
 
 
 @router.post("/api/sessions/{session_id}/artifacts", response_model=ArtifactView, status_code=201)
-def artifacts_create(session_id: UUID, payload: ArtifactCreate):
-    require_session(session_id)
+def artifacts_create(
+    session_id: UUID, payload: ArtifactCreate, user_id: UUID = Depends(current_user_id)
+):
+    require_session(session_id, user_id)
     source_content, source_message_id, source_evidence, ship30_requested = _artifact_source(
         session_id, payload
     )

@@ -1,6 +1,6 @@
 # Lenny's Growth Assistant v0.2
 
-A conversational research agent over Lenny's Podcast transcripts. FastAPI owns sessions, retrieval, citations, and artifacts; Pi owns the model/tool loop; local Qwen on Ollama is the default backend. Claude is an explicit optional backend through the same Pi harness. Groq is deferred and hidden.
+A conversational research agent over Lenny's Podcast transcripts. FastAPI owns sessions, retrieval, citations, and artifacts; Pi owns the model/tool loop. The local profile uses Qwen on Ollama. The cloud profile uses Groq GPT-OSS 120B, Supabase PostgreSQL, and pgvector through the same tools and grounding boundary.
 
 ## What is implemented
 
@@ -16,7 +16,7 @@ A conversational research agent over Lenny's Podcast transcripts. FastAPI owns s
 - Exact source-message artifact provenance, sanitized HTML, a sandboxed iframe, and a restrictive preview CSP.
 - A finishable release set of 10 distinct guests/episodes with exactly five real chat turns each, plus the separate 40-case retrieval regression.
 
-The required deployment is localhost. A public application URL and Supabase are not prerequisites for this submission.
+The localhost deployment remains the reproducible evaluator path. A separate cloud profile can publish the same product without changing the local Docker Compose topology.
 
 ## Repository and corpus
 
@@ -34,6 +34,19 @@ make up
 ```
 
 Open [http://localhost:3000](http://localhost:3000). All published application and data ports bind to `127.0.0.1`.
+
+## Cloud profile
+
+The cloud profile is intentionally additive:
+
+- The frontend deploys independently and proxies same-origin `/api/backend/*` requests to the configured backend URL.
+- One Docker web service runs FastAPI and Pi internally; only FastAPI is public.
+- Supabase PostgreSQL stores sessions, messages, transcript evidence, artifacts, and 384-dimensional `pgvector` embeddings.
+- A Supabase Edge Function uses `gte-small` for corpus and query embeddings.
+- Groq `openai/gpt-oss-120b` is the explicit default model and calls the same Pi tools.
+- Signed anonymous browser tokens isolate sessions; chat is rate-limited and ingestion requires the private internal token.
+
+Cloud configuration is documented in `.env.cloud.example`, `render.yaml`, `deploy/cloud/`, and `supabase/`. Secrets belong in Supabase/Render/Sites settings, never Git.
 
 Readiness and ingestion:
 
@@ -69,6 +82,8 @@ The dataset is mechanically grounded in actual transcript Q&A units and frozen f
 apps/web/        React/Vinext localhost UI
 apps/api/        FastAPI, PostgreSQL, parsing, retrieval, grounding, artifacts
 services/agent/  Pi runtime, provider adapters, and model-callable tools
+deploy/cloud/    Combined FastAPI/Pi cloud image
+supabase/        Versioned PostgreSQL/pgvector migration and embedding function
 evals/           retrieval regression, model gates, and 10-by-5 release suite
 docs/            PRD, design, architecture, evaluation, and manual verification
 agent-transcripts/ sanitized failures, corrections, and decisions
@@ -76,9 +91,10 @@ agent-transcripts/ sanitized failures, corrections, and decisions
 
 ## Privacy and providers
 
-- Ollama inference, transcripts, vectors, sessions, and artifacts remain local.
+- In the local profile, Ollama inference, transcripts, vectors, sessions, and artifacts remain local.
+- In the cloud profile, transcript passages and sessions are stored in the configured Supabase project and bounded prompt/evidence data is sent to the explicitly selected Groq model.
 - Claude is disabled until `ANTHROPIC_API_KEY` is set in local `.env`. Selecting it explicitly sends only bounded session context and evidence needed for that run.
-- Groq remains disabled for v0.2 even if an old key exists in `.env`.
+- Groq remains disabled in the local profile unless `ENABLE_GROQ=true`; the cloud profile enables it explicitly.
 - `.env` is ignored. API responses and persisted failure fields use stable codes rather than upstream bodies or secrets.
 
 Codex CLI/ChatGPT credentials are not used as an application provider.
@@ -100,4 +116,4 @@ Codex CLI/ChatGPT credentials are not used as an application provider.
 - [Evaluation](docs/evaluation.md)
 - [Manual test plan](docs/manual-test.md)
 - [Sanitized coding-agent log](agent-transcripts/v0.1-v0.2-build-log.md)
-- [v0.2 implementation plan](v0.2.md)
+- [Cloud recovery and deployment decision](docs/what-we-messed-up-and-recovery-plan.md)

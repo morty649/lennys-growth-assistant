@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+!.env.example
+!.env.cloud.example
+**/.DS_Store
+**/.venv
+**/node_modules
+**/dist
+**/.next
+**/.wrangler
+**/__pycache__
+evals/results
+data

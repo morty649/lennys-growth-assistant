@@ -293,6 +293,8 @@ def _lexical_candidates(
 
 def _dense_candidates(query: str, guest: str | None, limit: int) -> list[dict[str, Any]]:
     try:
+        if get_settings().vector_backend == "pgvector":
+            return _pgvector_candidates(query, guest, limit)
         collection = chroma_collection()
         guest_aliases: list[str | None] = [None]
         if guest:
@@ -330,6 +332,29 @@ def _dense_candidates(query: str, guest: str | None, limit: int) -> list[dict[st
         ]
     except Exception:
         return []
+
+
+def _pgvector_candidates(query: str, guest: str | None, limit: int) -> list[dict[str, Any]]:
+    vector = embed_query(query)
+    vector_literal = "[" + ",".join(f"{value:.9g}" for value in vector) + "]"
+    guest_clause = ""
+    params: list[Any] = [vector_literal]
+    if guest:
+        guest_clause = "AND (lower(guest) = lower(%s) OR lower(guest) LIKE lower(%s))"
+        params.extend((guest, f"{guest} %"))
+    params.extend((vector_literal, limit))
+    with connection() as conn:
+        rows = conn.execute(
+            f"""
+            SELECT id, GREATEST(0.0, 1.0 - (embedding <=> %s::extensions.vector)) AS dense_score
+            FROM evidence_units
+            WHERE embedding IS NOT NULL {guest_clause}
+            ORDER BY embedding <=> %s::extensions.vector
+            LIMIT %s
+            """,
+            params,
+        ).fetchall()
+    return [dict(row) for row in rows]
 
 
 def _load_units(ids: list[str]) -> dict[str, dict[str, Any]]:

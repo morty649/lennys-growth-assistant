@@ -8,7 +8,26 @@ import type {
   Session,
 } from './contracts';
 
-const API = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
+const API = process.env.NEXT_PUBLIC_API_URL ?? '/api/backend';
+const TOKEN_KEY = 'lenny-growth-client-token-v1';
+let tokenPromise: Promise<string> | null = null;
+
+async function clientToken(): Promise<string> {
+  if (typeof window === 'undefined') return '';
+  const existing = window.localStorage.getItem(TOKEN_KEY);
+  if (existing) return existing;
+  if (!tokenPromise) {
+    tokenPromise = fetch(`${API}/api/client`, withJsonHeaders({ method: 'POST' }))
+      .then(async (response) => {
+        await assertSuccessful(response);
+        const body = await response.json() as { token: string };
+        window.localStorage.setItem(TOKEN_KEY, body.token);
+        return body.token;
+      })
+      .finally(() => { tokenPromise = null; });
+  }
+  return tokenPromise;
+}
 
 function withJsonHeaders(init?: RequestInit): RequestInit {
   return {
@@ -28,13 +47,24 @@ async function assertSuccessful(response: Response): Promise<void> {
 }
 
 async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API}${path}`, withJsonHeaders(init));
+  const token = path === '/api/client' ? '' : await clientToken();
+  const response = await fetch(`${API}${path}`, withJsonHeaders({
+    ...init,
+    headers: {
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(init?.headers ?? {}),
+    },
+  }));
   await assertSuccessful(response);
   return response.json() as Promise<T>;
 }
 
 async function requestNoContent(path: string, init?: RequestInit): Promise<void> {
-  const response = await fetch(`${API}${path}`, withJsonHeaders(init));
+  const token = await clientToken();
+  const response = await fetch(`${API}${path}`, withJsonHeaders({
+    ...init,
+    headers: { Authorization: `Bearer ${token}`, ...(init?.headers ?? {}) },
+  }));
   await assertSuccessful(response);
 }
 
@@ -49,7 +79,7 @@ export function listSessions(): Promise<Session[]> {
 export function createSession(): Promise<Session> {
   return requestJson('/api/sessions', {
     method: 'POST',
-    body: JSON.stringify({ title: 'New investigation', provider: 'ollama' }),
+    body: JSON.stringify({ title: 'New investigation' }),
   });
 }
 

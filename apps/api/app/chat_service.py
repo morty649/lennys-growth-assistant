@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from typing import Any
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 from fastapi import HTTPException
 
@@ -13,11 +13,11 @@ from app.grounding import render_citations
 from app.schemas import ChatRequest, ChatResponse, MessageView, SourceView, ToolRunView
 
 
-async def handle_chat(payload: ChatRequest) -> ChatResponse:
-    session = require_session(payload.session_id)
+async def handle_chat(payload: ChatRequest, user_id: UUID | None = None) -> ChatResponse:
+    session = require_session(payload.session_id, user_id)
     provider = payload.provider or session["provider"]
     if provider == "groq" and not settings.enable_groq:
-        raise HTTPException(status_code=409, detail="Groq is deferred for v0.1")
+        raise HTTPException(status_code=409, detail="Groq is not enabled for this deployment")
     model = payload.model or session["model"] or default_model(provider)
     request_id = str(uuid4())
     add_message(payload.session_id, "user", payload.message, metadata={"request_id": request_id})
@@ -30,8 +30,19 @@ async def handle_chat(payload: ChatRequest) -> ChatResponse:
         request_id=request_id,
     )
     intent = _intent_from_result(result)
-    update_session(payload.session_id, {"resolved_context": _context_from_result(result, intent)})
-    assistant = _persist_assistant(payload, session, intent, request_id, result)
+    update_session(
+        payload.session_id,
+        {"resolved_context": _context_from_result(result, intent)},
+        user_id or UUID("00000000-0000-4000-8000-000000000001"),
+    )
+    assistant = _persist_assistant(
+        payload,
+        session,
+        intent,
+        request_id,
+        result,
+        user_id or UUID("00000000-0000-4000-8000-000000000001"),
+    )
     return ChatResponse(
         message=MessageView(**assistant),
         sources=[SourceView(**source) for source in result.evidence],
@@ -93,6 +104,7 @@ def _persist_assistant(
     intent: str,
     request_id: str,
     result: AgentResult,
+    user_id: UUID,
 ) -> dict[str, Any]:
     rendered = render_citations(result.text, result.evidence) if result.evidence else result.text
     can_create_artifact = artifact_available(result)
@@ -124,7 +136,7 @@ def _persist_assistant(
     )
     if session["title"] == "New investigation":
         title = re.sub(r"\s+", " ", payload.message).strip()[:72]
-        update_session(payload.session_id, {"title": title})
+        update_session(payload.session_id, {"title": title}, user_id)
     for tool_run in result.tool_runs:
         add_tool_run(
             payload.session_id,

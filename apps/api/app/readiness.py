@@ -19,21 +19,31 @@ async def readiness_snapshot() -> dict[str, Any]:
     except Exception:
         dependencies["postgres"] = {"status": "error", "reason_code": "postgres_unreachable"}
 
-    try:
-        chroma = chromadb.HttpClient(host=settings.chroma_host, port=settings.chroma_port)
-        chroma.heartbeat()
-        dependencies["chroma"] = {"status": "ok"}
-    except Exception:
-        dependencies["chroma"] = {"status": "error", "reason_code": "chroma_unreachable"}
+    if settings.vector_backend == "chroma":
+        try:
+            chroma = chromadb.HttpClient(host=settings.chroma_host, port=settings.chroma_port)
+            chroma.heartbeat()
+            dependencies["chroma"] = {"status": "ok"}
+        except Exception:
+            dependencies["chroma"] = {"status": "error", "reason_code": "chroma_unreachable"}
+    else:
+        dependencies["pgvector"] = {
+            "status": "ok" if dependencies["postgres"]["status"] == "ok" else "error",
+            "embedding": "supabase:gte-small",
+        }
 
     async with httpx.AsyncClient(timeout=2.5, trust_env=False) as client:
-        dependencies["ollama"] = await _ollama_readiness(client)
+        if settings.default_provider == "ollama" or settings.embedding_backend == "ollama":
+            dependencies["ollama"] = await _ollama_readiness(client)
+        else:
+            dependencies["ollama"] = {"status": "disabled"}
         dependencies["agent"] = await _agent_readiness(client)
 
-    required_ok = all(
-        dependencies[name]["status"] == "ok"
-        for name in ("postgres", "chroma", "ollama", "agent")
-    )
+    required = ["postgres", "agent"]
+    required.append("chroma" if settings.vector_backend == "chroma" else "pgvector")
+    if settings.default_provider == "ollama" or settings.embedding_backend == "ollama":
+        required.append("ollama")
+    required_ok = all(dependencies[name]["status"] == "ok" for name in required)
     return {
         "status": "ok" if required_ok else "degraded",
         "dependencies": dependencies,

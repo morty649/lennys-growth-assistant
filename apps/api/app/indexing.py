@@ -45,6 +45,8 @@ def hash_embedding(text: str, dimensions: int = EMBEDDING_DIMENSIONS) -> list[fl
 
 def embedding_version() -> str:
     settings = get_settings()
+    if settings.embedding_backend == "supabase":
+        return "supabase:gte-small:v1"
     if settings.embedding_backend == "ollama":
         return f"ollama:{settings.ollama_embed_model}:v1"
     return "feature-hash-v1"
@@ -52,6 +54,27 @@ def embedding_version() -> str:
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
     settings = get_settings()
+    if settings.embedding_backend == "supabase":
+        if not settings.supabase_url or not settings.supabase_service_role_key:
+            raise RuntimeError("Supabase embedding configuration is incomplete")
+        endpoint = (
+            f"{settings.supabase_url.rstrip('/')}/functions/v1/"
+            f"{settings.supabase_embed_function}"
+        )
+        with httpx.Client(timeout=120.0, trust_env=False) as client:
+            response = client.post(
+                endpoint,
+                headers={
+                    "Authorization": f"Bearer {settings.supabase_service_role_key}",
+                    "apikey": settings.supabase_service_role_key,
+                },
+                json={"inputs": texts},
+            )
+            response.raise_for_status()
+            embeddings = response.json().get("embeddings") or []
+        if len(embeddings) != len(texts):
+            raise RuntimeError("Supabase returned an unexpected embedding batch size")
+        return embeddings
     if settings.embedding_backend != "ollama":
         return [hash_embedding(text) for text in texts]
     endpoint = f"{settings.ollama_base_url.removesuffix('/v1')}/api/embed"
@@ -121,6 +144,7 @@ def _upsert_episode(episode, units: list[EvidenceUnit], topics: list[str]) -> bo
             existing
             and existing["content_hash"] == episode.content_hash
             and existing_metadata.get("evidence_build_version") == EVIDENCE_BUILD_VERSION
+            and existing_metadata.get("embedding_version") == embedding_version()
         ):
             unit_count = conn.execute(
                 "SELECT COUNT(*) AS count FROM evidence_units WHERE episode_id = %s", (episode.id,)
@@ -202,6 +226,17 @@ def _upsert_vectors(collection, episode_id: str, units: list[EvidenceUnit]) -> N
 
 
 def _upsert_vector_units(collection, units: list[EvidenceUnit]) -> None:
+    if get_settings().vector_backend == "pgvector":
+        for start in range(0, len(units), 16):
+            batch = units[start : start + 16]
+            embeddings = embed_texts([unit.search_document for unit in batch])
+            with connection() as conn:
+                with conn.cursor() as cursor:
+                    cursor.executemany(
+                        "UPDATE evidence_units SET embedding = %s::extensions.vector WHERE id = %s",
+                        [(_vector_literal(vector), unit.id) for vector, unit in zip(embeddings, batch, strict=True)],
+                    )
+        return
     for start in range(0, len(units), 192):
         batch = units[start : start + 192]
         collection.upsert(
@@ -220,6 +255,44 @@ def _upsert_vector_units(collection, units: list[EvidenceUnit]) -> None:
         )
 
 
+def _vector_literal(vector: list[float]) -> str:
+    return "[" + ",".join(f"{value:.9g}" for value in vector) + "]"
+
+
+def vector_count() -> int:
+    if get_settings().vector_backend == "pgvector":
+        with connection() as conn:
+            return int(
+                conn.execute(
+                    "SELECT COUNT(*) AS count FROM evidence_units WHERE embedding IS NOT NULL"
+                ).fetchone()["count"]
+            )
+    return chroma_collection().count()
+
+
+def episode_vector_ids(episode_id: str) -> list[str]:
+    if get_settings().vector_backend == "pgvector":
+        with connection() as conn:
+            return [
+                row["id"]
+                for row in conn.execute(
+                    "SELECT id FROM evidence_units WHERE episode_id = %s AND embedding IS NOT NULL",
+                    (episode_id,),
+                ).fetchall()
+            ]
+    return chroma_collection().get(where={"episode_id": episode_id}, include=[]).get("ids", [])
+
+
+def delete_episode_vectors(episode_id: str) -> None:
+    if get_settings().vector_backend == "pgvector":
+        with connection() as conn:
+            conn.execute(
+                "UPDATE evidence_units SET embedding = NULL WHERE episode_id = %s", (episode_id,)
+            )
+        return
+    chroma_collection().delete(where={"episode_id": episode_id})
+
+
 def corpus_counts() -> tuple[int, int]:
     with connection() as conn:
         episode_count = conn.execute("SELECT COUNT(*) AS count FROM episodes").fetchone()["count"]
@@ -233,25 +306,26 @@ def corpus_manifest() -> dict[str, Any]:
     """Return the versions and counts required to reproduce the active index."""
     episode_count, unit_count = corpus_counts()
     try:
-        vector_count = chroma_collection().count()
+        active_vector_count = vector_count()
     except Exception:
-        vector_count = 0
+        active_vector_count = 0
     return {
         "evidence_build_version": EVIDENCE_BUILD_VERSION,
         "embedding_version": embedding_version(),
         "episodes": episode_count,
         "evidence_units": unit_count,
-        "vectors": vector_count,
+        "vectors": active_vector_count,
     }
 
 
-def _remove_stale_episodes(active_episode_ids: set[str], collection) -> None:
+def _remove_stale_episodes(active_episode_ids: set[str], collection=None) -> None:
     """Reconcile DB and vector state when source transcript folders are removed."""
     with connection() as conn:
         rows = conn.execute("SELECT id FROM episodes").fetchall()
         stale_ids = [row["id"] for row in rows if row["id"] not in active_episode_ids]
         for episode_id in stale_ids:
-            collection.delete(where={"episode_id": episode_id})
+            if get_settings().vector_backend != "pgvector" and collection is not None:
+                collection.delete(where={"episode_id": episode_id})
             conn.execute("DELETE FROM episodes WHERE id = %s", (episode_id,))
 
 
@@ -273,7 +347,7 @@ def run_ingestion(limit: int | None = None, force: bool = False) -> None:
 
     try:
         topic_map = load_topic_map(settings.topics_dir)
-        collection = chroma_collection()
+        collection = chroma_collection() if settings.vector_backend != "pgvector" else None
         total_units = 0
         pending_vectors: list[EvidenceUnit] = []
         for index, path in enumerate(paths, start=1):
@@ -286,9 +360,9 @@ def run_ingestion(limit: int | None = None, force: bool = False) -> None:
             episode_changed = _upsert_episode(episode, units, topics)
             vector_ids = []
             if not episode_changed and not force:
-                vector_ids = collection.get(where={"episode_id": episode.id}, include=[]).get("ids", [])
+                vector_ids = episode_vector_ids(episode.id)
             if episode_changed or force or len(vector_ids) != len(units):
-                collection.delete(where={"episode_id": episode.id})
+                delete_episode_vectors(episode.id)
                 pending_vectors.extend(units)
             if len(pending_vectors) >= 768:
                 _upsert_vector_units(collection, pending_vectors)
@@ -338,14 +412,14 @@ def maybe_start_ingestion() -> None:
             (EVIDENCE_BUILD_VERSION,),
         ).fetchone()["count"]
     try:
-        vector_count = chroma_collection().count()
+        active_vector_count = vector_count()
     except Exception:
-        vector_count = -1
+        active_vector_count = -1
     if (
         episode_count == expected_episode_count
         and current_version_count == expected_episode_count
         and unit_count > 0
-        and vector_count == unit_count
+        and active_vector_count == unit_count
     ):
         ingestion_state.update(
             state="complete",

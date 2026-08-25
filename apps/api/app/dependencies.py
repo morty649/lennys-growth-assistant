@@ -19,8 +19,8 @@ def default_model(provider: str) -> str:
     return settings.ollama_model
 
 
-def require_session(session_id: UUID) -> dict[str, Any]:
-    session = get_session(session_id)
+def require_session(session_id: UUID, user_id: UUID | None = None) -> dict[str, Any]:
+    session = get_session(session_id, user_id or UUID("00000000-0000-4000-8000-000000000001"))
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
     return session

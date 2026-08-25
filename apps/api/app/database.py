@@ -159,13 +159,37 @@ def initialize_database() -> None:
     wait_for_database()
     with connection() as conn:
         conn.execute(SCHEMA_SQL)
+        if get_settings().vector_backend == "pgvector":
+            conn.execute(CLOUD_VECTOR_SQL)
+        ensure_user(LOCAL_USER_ID, "Local user", conn=conn)
+
+
+CLOUD_VECTOR_SQL = """
+CREATE EXTENSION IF NOT EXISTS vector WITH SCHEMA extensions;
+ALTER TABLE evidence_units ADD COLUMN IF NOT EXISTS embedding extensions.vector(384);
+CREATE INDEX IF NOT EXISTS evidence_units_embedding_hnsw_idx
+ON evidence_units USING hnsw (embedding extensions.vector_cosine_ops)
+WHERE embedding IS NOT NULL;
+"""
+
+
+def ensure_user(
+    user_id: UUID,
+    display_name: str,
+    *,
+    conn: psycopg.Connection[dict[str, Any]] | None = None,
+) -> None:
+    if conn is not None:
         conn.execute(
             "INSERT INTO users (id, display_name) VALUES (%s, %s) ON CONFLICT (id) DO NOTHING",
-            (LOCAL_USER_ID, "Local user"),
+            (user_id, display_name),
         )
+        return
+    with connection() as active:
+        ensure_user(user_id, display_name, conn=active)
 
 
-def create_session(title: str, provider: str, model: str) -> dict[str, Any]:
+def create_session(title: str, provider: str, model: str, user_id: UUID = LOCAL_USER_ID) -> dict[str, Any]:
     session_id = uuid4()
     with connection() as conn:
         return conn.execute(
@@ -174,11 +198,11 @@ def create_session(title: str, provider: str, model: str) -> dict[str, Any]:
             VALUES (%s, %s, %s, %s, %s)
             RETURNING id, title, provider, model, created_at, updated_at
             """,
-            (session_id, LOCAL_USER_ID, title, provider, model),
+            (session_id, user_id, title, provider, model),
         ).fetchone()
 
 
-def list_sessions() -> list[dict[str, Any]]:
+def list_sessions(user_id: UUID = LOCAL_USER_ID) -> list[dict[str, Any]]:
     with connection() as conn:
         return list(
             conn.execute(
@@ -187,37 +211,39 @@ def list_sessions() -> list[dict[str, Any]]:
                 FROM chat_sessions WHERE user_id = %s
                 ORDER BY updated_at DESC
                 """,
-                (LOCAL_USER_ID,),
+                (user_id,),
             ).fetchall()
         )
 
 
-def get_session(session_id: UUID) -> dict[str, Any] | None:
+def get_session(session_id: UUID, user_id: UUID = LOCAL_USER_ID) -> dict[str, Any] | None:
     with connection() as conn:
         return conn.execute(
             """
             SELECT id, title, provider, model, resolved_context, created_at, updated_at
             FROM chat_sessions WHERE id = %s AND user_id = %s
             """,
-            (session_id, LOCAL_USER_ID),
+            (session_id, user_id),
         ).fetchone()
 
 
-def update_session(session_id: UUID, updates: dict[str, Any]) -> dict[str, Any] | None:
+def update_session(
+    session_id: UUID, updates: dict[str, Any], user_id: UUID = LOCAL_USER_ID
+) -> dict[str, Any] | None:
     allowed = {
         key: value
         for key, value in updates.items()
         if key in {"title", "provider", "model", "resolved_context"} and value is not None
     }
     if not allowed:
-        return get_session(session_id)
+        return get_session(session_id, user_id)
     assignments: list[str] = []
     values: list[Any] = []
     for key, value in allowed.items():
         assignments.append(f"{key} = %s::jsonb" if key == "resolved_context" else f"{key} = %s")
         values.append(json.dumps(value) if key == "resolved_context" else value)
     assignment_sql = ", ".join(assignments)
-    values.extend((session_id, LOCAL_USER_ID))
+    values.extend((session_id, user_id))
     with connection() as conn:
         return conn.execute(
             f"""
@@ -229,11 +255,11 @@ def update_session(session_id: UUID, updates: dict[str, Any]) -> dict[str, Any] 
         ).fetchone()
 
 
-def delete_session(session_id: UUID) -> bool:
+def delete_session(session_id: UUID, user_id: UUID = LOCAL_USER_ID) -> bool:
     with connection() as conn:
         result = conn.execute(
             "DELETE FROM chat_sessions WHERE id = %s AND user_id = %s",
-            (session_id, LOCAL_USER_ID),
+            (session_id, user_id),
         )
         return result.rowcount > 0
 

@@ -1,4 +1,4 @@
-export type Provider = 'ollama' | 'anthropic';
+export type Provider = 'ollama' | 'anthropic' | 'groq';
 export type MessageRole = 'user' | 'assistant';
 export type ArtifactFormat = 'markdown' | 'html';
 export type GroundingState = 'supported' | 'insufficient' | 'not_applicable' | 'unverified';
@@ -102,6 +102,7 @@ export type ProviderConfig = {
 export type ConfigResponse = {
   default_provider: Provider;
   providers: ProviderConfig[];
+  deployment_mode?: string;
 };
 
 export type ToolRun = {

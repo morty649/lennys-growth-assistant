@@ -7,13 +7,15 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import initialize_database
+from app.client_auth import validate_auth_configuration
 from app.dependencies import settings
 from app.indexing import maybe_start_ingestion
-from app.routers import artifacts, chat, health, ingestion, sessions, tools
+from app.routers import artifacts, chat, client, health, ingestion, sessions, tools
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
+    validate_auth_configuration()
     await asyncio.to_thread(initialize_database)
     maybe_start_ingestion()
     yield
@@ -28,13 +30,18 @@ def create_app() -> FastAPI:
     )
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=[settings.web_origin, "http://127.0.0.1:3000", "http://localhost:3000"],
+        allow_origins=list(dict.fromkeys([
+            *settings.web_origins,
+            "http://127.0.0.1:3000",
+            "http://localhost:3000",
+        ])),
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
     for router in (
         health.router,
+        client.router,
         sessions.router,
         chat.router,
         artifacts.router,
