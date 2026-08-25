@@ -226,15 +226,22 @@ def _upsert_vectors(collection, episode_id: str, units: list[EvidenceUnit]) -> N
 
 
 def _upsert_vector_units(collection, units: list[EvidenceUnit]) -> None:
-    if get_settings().vector_backend == "pgvector":
-        for start in range(0, len(units), 16):
-            batch = units[start : start + 16]
-            embeddings = embed_texts([unit.search_document for unit in batch])
-            with connection() as conn:
-                with conn.cursor() as cursor:
+    settings = get_settings()
+    if settings.vector_backend == "pgvector":
+        # Keep one database connection and transaction for the entire pending
+        # batch. Opening a Supabase pooler connection for every 16 passages
+        # made cloud ingestion spend most of its time reconnecting.
+        with connection() as conn:
+            with conn.cursor() as cursor:
+                for start in range(0, len(units), 192 if settings.embedding_backend == "hash" else 16):
+                    batch = units[start : start + (192 if settings.embedding_backend == "hash" else 16)]
+                    embeddings = embed_texts([unit.search_document for unit in batch])
                     cursor.executemany(
                         "UPDATE evidence_units SET embedding = %s::extensions.vector WHERE id = %s",
-                        [(_vector_literal(vector), unit.id) for vector, unit in zip(embeddings, batch, strict=True)],
+                        [
+                            (_vector_literal(vector), unit.id)
+                            for vector, unit in zip(embeddings, batch, strict=True)
+                        ],
                     )
         return
     for start in range(0, len(units), 192):
