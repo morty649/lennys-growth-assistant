@@ -101,7 +101,10 @@ SHIP30_INFO — asks what the installed Ship 30 skill is, what it does, or how i
 SHIP30 | <exact subject quote> — requests a Ship 30 essay and a concrete subject appears verbatim in a user message. The quote must name the actual concept, guest, episode, or business problem; vague references such as "something," "this," "here," or "it" are not subjects.
 If the assistant's immediately previous message asked an entity clarification for a Ship 30 request and the user now supplies the guest, topic, or episode, resume with SHIP30 and quote the user's exact clarification answer.
 Choose by meaning and conversational context, not a keyword list. When the user asks for an answer according to the podcast or its guests, choose TRANSCRIPT. Do not invent or paraphrase the Ship 30 subject quote.`,
-      model: { ...modelFor(provider, payload.model), maxTokens: 64 },
+      // Classification needs a short visible answer, not reasoning tokens. In
+      // particular, GPT-OSS can otherwise spend this entire budget thinking
+      // and leave no label for the router to inspect.
+      model: { ...modelFor(provider, payload.model), reasoning: false, maxTokens: 256 },
       tools: [],
       messages: [],
       thinkingLevel: "off",
@@ -113,7 +116,18 @@ Choose by meaning and conversational context, not a keyword list. When the user 
   });
   await classifier.prompt(promptFor(payload.query.trim(), payload.history ?? [], payload.resolvedContext));
   if (classifier.state.errorMessage) throw new Error(classifier.state.errorMessage);
-  return scopeFromDecision(assistantText(classifier.state.messages), payload);
+  let decision = assistantText(classifier.state.messages);
+  if (!/\b(?:DIRECT|CATALOG|TRANSCRIPT|SHIP30(?:_CLARIFY|_INFO)?)\b/i.test(decision)) {
+    await classifier.prompt(
+      "Return only one valid routing label from the formats in your system instructions. Do not explain.",
+    );
+    if (classifier.state.errorMessage) throw new Error(classifier.state.errorMessage);
+    decision = assistantText(classifier.state.messages);
+  }
+  if (!/\b(?:DIRECT|CATALOG|TRANSCRIPT|SHIP30(?:_CLARIFY|_INFO)?)\b/i.test(decision)) {
+    throw new Error("scope classifier returned no valid routing label");
+  }
+  return scopeFromDecision(decision, payload);
 }
 
 export async function runAgent(payload: RunRequest) {
