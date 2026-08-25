@@ -52,7 +52,7 @@ export function SessionRail({
         <button className="new-session" onClick={onCreateSession} type="button">
           + new investigation
         </button>
-        <div className="rail-label">Local sessions</div>
+        <div className="rail-label">Private sessions</div>
         <nav aria-label="Chat sessions" className="session-list">
           {sessions.map((session) => (
             <div
@@ -86,7 +86,7 @@ export function SessionRail({
             className={`status-dot ${providerState?.enabled ? 'ready' : 'unavailable'}`}
             aria-hidden="true"
           />
-          localhost app · {providerState?.availability ?? 'checking'}
+          assistant · {providerState?.enabled ? 'ready' : (providerState?.availability ?? 'checking')}
         </div>
       </aside>
     </>
