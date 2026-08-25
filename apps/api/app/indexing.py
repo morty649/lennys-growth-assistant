@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import math
 import re
 import threading
@@ -26,6 +27,7 @@ WORD = re.compile(r"[a-z0-9][a-z0-9+#.-]+", re.IGNORECASE)
 EMBEDDING_DIMENSIONS = 384
 HASH_COLLECTION_NAME = "lenny_evidence_hash_v1"
 OLLAMA_COLLECTION_NAME = "lenny_evidence_nomic_v1"
+logger = logging.getLogger("lenny.ingestion")
 
 
 def hash_embedding(text: str, dimensions: int = EMBEDDING_DIMENSIONS) -> list[float]:
@@ -349,6 +351,12 @@ def run_ingestion(limit: int | None = None, force: bool = False) -> None:
         error=None,
     )
     run_id = uuid4()
+    logger.info(json.dumps({
+        "event": "ingestion_started",
+        "run_id": str(run_id),
+        "episodes_total": len(paths),
+        "embedding": embedding_version(),
+    }))
     with connection() as conn:
         conn.execute("INSERT INTO ingestion_runs (id, state) VALUES (%s, 'running')", (run_id,))
 
@@ -384,6 +392,12 @@ def run_ingestion(limit: int | None = None, force: bool = False) -> None:
             _remove_stale_episodes({path.parent.name for path in paths}, collection)
 
         ingestion_state.update(state="complete")
+        logger.info(json.dumps({
+            "event": "ingestion_completed",
+            "run_id": str(run_id),
+            "episodes_processed": len(paths),
+            "evidence_units": total_units,
+        }))
         with connection() as conn:
             conn.execute(
                 """
@@ -395,6 +409,11 @@ def run_ingestion(limit: int | None = None, force: bool = False) -> None:
     except Exception as exc:
         error_code = failure_code(exc)
         ingestion_state.update(state="failed", error=error_code)
+        logger.error(json.dumps({
+            "event": "ingestion_failed",
+            "run_id": str(run_id),
+            "error_code": error_code,
+        }))
         with connection() as conn:
             conn.execute(
                 "UPDATE ingestion_runs SET state = 'failed', error = %s, completed_at = NOW() WHERE id = %s",

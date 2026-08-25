@@ -1,16 +1,21 @@
 from __future__ import annotations
 
 import asyncio
+import json
+import logging
 from contextlib import asynccontextmanager
+from time import perf_counter
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.database import initialize_database
 from app.client_auth import validate_auth_configuration
+from app.database import initialize_database
 from app.dependencies import settings
 from app.indexing import maybe_start_ingestion
 from app.routers import artifacts, chat, client, health, ingestion, sessions, tools
+
+logger = logging.getLogger("lenny.api")
 
 
 @asynccontextmanager
@@ -39,6 +44,21 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+    @application.middleware("http")
+    async def structured_request_log(request, call_next):
+        started = perf_counter()
+        response = await call_next(request)
+        if request.url.path != "/health/live":
+            logger.info(json.dumps({
+                "event": "http_request",
+                "method": request.method,
+                "path": request.url.path,
+                "status": response.status_code,
+                "duration_ms": round((perf_counter() - started) * 1000, 2),
+            }))
+        return response
+
     for router in (
         health.router,
         client.router,

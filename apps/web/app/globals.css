@@ -21,6 +21,16 @@ body {
 button, textarea { font: inherit; }
 button { color: inherit; }
 
+.login-shell { display: grid; width: 100vw; height: 100dvh; place-items: center; padding: 24px; background: var(--paper); }
+.login-card { display: grid; width: min(440px, 100%); gap: 18px; padding: 34px; border: 1px solid var(--ink); background: var(--white); box-shadow: 8px 8px 0 var(--ink); }
+.login-card h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 36px; font-weight: 400; }
+.login-card p { margin: 0 0 6px; color: var(--muted); font-family: Georgia, serif; line-height: 1.5; }
+.login-card label { display: grid; gap: 7px; color: var(--muted); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.login-card input { width: 100%; padding: 12px; border: 1px solid var(--line); background: var(--paper); font: inherit; }
+.login-card button { padding: 12px; border: 1px solid var(--ink); background: var(--signal); box-shadow: 3px 3px 0 var(--ink); cursor: pointer; }
+.login-card button:disabled { opacity: .55; }
+.login-error { padding: 10px; border: 1px solid #9b3028; background: #ffe5df; color: #9b3028; font-size: 10px; }
+
 .app-shell {
   display: grid;
   grid-template-columns: 252px minmax(520px, 1fr);
@@ -69,6 +79,8 @@ button { color: inherit; }
   padding: 24px 34px; border-bottom: 1px solid var(--ink);
 }
 .conversation-header h1 { margin: 8px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(24px, 3vw, 38px); font-weight: 400; letter-spacing: -.02em; }
+.provider-controls { display: flex; align-items: center; gap: 8px; }
+.profile-switch { padding: 8px 10px; border: 1px solid var(--line); background: transparent; font-size: 9px; text-transform: uppercase; cursor: pointer; }
 .model-chip { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); background: var(--white); font-size: 10px; text-transform: uppercase; }
 .model-chip span { width: 7px; height: 7px; background: #3d9b5f; border-radius: 50%; }
 .model-chip.unavailable span { background: #a43a2e; }
@@ -194,7 +206,7 @@ button { color: inherit; }
   .composer { margin: 0 14px 14px; }
   .conversation-panel { height: 100dvh; }
   .context-workspace { inset: 0; width: 100vw; }
-  .workspace-controls button:first-child { display: none; }
+  .workspace-controls button[aria-label="Toggle workspace width"] { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }

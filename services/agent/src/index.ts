@@ -290,11 +290,28 @@ app.get("/health", (_request: Request, response: Response) => {
   response.json({ status: "ok", service: "pi-agent", version: "0.1.0" });
 });
 app.post("/run", async (request: Request<unknown, unknown, RunRequest>, response: Response) => {
+  const started = performance.now();
   try {
-    response.json(await runAgent(request.body));
+    const result = await runAgent(request.body);
+    console.log(JSON.stringify({
+      event: "agent_run",
+      requestId: result.requestId,
+      provider: result.provider,
+      model: result.model,
+      tools: result.toolRuns.map((run) => run.name),
+      fallbackReasonCode: "fallbackReasonCode" in result ? result.fallbackReasonCode : null,
+      durationMs: Math.round(performance.now() - started),
+    }));
+    response.json(result);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     const configurationError = message.includes("API_KEY") || message.includes("LOCAL_MODEL_THINKING");
+    console.error(JSON.stringify({
+      event: "agent_run_failed",
+      requestId: request.body.requestId,
+      code: configurationError ? "provider_not_configured" : "agent_run_failed",
+      durationMs: Math.round(performance.now() - started),
+    }));
     response.status(configurationError ? 400 : 502).json({
       code: configurationError ? "provider_not_configured" : "agent_run_failed",
       detail: configurationError ? message : "The Pi agent could not complete the request",

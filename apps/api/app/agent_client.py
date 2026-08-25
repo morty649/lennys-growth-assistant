@@ -43,10 +43,18 @@ async def run_adaptive_agent(
     model: str,
     *,
     request_id: str | None = None,
+    resolved_context: dict[str, Any] | None = None,
 ) -> AgentResult:
     """Let Pi choose direct, catalog, or transcript research; enforce the chosen path here."""
     started = perf_counter()
-    payload = await _call_agent(query, history, provider, model, request_id)
+    payload = await _call_agent(
+        query,
+        history,
+        provider,
+        model,
+        request_id,
+        resolved_context or {},
+    )
     raw_runs = payload.get("toolRuns") or []
     public_runs = public_tool_runs(raw_runs)
     searched = any(run.get("name") == "search_transcripts" for run in raw_runs)
@@ -110,6 +118,7 @@ async def _call_agent(
     provider: str,
     model: str,
     request_id: str | None,
+    resolved_context: dict[str, Any],
 ) -> dict[str, Any]:
     settings = get_settings()
     prior_history = (
@@ -135,6 +144,11 @@ async def _call_agent(
                 "model": model,
                 "mode": "adaptive",
                 "requestId": request_id,
+                "resolvedContext": {
+                    "guests": resolved_context.get("guests") or [],
+                    "topics": resolved_context.get("topics") or [],
+                    "prior_evidence_ids": resolved_context.get("prior_evidence_ids") or [],
+                },
             },
         )
         response.raise_for_status()

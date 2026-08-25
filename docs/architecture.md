@@ -45,9 +45,11 @@ PostgreSQL is the source of truth for isolated sessions, ordered history, resolv
 - Transcript text is evidence, never instructions.
 - Pi can call only four declared application tools; the Ship 30 tool loads its versioned skill file and accepts only evidence IDs returned during the same run. Tool calls and history are bounded.
 - Internal tool routes require the local shared token.
-- No provider fallback is automatic. Cloud use requires an explicitly configured and selected provider.
+- Providers never switch implicitly. The Groq cloud profile may retry a genuine HTTP 429 on `openai/gpt-oss-20b`; the response records the actual model and `provider_rate_limited` reason. Configuration, timeout, and tool failures do not trigger this fallback.
 - Raw provider bodies, headers, secrets, prompts, transcript passages, and complete histories are not stored as errors.
 - UI provider state reflects configured model readiness rather than process reachability alone.
+
+FastAPI emits redacted JSON request summaries and ingestion lifecycle events. Pi emits JSON run summaries containing only request ID, provider/model, tool names, fallback code, and duration. Full structured tool records and requested/actual execution metadata are also stored in PostgreSQL; prompts, answers, and secrets are excluded from operational logs.
 
 ## Local deployment topology
 
@@ -70,4 +72,4 @@ public Sites frontend
      -> local feature-hash embedding (default) or Supabase gte-small Edge Function (optional)
 ```
 
-The cloud profile is selected only by environment. Supabase migrations are versioned under `supabase/migrations`; the embedding function lives under `supabase/functions/embed`; and the combined backend image lives under `deploy/cloud`. Signed anonymous client tokens scope every session query to one browser identity. The frontend never receives the Groq key, database password, service-role key, internal tool token, or anonymous-token signing secret.
+The cloud profile is selected only by environment. Supabase migrations are versioned under `supabase/migrations`; the embedding function lives under `supabase/functions/embed`; and the combined backend image lives under `deploy/cloud`. Signed profile tokens scope every session query to one stable profile identity. Passwords and signing secrets are configured only in Render. The frontend never receives the Groq key, database password, service-role key, internal tool token, profile passwords, or token-signing secret.

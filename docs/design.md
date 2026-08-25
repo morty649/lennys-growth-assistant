@@ -50,7 +50,7 @@ The visual treatment is neutral and explicit. It explains whether evidence was i
 
 ### Artifact
 
-An inline card opens beside the chat. Preview, Code, and Sources tabs remain tied to that exact artifact. HTML preview is sanitized and isolated.
+An inline card opens beside the chat. Preview, Code, and Sources tabs remain tied to that exact artifact. Markdown artifacts have a real file-download control. HTML preview is sanitized and isolated.
 
 ### Provider unavailable
 
@@ -84,4 +84,3 @@ Generated HTML is untrusted. The server allowlist-sanitizes tags and attributes,
 - A contextual workspace adds one click but preserves the relationship between answer, artifact, and evidence.
 - Provider status is visually prominent because local-model readiness and missing cloud keys are normal operational states, not exceptional developer details.
 - The interface remains single-user for the take-home so effort stays focused on grounding, context, artifacts, and reproducibility.
-

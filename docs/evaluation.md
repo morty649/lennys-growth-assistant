@@ -82,6 +82,20 @@ Release requires zero accepted unsupported material claims. Generated fixtures r
 - The interrupted multi-session 14B file remains incomplete and must not be resumed or mixed with 8B results.
 - Qwen3 8B has its own model-identified gate and release files.
 
-## Cloud canary
+## Cloud release run
 
-When `ANTHROPIC_API_KEY` is available, run one five-turn development canary through the same Pi tools. Do not claim cloud parity without a live run, and do not run a paid 50-turn suite without an explicit cost budget.
+The same 10-session, 50-turn suite can target the deployed Groq profile. The
+runner signs in with an environment-supplied demo profile and does not persist
+its signed tokens in the checkpoint.
+
+```bash
+cd apps/api
+EVAL_API_URL=https://lennys-growth-api.onrender.com \
+  EVAL_USERNAME=test1 EVAL_PASSWORD='<configured password>' \
+  uv run python ../../evals/run_agent_eval.py --set v02 --provider groq \
+  --model openai/gpt-oss-120b --run-id v02-cloud-groq
+```
+
+Rate-limit fallback may use `openai/gpt-oss-20b`; each affected turn is
+recorded with `fallback_reason_code=provider_rate_limited`. Do not count other
+provider failures as successful fallback behavior.

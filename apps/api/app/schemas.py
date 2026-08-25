@@ -139,3 +139,8 @@ class IngestStatus(BaseModel):
 class ClientTokenView(BaseModel):
     token: str
     expires_at: datetime | None = None
+
+
+class ProfileLogin(BaseModel):
+    username: str = Field(min_length=1, max_length=40)
+    password: str = Field(min_length=1, max_length=200)

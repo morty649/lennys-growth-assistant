@@ -34,6 +34,7 @@ services:
       - path: .env
         required: false
     environment:
+      API_HOST: ${API_HOST:-0.0.0.0}
       DATABASE_URL: ${DATABASE_URL:-postgresql://lenny:lenny_local_password@postgres:5432/lenny_growth}
       CHROMA_HOST: ${CHROMA_HOST:-chroma}
       CHROMA_PORT: ${CHROMA_PORT:-8000}
@@ -59,6 +60,7 @@ services:
       - path: .env
         required: false
     environment:
+      AGENT_HOST: ${AGENT_HOST:-0.0.0.0}
       API_INTERNAL_URL: ${API_INTERNAL_URL:-http://api:8000}
       OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434/v1}
       INTERNAL_TOOL_TOKEN: ${INTERNAL_TOOL_TOKEN:-local-dev-tool-token-change-me}

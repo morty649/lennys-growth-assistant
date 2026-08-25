@@ -44,9 +44,16 @@ The cloud profile is intentionally additive:
 - Supabase PostgreSQL stores sessions, messages, transcript evidence, artifacts, and 384-dimensional `pgvector` embeddings.
 - The free cloud profile uses deterministic local feature-hash embeddings in pgvector, avoiding external embedding quotas; the included Supabase `gte-small` Edge Function remains an optional upgrade.
 - Groq `openai/gpt-oss-120b` is the explicit default model and calls the same Pi tools.
-- Signed anonymous browser tokens isolate sessions; chat is rate-limited and ingestion requires the private internal token.
+- A genuine Groq HTTP 429 retries once on `openai/gpt-oss-20b`; responses expose the actual model and fallback reason. Other failures are not silently retried on a different model.
+- Three environment-configured demo profiles use signed tokens and isolated PostgreSQL session ownership; passwords never enter the repository. Chat is rate-limited and ingestion requires the private internal token.
+- Redacted JSON logs cover API requests, ingestion lifecycle, model/model-fallback metadata, tool names, and latency without storing prompts or secrets.
 
 Cloud configuration is documented in `.env.cloud.example`, `render.yaml`, `deploy/cloud/`, and `supabase/`. Secrets belong in Supabase/Render/Sites settings, never Git.
+
+For the private public demo, set `PROFILE_TEST1_PASSWORD`,
+`PROFILE_TEST2_PASSWORD`, and `PROFILE_LENNY_PASSWORD` in Render. Keep
+`AUTH_MODE=profiles` and use a unique 32+ character
+`ANONYMOUS_TOKEN_SECRET` to sign profile sessions.
 
 Readiness and ingestion:
 
@@ -75,6 +82,16 @@ uv run python ../../evals/run_agent_eval.py --set v02 --provider ollama --model 
 ```
 
 The dataset is mechanically grounded in actual transcript Q&A units and frozen for repeatability. Its `review_status` records that origin. Automated success remains separate from manual support review.
+
+Run the same release suite against the public Groq deployment with:
+
+```bash
+cd apps/api
+EVAL_API_URL=https://lennys-growth-api.onrender.com \
+  EVAL_USERNAME=test1 EVAL_PASSWORD='<configured password>' \
+  uv run python ../../evals/run_agent_eval.py --set v02 --provider groq \
+  --model openai/gpt-oss-120b --run-id v02-cloud-groq
+```
 
 ## Project layout
 

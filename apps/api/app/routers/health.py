@@ -77,4 +77,5 @@ async def config() -> dict[str, Any]:
         "default_provider": settings.default_provider,
         "providers": providers,
         "deployment_mode": settings.deployment_mode,
+        "auth_mode": settings.auth_mode,
     }

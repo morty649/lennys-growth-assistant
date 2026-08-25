@@ -38,6 +38,9 @@ function withJsonHeaders(init?: RequestInit): RequestInit {
 
 async function assertSuccessful(response: Response): Promise<void> {
   if (response.ok) return;
+  if (response.status === 401 && typeof window !== 'undefined') {
+    window.localStorage.removeItem(TOKEN_KEY);
+  }
   const body = await response.json().catch(() => ({}));
   throw new Error(
     typeof body.detail === 'string'
@@ -47,7 +50,7 @@ async function assertSuccessful(response: Response): Promise<void> {
 }
 
 async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
-  const token = path === '/api/client' ? '' : await clientToken();
+  const token = path === '/api/client' || path === '/api/config' ? '' : await clientToken();
   const response = await fetch(`${API}${path}`, withJsonHeaders({
     ...init,
     headers: {
@@ -70,6 +73,24 @@ async function requestNoContent(path: string, init?: RequestInit): Promise<void>
 
 export function getConfig(): Promise<ConfigResponse> {
   return requestJson('/api/config');
+}
+
+export function hasClientToken(): boolean {
+  return typeof window !== 'undefined' && Boolean(window.localStorage.getItem(TOKEN_KEY));
+}
+
+export async function loginProfile(username: string, password: string): Promise<void> {
+  const response = await fetch(`${API}/api/login`, withJsonHeaders({
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+  }));
+  await assertSuccessful(response);
+  const body = await response.json() as { token: string };
+  window.localStorage.setItem(TOKEN_KEY, body.token);
+}
+
+export function logoutProfile(): void {
+  if (typeof window !== 'undefined') window.localStorage.removeItem(TOKEN_KEY);
 }
 
 export function listSessions(): Promise<Session[]> {

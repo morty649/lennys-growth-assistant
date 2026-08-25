@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     auth_mode: str = "local"
     anonymous_token_secret: str = "local-dev-anonymous-token-change-me"
     anonymous_token_ttl_days: int = 30
+    profile_test1_password: str = ""
+    profile_test2_password: str = ""
+    profile_lenny_password: str = ""
     chat_rate_limit: int = 20
     chat_rate_window_seconds: int = 3600
 
@@ -64,6 +67,14 @@ class Settings(BaseSettings):
     @property
     def web_origins(self) -> list[str]:
         return [origin.strip() for origin in self.web_origin.split(",") if origin.strip()]
+
+    @property
+    def profile_credentials(self) -> dict[str, str]:
+        return {
+            "test1": self.profile_test1_password,
+            "test2": self.profile_test2_password,
+            "lenny": self.profile_lenny_password,
+        }
 
 
 @lru_cache

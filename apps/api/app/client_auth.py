@@ -8,7 +8,7 @@ import threading
 import time
 from collections import defaultdict, deque
 from datetime import UTC, datetime, timedelta
-from uuid import UUID, uuid4
+from uuid import NAMESPACE_URL, UUID, uuid4, uuid5
 
 from fastapi import Header, HTTPException
 
@@ -28,6 +28,13 @@ def validate_auth_configuration() -> None:
         or len(settings.anonymous_token_secret) < 32
     ):
         raise RuntimeError("ANONYMOUS_TOKEN_SECRET must be a unique value of at least 32 characters")
+    if settings.auth_mode == "profiles" and (
+        not settings.anonymous_token_secret
+        or settings.anonymous_token_secret == _DEFAULT_SECRET
+        or len(settings.anonymous_token_secret) < 32
+        or any(not password for password in settings.profile_credentials.values())
+    ):
+        raise RuntimeError("Profile authentication secrets are incomplete")
 
 
 def _sign(payload: str) -> str:
@@ -37,22 +44,40 @@ def _sign(payload: str) -> str:
     return base64.urlsafe_b64encode(digest).decode().rstrip("=")
 
 
-def issue_client_token() -> tuple[str, datetime | None]:
+def _issue_token(user_id: UUID, display_name: str) -> tuple[str, datetime]:
     settings = get_settings()
-    if settings.auth_mode != "anonymous":
-        ensure_user(LOCAL_USER_ID, "Local user")
-        return "local", None
-    user_id = uuid4()
     expires_at = datetime.now(UTC) + timedelta(days=settings.anonymous_token_ttl_days)
     nonce = secrets.token_urlsafe(12)
     payload = f"{user_id}.{int(expires_at.timestamp())}.{nonce}"
-    ensure_user(user_id, "Anonymous visitor")
+    ensure_user(user_id, display_name)
     return f"{payload}.{_sign(payload)}", expires_at
+
+
+def issue_client_token() -> tuple[str, datetime | None]:
+    settings = get_settings()
+    if settings.auth_mode == "local":
+        ensure_user(LOCAL_USER_ID, "Local user")
+        return "local", None
+    if settings.auth_mode != "anonymous":
+        raise HTTPException(status_code=401, detail="Profile sign-in required")
+    return _issue_token(uuid4(), "Anonymous visitor")
+
+
+def login_profile(username: str, password: str) -> tuple[str, datetime]:
+    settings = get_settings()
+    if settings.auth_mode != "profiles":
+        raise HTTPException(status_code=404, detail="Profile sign-in is not enabled")
+    normalized = username.strip().casefold()
+    expected = settings.profile_credentials.get(normalized, "")
+    if not expected or not hmac.compare_digest(password, expected):
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    user_id = uuid5(NAMESPACE_URL, f"lenny-growth-profile:{normalized}")
+    return _issue_token(user_id, normalized)
 
 
 def current_user_id(authorization: str | None = Header(default=None)) -> UUID:
     settings = get_settings()
-    if settings.auth_mode != "anonymous":
+    if settings.auth_mode == "local":
         return LOCAL_USER_ID
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="Anonymous client token required")
@@ -76,7 +101,7 @@ def current_user_id(authorization: str | None = Header(default=None)) -> UUID:
 
 def enforce_chat_rate_limit(user_id: UUID) -> None:
     settings = get_settings()
-    if settings.auth_mode != "anonymous":
+    if settings.auth_mode == "local":
         return
     now = time.monotonic()
     cutoff = now - settings.chat_rate_window_seconds

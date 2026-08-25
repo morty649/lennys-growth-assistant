@@ -39,6 +39,8 @@ def _slug(value: str) -> str:
 def _default_model(provider: str) -> str:
     if provider == "anthropic":
         return os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-5")
+    if provider == "groq":
+        return os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
     return os.getenv("OLLAMA_MODEL", "qwen3:8b")
 
 
@@ -46,7 +48,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run real multi-turn sessions through POST /api/chat")
     parser.add_argument("--set", choices=("development", "acceptance", "v02"), default="v02")
     parser.add_argument("--limit", type=int)
-    parser.add_argument("--provider", choices=("ollama", "anthropic"), default="ollama")
+    parser.add_argument("--provider", choices=("ollama", "anthropic", "groq"), default="ollama")
     parser.add_argument("--model")
     parser.add_argument("--run-id")
     parser.add_argument("--resume", action="store_true")
@@ -78,6 +80,26 @@ def main() -> None:
             session_result = existing_by_case.get(case["id"])
             if session_result and len(session_result["turns"]) == len(case["turns"]):
                 continue
+            eval_username = os.getenv("EVAL_USERNAME")
+            eval_password = os.getenv("EVAL_PASSWORD")
+            client_token = (
+                client.post(
+                    "/api/login",
+                    json={"username": eval_username, "password": eval_password},
+                )
+                if eval_username and eval_password
+                else client.post("/api/client")
+            )
+            client_token.raise_for_status()
+            token = str(client_token.json().get("token") or "")
+            headers = {"Authorization": f"Bearer {token}"} if token != "local" else {}
+            # Anonymous cloud sessions belong to the token that created them.
+            # Tokens are deliberately never checkpointed, so an interrupted
+            # case restarts cleanly instead of persisting an identity secret.
+            if session_result is not None:
+                output["sessions"].remove(session_result)
+                existing_by_case.pop(case["id"], None)
+                session_result = None
             if session_result is None:
                 created = client.post(
                     "/api/sessions",
@@ -86,6 +108,7 @@ def main() -> None:
                         "provider": args.provider,
                         "model": model,
                     },
+                    headers=headers,
                 )
                 created.raise_for_status()
                 session_result = {
@@ -109,6 +132,7 @@ def main() -> None:
                         "provider": args.provider,
                         "model": model,
                     },
+                    headers=headers,
                 )
                 response.raise_for_status()
                 payload = response.json()

@@ -7,9 +7,12 @@ import {
   createSession as createSessionRequest,
   deleteSession,
   getConfig,
+  hasClientToken,
   listArtifacts,
   listMessages,
   listSessions,
+  loginProfile,
+  logoutProfile,
   sendChat,
   updateSessionProvider,
 } from './api-client';
@@ -38,6 +41,12 @@ export default function Home() {
   const [workspaceTab, setWorkspaceTab] = useState<'preview' | 'code' | 'sources'>('sources');
   const [workspaceWide, setWorkspaceWide] = useState(false);
   const [railOpen, setRailOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'local' | 'anonymous' | 'profiles'>('local');
+  const [authReady, setAuthReady] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [signingIn, setSigningIn] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const conversationScrollRef = useRef<HTMLDivElement>(null);
   const active = sessions.find((session) => session.id === activeId);
@@ -68,13 +77,16 @@ export default function Home() {
     return created;
   }, []);
 
-  useEffect(() => {
-    (async () => {
+  const initialize = useCallback(async () => {
       try {
-        const [config, existing] = await Promise.all([
-          getConfig(), listSessions(),
-        ]);
+        const config = await getConfig();
         setProviders(config.providers);
+        setAuthMode(config.auth_mode ?? 'local');
+        if (config.auth_mode === 'profiles' && !hasClientToken()) {
+          setSignedIn(false); setAuthReady(true); return;
+        }
+        const existing = await listSessions();
+        setSignedIn(true);
         if (existing.length) {
           activeIdRef.current = existing[0].id;
           setSessions(existing); setActiveId(existing[0].id);
@@ -85,10 +97,27 @@ export default function Home() {
           setMessages(nextMessages); setArtifacts(nextArtifacts);
         } else await createSession();
       } catch (cause) {
-        setError(cause instanceof Error ? cause.message : 'Could not reach the assistant API');
+        const message = cause instanceof Error ? cause.message : 'Could not reach the assistant API';
+        if (message.toLowerCase().includes('sign in') || message.toLowerCase().includes('token')) {
+          setSignedIn(false);
+        } else setError(message);
+      } finally {
+        setAuthReady(true);
       }
-    })();
   }, [createSession]);
+
+  useEffect(() => { void (async () => { await initialize(); })(); }, [initialize]);
+
+  async function signIn(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); setSigningIn(true); setError('');
+    try {
+      await loginProfile(username, password);
+      setPassword('');
+      await initialize();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'Sign-in failed');
+    } finally { setSigningIn(false); }
+  }
 
   useEffect(() => {
     const scroller = conversationScrollRef.current;
@@ -162,8 +191,19 @@ export default function Home() {
     setWorkspace({ kind: 'artifact', artifactId: artifact.id }); setWorkspaceTab('preview');
   }
 
+  function downloadMarkdown(artifact: Artifact) {
+    const filename = `${artifact.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'lenny-growth-brief'}.md`;
+    const url = URL.createObjectURL(new Blob([artifact.source_content], { type: 'text/markdown;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url; link.download = filename; link.click();
+    URL.revokeObjectURL(url);
+  }
+
   const providerState = providers.find((provider) => provider.id === active?.provider);
   const workspaceOpen = Boolean(workspace && (selectedMessage || selectedArtifact));
+
+  if (!authReady) return <main className="login-shell"><div className="login-card"><span className="eyebrow">L/G_ INITIALIZING</span><h1>Lenny&apos;s Growth Assistant</h1></div></main>;
+  if (authMode === 'profiles' && !signedIn) return <main className="login-shell"><form className="login-card" onSubmit={(event) => void signIn(event)}><span className="eyebrow">PRIVATE RESEARCH WORKSPACE</span><h1>Lenny&apos;s Growth Assistant</h1><p>Sign in to open your conversations and artifacts.</p><label>Profile<input autoComplete="username" value={username} onChange={(event) => setUsername(event.target.value)} required /></label><label>Password<input autoComplete="current-password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} required /></label>{error && <div className="login-error">{error}</div>}<button disabled={signingIn} type="submit">{signingIn ? 'signing in…' : 'enter workspace ↗'}</button></form></main>;
 
   return (
     <main className={`app-shell ${workspaceOpen ? 'workspace-open' : ''} ${workspaceWide ? 'workspace-wide' : ''}`}>
@@ -182,7 +222,7 @@ export default function Home() {
       <section className="conversation-panel">
         <header className="conversation-header">
           <div><span className="eyebrow">{active ? 'SESSION ACTIVE' : 'CONNECTING'}</span><h1>{active?.title ?? 'Ask the people who built growth'}</h1></div>
-          <label className={`model-chip ${providerState?.enabled ? 'ready' : 'unavailable'}`} title={providerState?.reason}><span /><select value={active?.provider ?? 'ollama'} onChange={(event) => void chooseProvider(event.target.value as Provider)} aria-label="Model provider">{providers.map((provider) => <option key={provider.id} value={provider.id} disabled={!provider.enabled}>{provider.label}{!provider.enabled ? ' · unavailable' : ''}</option>)}</select></label>
+          <div className="provider-controls">{authMode === 'profiles' && <button className="profile-switch" onClick={() => { logoutProfile(); window.location.reload(); }} type="button">switch profile</button>}<label className={`model-chip ${providerState?.enabled ? 'ready' : 'unavailable'}`} title={providerState?.reason}><span /><select value={active?.provider ?? 'ollama'} onChange={(event) => void chooseProvider(event.target.value as Provider)} aria-label="Model provider">{providers.map((provider) => <option key={provider.id} value={provider.id} disabled={!provider.enabled}>{provider.label}{!provider.enabled ? ' · unavailable' : ''}</option>)}</select></label></div>
         </header>
 
         <div className="conversation-scroll" ref={conversationScrollRef}>
@@ -213,7 +253,7 @@ export default function Home() {
       </section>
 
       {workspaceOpen && <aside className="context-workspace" aria-label="Context workspace">
-        <header><div><span className="eyebrow">CONTEXT WORKSPACE</span><strong>{selectedArtifact?.title ?? 'Answer evidence'}</strong></div><div className="workspace-controls"><button onClick={() => setWorkspaceWide((value) => !value)} type="button" aria-label="Toggle workspace width">{workspaceWide ? 'shrink' : 'expand'}</button><button onClick={() => { setWorkspace(null); setWorkspaceWide(false); }} type="button" aria-label="Close workspace">×</button></div></header>
+        <header><div><span className="eyebrow">CONTEXT WORKSPACE</span><strong>{selectedArtifact?.title ?? 'Answer evidence'}</strong></div><div className="workspace-controls">{selectedArtifact?.format === 'markdown' && <button onClick={() => downloadMarkdown(selectedArtifact)} type="button">save markdown ↓</button>}<button onClick={() => setWorkspaceWide((value) => !value)} type="button" aria-label="Toggle workspace width">{workspaceWide ? 'shrink' : 'expand'}</button><button onClick={() => { setWorkspace(null); setWorkspaceWide(false); }} type="button" aria-label="Close workspace">×</button></div></header>
         <nav className="workspace-tabs" aria-label="Workspace view">
           {selectedArtifact && <><button className={workspaceTab === 'preview' ? 'active' : ''} onClick={() => setWorkspaceTab('preview')} type="button">Preview</button><button className={workspaceTab === 'code' ? 'active' : ''} onClick={() => setWorkspaceTab('code')} type="button">Code</button></>}
           <button className={workspaceTab === 'sources' ? 'active' : ''} onClick={() => setWorkspaceTab('sources')} type="button">Sources <span>{workspaceSources.length}</span></button>

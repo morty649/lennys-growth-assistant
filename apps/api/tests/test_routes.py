@@ -16,6 +16,7 @@ def test_public_and_internal_route_contract_is_preserved() -> None:
         ("GET", "/api/providers"),
         ("GET", "/api/config"),
         ("POST", "/api/client"),
+        ("POST", "/api/login"),
         ("GET", "/api/sessions"),
         ("POST", "/api/sessions"),
         ("PATCH", "/api/sessions/{session_id}"),

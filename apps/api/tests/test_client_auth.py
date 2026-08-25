@@ -26,3 +26,20 @@ def test_anonymous_token_is_signed_and_scoped(monkeypatch: pytest.MonkeyPatch) -
     with pytest.raises(HTTPException) as error:
         client_auth.current_user_id(f"Bearer {token[:-1]}x")
     assert error.value.status_code == 401
+
+
+def test_profile_login_uses_stable_isolated_identity(monkeypatch: pytest.MonkeyPatch) -> None:
+    settings = client_auth.get_settings()
+    monkeypatch.setattr(settings, "auth_mode", "profiles")
+    monkeypatch.setattr(settings, "profile_test1_password", "unit-test-password")
+    monkeypatch.setattr(settings, "anonymous_token_secret", "test-secret-with-more-than-thirty-two-characters")
+    monkeypatch.setattr(client_auth, "ensure_user", lambda *_args, **_kwargs: None)
+
+    token, _ = client_auth.login_profile("Test1", "unit-test-password")
+    first_id = client_auth.current_user_id(f"Bearer {token}")
+    second_token, _ = client_auth.login_profile("test1", "unit-test-password")
+    assert client_auth.current_user_id(f"Bearer {second_token}") == first_id
+
+    with pytest.raises(HTTPException) as error:
+        client_auth.login_profile("test1", "wrong")
+    assert error.value.status_code == 401

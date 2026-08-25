@@ -2,7 +2,7 @@
 
 ## Product
 
-Lenny's Growth Assistant is a single-user, localhost-only research workspace for asking grounded questions across the Lenny's Podcast corpus without losing conversational context.
+Lenny's Growth Assistant is a local-first research workspace for asking grounded questions across the Lenny's Podcast corpus without losing conversational context. The mandatory evaluator path is self-contained Docker Compose; an additive public demo uses three password-protected profiles with isolated sessions.
 
 ## Primary user jobs
 
@@ -22,7 +22,7 @@ Lenny's Growth Assistant is a single-user, localhost-only research workspace for
 - PostgreSQL stores sessions and source metadata; Chroma stores dense retrieval vectors.
 - The entire transcript corpus can be ingested without modifying source files.
 - Pi is the only model/tool harness. The default backend is Ollama `qwen3:8b` with per-request no-think enforcement; 14B is retained only as a proven fallback option.
-- Claude is an explicit optional Pi backend. Groq is deferred and absent from the normal v0.1 UI.
+- Claude and Groq are explicit optional Pi backends. The public profile uses Groq GPT-OSS 120B with a disclosed 20B fallback only for provider rate limits.
 - Answers cite transcript evidence; unsupported questions abstain.
 - Users can inspect answer-bound evidence and exact-message artifacts in a responsive Preview/Code/Sources workspace.
 - Ship 30 requests use an evidence-ID allowlist, structured word budgets, and 1,100–1,400 word artifact validation.
@@ -30,8 +30,8 @@ Lenny's Growth Assistant is a single-user, localhost-only research workspace for
 
 ## Non-goals for MVP
 
-- Authentication or multiple simultaneous users
-- Public application hosting, Supabase migration, or analytics
+- Account signup, teams, or organization administration
+- Product analytics or transcript editing workflows
 - Editing/replacing the source transcripts
 - General web search or answering from model memory
 - JavaScript execution in generated artifacts

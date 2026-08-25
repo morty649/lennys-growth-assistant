@@ -33,9 +33,9 @@ services:
       - key: AUTO_INGEST
         value: "true"
       - key: AUTH_MODE
-        value: anonymous
+        value: profiles
       - key: CHAT_RATE_LIMIT
-        value: "20"
+        value: "100"
       - key: CHAT_RATE_WINDOW_SECONDS
         value: "3600"
       - key: DEFAULT_PROVIDER
@@ -54,6 +54,12 @@ services:
         generateValue: true
       - key: ANONYMOUS_TOKEN_SECRET
         generateValue: true
+      - key: PROFILE_TEST1_PASSWORD
+        sync: false
+      - key: PROFILE_TEST2_PASSWORD
+        sync: false
+      - key: PROFILE_LENNY_PASSWORD
+        sync: false
       - key: DATABASE_URL
         sync: false
       - key: SUPABASE_URL

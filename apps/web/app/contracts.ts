@@ -103,6 +103,7 @@ export type ConfigResponse = {
   default_provider: Provider;
   providers: ProviderConfig[];
   deployment_mode?: string;
+  auth_mode?: 'local' | 'anonymous' | 'profiles';
 };
 
 export type ToolRun = {

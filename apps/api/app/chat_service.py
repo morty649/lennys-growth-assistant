@@ -28,11 +28,18 @@ async def handle_chat(payload: ChatRequest, user_id: UUID | None = None) -> Chat
         provider,
         model,
         request_id=request_id,
+        resolved_context=session.get("resolved_context") or {},
     )
     intent = _intent_from_result(result)
     update_session(
         payload.session_id,
-        {"resolved_context": _context_from_result(result, intent)},
+        {
+            "resolved_context": _context_from_result(
+                result,
+                intent,
+                session.get("resolved_context") or {},
+            )
+        },
         user_id or UUID("00000000-0000-4000-8000-000000000001"),
     )
     assistant = _persist_assistant(
@@ -70,9 +77,25 @@ def _intent_from_result(result: AgentResult) -> str:
     return "general"
 
 
-def _context_from_result(result: AgentResult, intent: str) -> dict[str, Any]:
+def _context_from_result(
+    result: AgentResult,
+    intent: str,
+    previous: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    previous = previous or {}
+    if not result.evidence:
+        return {**previous, "last_intent": intent}
+
     return {
         "last_intent": intent,
+        "guests": list(
+            dict.fromkeys(
+                str(item["guest"])
+                for item in result.evidence[:12]
+                if item.get("guest")
+            )
+        ),
+        "topics": previous.get("topics") or [],
         "prior_evidence_ids": [item["id"] for item in result.evidence[:12]],
         "episode_ids": list(dict.fromkeys(item["episode_id"] for item in result.evidence[:8])),
     }
