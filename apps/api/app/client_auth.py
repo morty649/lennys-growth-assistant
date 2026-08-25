@@ -75,6 +75,13 @@ def login_profile(username: str, password: str) -> tuple[str, datetime]:
     return _issue_token(user_id, normalized)
 
 
+def _profile_user_ids() -> set[UUID]:
+    return {
+        uuid5(NAMESPACE_URL, f"lenny-growth-profile:{username}")
+        for username in get_settings().profile_credentials
+    }
+
+
 def current_user_id(authorization: str | None = Header(default=None)) -> UUID:
     settings = get_settings()
     if settings.auth_mode == "local":
@@ -96,6 +103,8 @@ def current_user_id(authorization: str | None = Header(default=None)) -> UUID:
         raise HTTPException(status_code=401, detail="Invalid anonymous client token") from exc
     if expires_at <= int(time.time()):
         raise HTTPException(status_code=401, detail="Anonymous client token expired")
+    if settings.auth_mode == "profiles" and user_id not in _profile_user_ids():
+        raise HTTPException(status_code=401, detail="Profile sign-in required")
     return user_id
 
 
