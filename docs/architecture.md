@@ -27,7 +27,7 @@ Each episode stores `evidence_build_version`; each Chroma collection stores its 
 
 - `episodes/<guest>/transcript.md` supplies canonical guest identity.
 - `index/*.md` supplies a soft topic-to-episode prior, not passage-level truth.
-- PostgreSQL full-text search and the selected dense backend produce independent candidates. Local uses Ollama `nomic-embed-text` in Chroma; cloud uses Supabase `gte-small` vectors in pgvector.
+- PostgreSQL full-text search and the selected dense backend produce independent candidates. Local uses Ollama `nomic-embed-text` in Chroma; the quota-free cloud default uses deterministic feature-hash vectors in pgvector, with Supabase `gte-small` available as an optional upgrade.
 - Query decomposition, reciprocal-rank fusion, query/guest/topic overlap reranking, episode diversity, and comparison coverage produce the evidence set.
 - Stable evidence IDs resolve exact sources and expanded local context.
 - Resolved guest episode IDs are hard filters in lexical retrieval and post-fusion ranking, so unrelated guests cannot enter a guest-scoped evidence set.
@@ -67,7 +67,7 @@ public Sites frontend
      -> Pi agent on loopback
      -> Groq GPT-OSS 120B
      -> Supabase PostgreSQL + pgvector
-     -> Supabase gte-small embedding function
+     -> local feature-hash embedding (default) or Supabase gte-small Edge Function (optional)
 ```
 
 The cloud profile is selected only by environment. Supabase migrations are versioned under `supabase/migrations`; the embedding function lives under `supabase/functions/embed`; and the combined backend image lives under `deploy/cloud`. Signed anonymous client tokens scope every session query to one browser identity. The frontend never receives the Groq key, database password, service-role key, internal tool token, or anonymous-token signing secret.

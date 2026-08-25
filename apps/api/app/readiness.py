@@ -7,7 +7,7 @@ import httpx
 
 from app.database import connection
 from app.dependencies import settings
-from app.indexing import ingestion_state
+from app.indexing import embedding_version, ingestion_state
 
 
 async def readiness_snapshot() -> dict[str, Any]:
@@ -29,7 +29,7 @@ async def readiness_snapshot() -> dict[str, Any]:
     else:
         dependencies["pgvector"] = {
             "status": "ok" if dependencies["postgres"]["status"] == "ok" else "error",
-            "embedding": "supabase:gte-small",
+            "embedding": embedding_version(),
         }
 
     async with httpx.AsyncClient(timeout=2.5, trust_env=False) as client:

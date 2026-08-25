@@ -42,7 +42,7 @@ The cloud profile is intentionally additive:
 - The frontend deploys independently and proxies same-origin `/api/backend/*` requests to the configured backend URL.
 - One Docker web service runs FastAPI and Pi internally; only FastAPI is public.
 - Supabase PostgreSQL stores sessions, messages, transcript evidence, artifacts, and 384-dimensional `pgvector` embeddings.
-- A Supabase Edge Function uses `gte-small` for corpus and query embeddings.
+- The free cloud profile uses deterministic local feature-hash embeddings in pgvector, avoiding external embedding quotas; the included Supabase `gte-small` Edge Function remains an optional upgrade.
 - Groq `openai/gpt-oss-120b` is the explicit default model and calls the same Pi tools.
 - Signed anonymous browser tokens isolate sessions; chat is rate-limited and ingestion requires the private internal token.
 

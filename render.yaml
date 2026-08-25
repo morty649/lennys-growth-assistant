@@ -27,7 +27,7 @@ services:
       - key: VECTOR_BACKEND
         value: pgvector
       - key: EMBEDDING_BACKEND
-        value: supabase
+        value: hash
       - key: SUPABASE_EMBED_FUNCTION
         value: embed
       - key: AUTO_INGEST
