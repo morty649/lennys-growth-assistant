@@ -186,3 +186,10 @@ Codex CLI/ChatGPT credentials are not used as an application provider.
 - [Manual test plan](docs/manual-test.md)
 - [Sanitized coding-agent log](agent-transcripts/build-log.md)
 - [Cloud recovery and deployment decision](docs/what-we-messed-up-and-recovery-plan.md)
+
+## Online demo
+
+You can access the hosted application at [Lenny's Growth Assistant](https://lennys-growth-assistant.maruthi-enugula.chatgpt.site/).
+
+- Username: `lenny`
+- Password: `podcast`
