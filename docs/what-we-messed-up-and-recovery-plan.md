@@ -1,232 +1,161 @@
-# What we messed up and how we recover
+# What we messed up and what we changed
 
 Date: 2026-08-26  
-Status: local implementation checkpoint; cloud work has not started
+Status: local and cloud implementations are running; final evaluation evidence is incomplete
 
-## The decision
+This is a technical retrospective, not a release claim. It separates problems we fixed from validation work that still remains.
 
-We will keep two explicit product tracks instead of repeatedly converting one environment into the other.
+## Current product shape
 
-1. **Local demo:** the current self-contained repository stays Docker Compose + local PostgreSQL + Chroma + Ollama `qwen3:8b`. It is the mandatory local-model demonstration and the evaluator can run it from a clone. The transcripts and topic indexes remain inside the repository.
-2. **Cloud demo:** a later, separate deployment will use managed Supabase PostgreSQL, Supabase `pgvector`, hosted FastAPI/Pi services, and Groq. Its default model will be the explicit, configurable `openai/gpt-oss-120b`. Anthropic remains an optional adapter, not a release dependency.
-
-We deliberately choose **Supabase instead of Railway for managed PostgreSQL**. The application still needs somewhere to run the web, FastAPI, and Pi services: Supabase is the database and vector store, not the application host. No Supabase, Groq, or public-hosting changes belong in the local-only checkpoint.
-
-```text
-LOCAL
-Browser -> web -> FastAPI -> Pi -> Ollama
-                    |-> local PostgreSQL
-                    `-> local Chroma
-
-CLOUD
-Browser -> hosted web -> hosted FastAPI -> hosted Pi -> Groq GPT-OSS 120B
-                            |
-                            `-> Supabase PostgreSQL + pgvector
-```
-
-For a public demo, we configure one server-side Groq key and protect it with rate limits. For a cloned repository, the evaluator supplies `GROQ_API_KEY` in `.env`. We should not ask public visitors to paste keys into the browser, and keys must never be shipped in Git.
-
-## What already has real value
-
-- The nested repository is self-contained: 303 episode directories and 89 topic/index files are tracked with the application.
-- The local product path exists: web UI, FastAPI, Pi agent, PostgreSQL sessions, hybrid retrieval, Chroma vectors, Ollama, citations, and artifacts.
-- Session, message, artifact, tool-run, episode, evidence, and ingestion records have PostgreSQL schemas.
-- Retrieval has a useful diagnostic baseline: the recorded 40-case suite reached Recall@5 1.00 and Recall@8 1.00.
-- The source checkpoint passes 28 API tests, 14 agent tests, web lint, and a production web build.
-- Failure behavior is generally conservative: weak or uncited transcript answers are withheld instead of presented as grounded facts.
-
-Those assets should be preserved. The recovery is mostly about proving the product, simplifying the deployment story, and removing contradictions—not rewriting everything.
+- **Local:** Docker Compose runs the web UI, FastAPI, Pi agent, PostgreSQL, Chroma, and a host-based Ollama model. Groq and Claude are optional, explicitly selected providers.
+- **Cloud:** the public UI calls a Render backend using Supabase PostgreSQL and pgvector. Groq is the configured hosted model; Claude remains optional.
+- **Shared behavior:** both profiles use the same session, routing, retrieval, grounding, source, artifact, and tool contracts.
 
 ## 1. We kept changing the target
 
 ### What went wrong
 
-The project moved between localhost, a public website, Railway, Supabase, Ollama, Codex, Anthropic, Groq, 8B, and 14B without freezing one accepted baseline. Each pivot introduced partial configuration and documentation, so “implemented,” “enabled,” and “verified” became different states.
+We moved repeatedly between localhost, public hosting, Railway, Supabase, Ollama, Codex, Claude, Groq, and several model sizes. Configuration, documentation, and actual verification stopped describing the same product.
 
-### How we solve it
+### What changed
 
-Freeze the current repository as the local-only baseline. Build cloud support afterward in small commits with separate acceptance gates. Do not alter the local Compose topology merely to make cloud hosting easier. Both tracks share domain code and tools, but have different deployment configuration.
+The product now has two explicit profiles instead of one shifting topology. Local remains self-contained and evaluator-run. Cloud uses the hosted UI, Render, Supabase, and Groq. Supabase was deliberately chosen over Railway for managed PostgreSQL. The two profiles share application code but keep independent infrastructure and model configuration.
 
-## 2. We treated code presence as product success
-
-### What went wrong
-
-Several capabilities exist in source but were described too confidently. Anthropic has an adapter but no live canary. Groq has partial agent code but is excluded by API and UI types. Artifact viewing exists, but strong end-to-end Ship 30 generation has not passed.
-
-### How we solve it
-
-Use four labels everywhere: **planned**, **implemented**, **verified**, and **release-passing**. A provider becomes verified only after a real five-turn canary. A feature becomes release-passing only after its user-visible output meets the stated quality gate.
-
-## 3. We optimized retrieval before the basic assistant experience
+## 2. We treated implemented code as proven behavior
 
 ### What went wrong
 
-The assistant initially behaved like every message required podcast evidence. Greetings and ordinary questions triggered abstentions or irrelevant sources. That made good retrieval metrics meaningless to a user whose first two chat turns felt broken.
+Adapters, routes, or UI controls were sometimes described as complete before a real end-to-end result existed. This was most visible with provider support, Ship 30 generation, and deployment readiness.
 
-### How we solve it
+### What changed
 
-Keep one adaptive agent with clearly described tools and a compact live corpus catalog. The model can answer ordinary conversation directly, browse the catalog when scope is unclear, and retrieve only for transcript claims. Add a small regression suite covering greetings, identity, general help, research, follow-ups, and unsupported questions.
+We distinguish **implemented**, **automatically tested**, **deployed**, and **release-passing**. The current backend deployment is live and healthy, all 303 episodes are ingested, and persistence works. Ship 30 and the final multi-turn evaluation are still not release-passing because their intended live evidence has not been completed and reviewed.
 
-## 4. We replaced dynamic reasoning with patches
-
-### What went wrong
-
-Some fixes were framed around individual guests, example phrases, or special cases. Even where later code removed those patches, the design process repeatedly leaned toward hardcoded routing. That does not generalize across 303 episodes.
-
-### How we solve it
-
-Resolve guests and topics from the generated episode/index catalog, then pass canonical filters into a generic retrieval tool. Tests may use named examples, but production logic must not contain guest-specific answers or topic keyword response templates.
-
-## 5. We chose evaluation volume before evaluation economics
+## 3. We made every question look like a RAG question
 
 ### What went wrong
 
-The 50-turn local run took 45.7 minutes, with p50 latency of 49.8 seconds and p95 of 84.2 seconds. Earlier plans proposed much larger runs before individual failures were understood. This consumed time while producing repetitive evidence.
+Early routing sent greetings and general questions toward transcript retrieval. The assistant then abstained or displayed sources when no podcast evidence was necessary.
 
-### How we solve it
+### What changed
 
-Use a ladder: unit tests, six-turn routing smoke, one five-turn research session, ten distinct five-turn sessions, then a larger suite only if needed. Run cheap retrieval regression separately. Stop a suite early when a gate clearly fails, fix the failure class, and resume from checkpoints.
+Every turn now passes through adaptive semantic routing. Direct conversation uses no transcript tool. Corpus questions browse the catalog. Research questions retrieve evidence. Ship 30 requests use their dedicated skill and evidence preparation tool. Sources appear only when retrieval was actually used.
 
-## 6. We selected a local model that does not meet every job
-
-### What went wrong
-
-`qwen3:8b` proves local tool use, but it is slow on this machine and has not produced a passing long-form Ship 30 essay. The recorded 50-turn run also exceeded the evidence-only fallback target: 0.16 versus 0.10.
-
-### How we solve it
-
-Keep Qwen 8B for the mandatory local demonstration and short grounded research. State its limits. Use Groq `openai/gpt-oss-120b` for the cloud quality demonstration and Ship 30 test. Do not silently switch providers; show the actual provider/model with each response.
-
-## 7. The Ship 30 feature is implemented but not complete
+## 4. We reached for hardcoded fixes
 
 ### What went wrong
 
-The skill, preparation tool, grounding validation, and artifact gate exist. However, the tested 8B drafts were generic, short, unsupported, or missing citation tokens. The gate correctly withheld them, which is safe behavior but not a successful assignment demonstration.
+Some proposed fixes were framed around specific guests, phrases, or example questions. That approach could make a demo case pass while failing across the other episodes.
 
-### How we solve it
+### What changed
 
-First run one hand-reviewed gold case on GPT-OSS 120B. Require valid transcript evidence, 1,100–1,400 words, a specific thesis, narrative progression, skimmability, and an actionable takeaway. Only after that passes should we run the remaining nine editorial cases and record their scores.
+Guest and topic resolution now operates from the generated corpus catalog. Canonical episode IDs become dynamic retrieval constraints. Lexical and vector results are filtered and reranked generically. Named guests remain in tests as regression examples, not as production routing rules.
 
-## 8. Evaluation data polluted the demo UI
-
-### What went wrong
-
-Automated evaluation sessions were stored beside human demo sessions, leaving a noisy sidebar full of machine-generated investigations. This makes the interface look unfinished and makes it difficult to inspect a clean user journey.
-
-### How we solve it
-
-Give evaluations a separate database, schema, or test user. Seed the demo with no sessions or two carefully chosen examples. Never run automated suites against the same identity and database shown in the recorded demo.
-
-## 9. Provider support is contradictory
+## 5. We optimized evaluation volume instead of learning speed
 
 ### What went wrong
 
-The agent contract knows `groq`, but FastAPI request schemas, provider discovery, and frontend types accept only Ollama and Anthropic. The environment example still names Qwen 3.6 while documentation says Groq is deferred. This is a half-integration, not cloud support.
+Large local evaluations were started before individual failure modes were understood. Qwen latency turned them into multi-hour runs, while repeated failures added little information.
 
-### How we solve it
+### What changed
 
-Add Groq vertically in one slice: shared provider contract, configuration endpoint, session schema, UI selector, exact model metadata, Pi model adapter, error mapping, and tests. Default to `openai/gpt-oss-120b`, but permit `GROQ_MODEL` override. Do not expose it until a live tool-call canary passes.
+Evaluation now follows a ladder: unit tests, focused routing checks, one research canary, then five distinct three-turn sessions. Retrieval Recall@5 and Recall@8 are measured separately from expensive generation. Runs save checkpoints and detailed answer/evidence records. Two interrupted Groq result files remain intentionally untracked and must not be presented as final evidence.
 
-## 10. We did not separate database hosting from application hosting
-
-### What went wrong
-
-Railway and Supabase were discussed as though either one automatically hosted the entire product. Supabase provides managed PostgreSQL and related services; it does not run this FastAPI/Pi application or the Ollama model. The current Dockerfiles also rely on local mounts that a cloud host will not have.
-
-### How we solve it
-
-Use Supabase for PostgreSQL and vectors. Host the frontend and backend services separately. During cloud deployment, bake required skills into the agent image and run corpus ingestion as a controlled one-time job from the tracked transcript files. Do not mount a developer laptop path in production.
-
-## 11. Chroma creates an unnecessary second cloud stateful service
+## 6. We expected one small local model to do every job
 
 ### What went wrong
 
-Chroma is sensible locally, but hosting both Supabase PostgreSQL and a persistent Chroma service makes the cloud version harder to provision, back up, and explain. It also creates two sources of ingestion state.
+Qwen 8B was expected to handle fast conversation, reliable tool routing, grounded synthesis, and a polished 1,250-word essay. Its latency and long-form reliability do not justify that claim.
 
-### How we solve it
+### What changed
 
-Keep Chroma unchanged locally. For cloud only, enable `pgvector` in Supabase and store embeddings with evidence IDs in PostgreSQL. Preserve the retrieval interface so lexical search, vector search, fusion, and reranking do not care which vector backend is selected.
+The local profile demonstrates Ollama-based operation and tool use. The same local UI can explicitly select Groq or Claude when configured; those are separate providers, not silent fallbacks. The cloud profile uses Groq for the hosted demonstration. Actual provider and model metadata are shown and persisted with every response.
 
-## 12. The public version has no user boundary
-
-### What went wrong
-
-The local MVP uses one fixed local user, loopback-only ports, a development internal token, and localhost CORS. That is acceptable for a laptop demo but unsafe for a public URL: visitors would share sessions and could consume the configured model quota.
-
-### How we solve it
-
-For cloud, assign each browser an anonymous Supabase-authenticated identity or require a simple sign-in, enforce ownership on every session/artifact query, use real service secrets, restrict CORS, rate-limit chat, and disable public ingestion/deletion administration. Keep this out of the local-only checkpoint.
-
-## 13. “One command” is not yet literally one command
+## 7. Ship 30 is safe but not yet proven
 
 ### What went wrong
 
-`make up` starts the containers, but Ollama and two model downloads are host prerequisites. First-run embedding also takes time. A fresh-clone rehearsal from the exact commit has not been recorded, so the README path is plausible rather than independently proven.
+The skill and artifact UI existed, but early drafts were generic, short, or missing valid evidence tokens. Having a button and a prompt did not demonstrate a successful writing workflow.
 
-### How we solve it
+### What changed
 
-Be precise: the evaluator installs Docker and Ollama, pulls the two named models, then runs `docker compose up --build`. Add a preflight that reports missing models clearly. Before submission, test from a clean clone, wait for ingestion parity, and record exact elapsed time and commands.
+Ship 30 is a versioned skill with a bounded preparation tool. Generation requires grounded passages, a strong hook, narrative progression, skimmable structure, an actionable takeaway, and approximately 1,250 words. The server withholds artifacts that fail structural or citation gates. One strong live artifact still needs manual review before this capability is called release-passing.
 
-## 14. Documentation and current behavior drifted apart
+## 8. Evaluation sessions polluted the product experience
 
 ### What went wrong
 
-The README previously linked to a nonexistent planning document. Some older reports describe fewer tests than now exist, and “Claude implemented,” “Groq deferred,” and “cloud version” are easy to misread as verified provider parity. The current containers are also stopped even though prior reports describe a running stack.
+Automated sessions were written into the same profile used for manual demonstrations. The sidebar became noisy and made the product appear unfinished.
 
-### How we solve it
+### What changed
 
-Make one release-status page the source of truth. Update it only from a repeatable verification checklist and link historical reports as historical. Remove broken links, date provider canaries, and distinguish source verification from a currently running deployment.
+Profiles now isolate user sessions and the evaluator supports a distinct run identity. Future automated runs should use a dedicated test profile or database. Existing evaluation sessions still visible in the demo profile should be cleaned only after preserving any evidence needed for the final report.
 
-## Supabase translation of the earlier Railway idea
+## 9. We confused database hosting with application hosting
 
-| Earlier Railway-shaped responsibility | Supabase-based decision |
-|---|---|
-| Managed PostgreSQL service | Supabase managed PostgreSQL |
-| PostgreSQL session/message/artifact tables | Same schema migrated with versioned SQL migrations |
-| Hosted Chroma volume | Replace in cloud with Supabase `pgvector`; retain Chroma locally |
-| Internal database URL | Supabase direct connection for a long-lived IPv6 backend, or Supavisor session pooler when the host is IPv4-only |
-| Secrets | Backend-host secrets; never frontend environment variables |
-| Authentication/user IDs | Supabase Auth anonymous or signed-in identities for the public version |
-| FastAPI/Pi containers | A separate container host; Supabase does not run them |
-| Frontend | A separate static/frontend host pointing only to the public FastAPI URL |
-| Corpus ingestion | Controlled one-time/admin job from the repository corpus into Supabase |
+### What went wrong
 
-## Recovery order
+Railway and Supabase were discussed as if either automatically hosted the database, backend, agent, model, and frontend. This obscured the real boundaries and repeatedly broke deployment configuration.
 
-### Checkpoint A — local only
+### What changed
 
-- Preserve the current code and corpus in Git.
-- Record passing unit/lint/build gates.
-- Re-start Compose later and run one clean manual demo session.
-- Do not add Supabase or Groq behavior to this checkpoint.
+Supabase owns cloud PostgreSQL and pgvector. Render runs FastAPI and Pi in one Docker service. The public frontend is hosted separately. Groq or Claude performs cloud inference. Locally, PostgreSQL and Chroma remain Docker services while Ollama runs on the host. These flows are now shown separately in `docs/architecture.md`.
 
-### Checkpoint B — prove the cloud model locally
+## 10. Provider integration was temporarily inconsistent
 
-- Complete the Groq provider contract end to end.
-- Configure `openai/gpt-oss-120b` through `.env`, never in Git.
-- Run general-chat, transcript-tool, multi-turn, and one Ship 30 canary.
-- Keep local PostgreSQL/Chroma during this step so only one variable changes.
+### What went wrong
 
-### Checkpoint C — move cloud data to Supabase
+At one stage Pi understood Groq while the API schemas and UI did not. Model names also drifted between environment files, documentation, and deployed behavior.
 
-- Create versioned SQL migrations for current tables and `pgvector`.
-- Implement a selectable vector-store adapter.
-- Ingest the corpus once and verify record/vector parity and Recall@8.
-- Keep local Compose behavior unchanged.
+### What changed
 
-### Checkpoint D — host the application
+Provider configuration now flows through the API, Pi contract, UI selector, persistence metadata, health/config endpoints, and tests. The hosted default is Groq GPT-OSS 120B with a smaller Groq fallback only for a genuine rate-limit response. Local model names remain environment-configurable. Claude is visible only when its key is supplied.
 
-- Deploy web, FastAPI, and Pi with production secrets and health checks.
-- Add user/session ownership, CORS restrictions, and rate limits.
-- Run a five-turn cloud canary, then the ten-session suite.
-- Publish only after a clean-clone local rehearsal and a clean public-demo rehearsal.
+## 11. Authentication was added before the sign-in experience
 
-## Explicit non-goals for the next step
+### What went wrong
 
-- No Railway provisioning.
-- No deletion of local PostgreSQL or Chroma.
-- No public key-entry form.
-- No automatic provider fallback.
-- No 50-turn paid evaluation before a five-turn canary passes.
-- No claim that Ship 30 passes until a generated artifact is manually scored.
-- No push or public deployment without explicit authorization.
+The backend began requiring profile authentication while the public UI did not expose a usable sign-in screen. Users saw “Profile sign-in required” with no clear recovery path.
+
+### What changed
+
+The public UI now has a dedicated profile sign-in state and profile switching. Sessions and artifacts are scoped to a stable user identity. Passwords, signing secrets, provider keys, database credentials, and internal tool tokens remain server-side.
+
+## 12. Documentation became dense and environment-biased
+
+### What went wrong
+
+Architecture documentation grew into a local-heavy implementation dump. The combined local/cloud diagram was cluttered, and important product boundaries were harder to see than the details.
+
+### What changed
+
+`docs/architecture.md` now begins with a concise query dataflow and gives local and cloud deployments separate diagrams. The remaining prose covers only component ownership, ingestion/retrieval, agent tools, persistence, APIs, and security. README, PRD, design, and architecture documents have distinct responsibilities.
+
+## 13. “One command” was stated too casually
+
+### What went wrong
+
+`docker compose up` was described as completely self-sufficient even though Docker, Ollama, and the required local models are host prerequisites. First-run ingestion also has a real startup cost.
+
+### What changed
+
+The repository contains its transcripts and indexes, and Compose starts all application and data services. The README must continue to state the Ollama prerequisite and model pulls explicitly. The current stack is healthy, but the latest exact commit still needs one clean-clone Compose rehearsal before the evaluator path is called fully certified.
+
+## 14. Verification evidence lagged behind the code
+
+### What went wrong
+
+Test totals, provider status, and deployment claims changed faster than the handoff documents. Old statements remained technically historical but looked current.
+
+### What changed
+
+The current automated evidence is:
+
+- 42 API tests passed and one skipped;
+- one real PostgreSQL integration test passed;
+- 17 Pi-agent tests and the TypeScript build passed;
+- frontend lint and production build passed;
+- Render successfully deployed the current backend;
+- readiness reports PostgreSQL, pgvector, Pi, and all 303 ingested episodes as healthy.
+
+These checks prove infrastructure and contracts, not answer quality. The remaining release evidence is a reviewed Ship 30 artifact, the five-session/three-turn evaluation, and a fresh-clone Compose rehearsal from the final commit.
